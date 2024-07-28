@@ -1,0 +1,497 @@
+@media screen and (max-width: 1200px) {
+    .main .main-content .content-div .content{
+        gap: 18px;
+    }
+
+    .content-div> .content > .heading-content{
+        gap: 5px;
+    }
+
+    .content-div> .content > .heading-content >h3 {
+        font-size: 32px;
+    }
+    
+    .content-div > .content > .input-content > .input-container {
+        height: 39px;
+        gap: 7px;
+        padding-left: 8px;
+    }
+
+    .input-content > .input-container > span > .search {
+        width: 18px;
+        height: 18px;
+    }
+
+    .content-div > .content .input-content input {
+        width: 230px;
+    }
+    .content-div > .content .input-content input[placeholder="Keywords: JAVA, React, IT Director..."] {
+        font-size: 13px;
+    }
+    .content-div > .content .input-content input[placeholder="Location"] {
+        font-size: 14px;
+    }
+
+    .content-div> .content > .span-content span {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 1px;
+    }
+
+    .content-div > .content > .content-button {
+        margin-top: 15px;
+    }
+
+    .content-div > .content > .content-button button {
+        padding: 10px 33px;
+        font-size: 16px;
+    }
+
+    .content-div .content> img:first-child {
+        width: 205px;
+        height: 20px;
+        top: 88px;
+    }
+
+    .content-div .content> img:nth-of-type(2) {
+        width: 205px;
+        height: 20px;
+        top: 135px;
+    }
+
+    .content-div > .content > img:nth-of-type(3) {
+        width: 129px;
+        height: 100.54px;
+        position: absolute;
+        top: 342px;
+        left: 226px;
+    }
+
+    .svg-div {
+        width: 100%;
+        margin-bottom: 85px;
+    }
+
+    .svg-div img {
+        width: 100%;
+    }
+    .achievement-container {
+        padding: 50px 50px;
+    }
+    .achievement-container> .achievement-heading > div > h3 {
+        font-size: 34px;
+        line-height: 32.5px;
+    }
+    .achievement-container> .achievement-heading > div > span {
+        font-size: 18px;
+    }
+
+    .achivement-description > img {
+        top: 56px;
+    }
+    .achivement-description > h4 {
+        font-size: 32px;
+        line-height: 59.4px;
+    }
+
+    .pricing-container> .price-heading> div > h4 {
+        font-size: 34px;
+    }
+    .pricing-container> .price-heading> span {
+        font-size: 18px;
+    }
+
+    .pricing-plans h6 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .pricing-buttons > .monthly-button > button {
+        width: 200px;
+    }
+    .footer-bottom > .important-links {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 1339px){
+    .footer-container > footer {
+        gap: 40px;
+    }
+   .footer-content{
+    width: 20%;
+   }
+   .footer-container > footer > .logo-col > a {
+   
+    justify-content: start;
+}
+}
+
+@media screen and (max-width: 1024px){
+    .logo > img {
+        width: 130px;
+        height: 30px;
+        padding-left: 0px;
+    }
+    .collapse > .gapp {
+        gap: 15px;
+    }
+    .nav-buttons button:first-child {
+        padding: 5px 22px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .nav-buttons button:last-child {
+        padding: 5px 22px;
+        font-size: 16px;
+    }
+    .Exceptional-container {
+        padding: 30px 30px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .collapse > .gapp {
+        gap: 30px;
+    }
+    .logo > img {
+        width: 150px;
+        height: 32px;
+        padding-left: 0px;
+    }
+
+    .nav-buttons button:first-child {
+        padding: 4px 25px 4px 24px;
+        font-size: 18px;
+    }
+
+    .nav-buttons button:last-child {
+        padding: 4px 25px 4px 25px;
+        font-size: 18px;
+    }
+
+    .gapp .nav-item > a {
+        font-size: 16px;
+        line-height: 26.4px;
+    }
+
+    .content-div > .content .input-content input {
+        width: 200px;
+    }
+
+    .content-div > .content .input-content input[placeholder="Keywords: JAVA, React, IT Director..."] {
+        font-size: 11px;
+    }
+
+    .input-content > .input-container > span > .search{
+        width: 15px;
+        height: 15px;
+    }
+    .content-div> .content > .span-content span {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .content-div > .content > img:nth-of-type(3) {
+        width: 100px;
+        height: 95.54px;
+        top: 370px;
+        left: 225px;
+    }
+    .exceptional-content{
+        flex-wrap: wrap;
+    }
+
+    .faqs-container {
+        padding: 30px 40px;
+    }
+    .contactus-container {
+        padding: 60px 0px;
+    }
+    .contactus-container > .contact-form {
+        width: 95%;
+    }
+    .contact-form > .contact-form-info .form > .input-div {
+        gap: 20px;
+    }
+
+    .footer-link{
+        width: 100%;
+    }
+    .empty-col{
+        display: none;
+    }
+    .data-quality {
+        padding: 0px;
+        max-height: none;
+    }
+
+    .exceptional-content> .exceptional-roi > p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .Exceptional-container .exceptional-heading> h3 {
+        font-size: 35px;
+        line-height: 30px;
+    }
+    .Exceptional-container .exceptional-heading>span {
+        font-size: 18px;
+        max-width: 800px;
+    }
+    .achievement-container> .achievement-heading > h3 {
+        font-size: 32px;
+    }
+    .achievement-container> .achievement-heading > span {
+        font-size: 19px;
+    }
+}
+
+
+@media screen and (max-width: 900px)  {
+    .main > .main-content {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .svg-div {
+        margin-top: 35px;
+        margin-bottom: 0px;
+    }
+
+    .content-div {
+        padding: 22px 20px;
+    }
+
+    .content-div> .content > .heading-content >h3 {
+        font-size: 42px;
+    }
+    .content-div> .content > .heading-content {
+        gap: 8px;
+    }
+
+    .content-div> .content > .span-content span {
+        font-size: 22px;
+        line-height: 35px;
+        font-weight: 500;
+    }
+    .content-div > .content > .input-content > .input-container {
+        height: 50px;
+        gap: 7px;
+        padding-left: 10px;
+    }
+    .content-div > .content .input-content input {
+        width: 300px;
+    }
+
+    .content-div > .content .input-content input[placeholder="Keywords: JAVA, React, IT Director..."] {
+        font-size: 15px;
+    }
+
+    .input-content > .input-container > span > .search {
+        width: 21px;
+        height: 19px;
+    }
+    .content-div > .content .input-content input[placeholder="Location"] {
+        font-size: 16px;
+    }
+
+    .content-div > .content > .content-button {
+        margin-top: 20px;
+    }
+
+    .content-div > .content > .content-button button {
+        padding: 10px 43px;
+        font-size: 21px;
+    }
+
+    .content-div .content> img:first-child {
+        width: 268px;
+        height: 27px;
+        top: 113px;
+    }
+
+    .content-div .content> img:nth-of-type(2) {
+        width: 268px;
+        height: 27px;
+        top: 173px;
+    }
+
+    .main .main-content .content-div .content {
+        gap: 22px;
+    }
+
+    .content-div > .content > img:nth-of-type(3) {
+        width: 155px;
+        height: 139px;
+        top: 428px;
+        left: 292px;
+    }
+
+    .Exceptional-container .exceptional-heading> div > h3 {
+        font-size: 40px;
+    }
+    .Exceptional-container .exceptional-heading> div > span {
+        font-size: 18px;
+    }
+    .achievement-container> .achievement-heading > div > h3 {
+        font-size: 26px;
+        line-height: 26.5px;
+    }
+    .accordion-header > button {
+        font-size: 20px;
+    }
+    .faqs-container {
+        padding: 20px 30px;
+    }
+
+    .contactus-container > .contact-form {
+        width: 96%;
+        flex-direction: column;
+        gap: 50px;
+   
+    }
+    .contact-form > .contact-info {
+        width: 100%;
+        /* flex-direction: row; */
+        gap: 18px;
+}
+
+.contact-form > .contact-form-info {
+    width: 100%;
+    padding: 0px 10px;
+}
+.important-icons{
+    display: flex;
+    flex-direction: column;
+}
+.important-icons > svg{
+    width: 36px;
+    height: 36px;
+}
+
+}
+
+@media screen and (max-width: 708px) {
+    .content-div > .content > img:nth-of-type(3) {
+        width: 155px;
+        height: 139px;
+        top: 493px;
+        left: 292px;
+    }
+    .content-div > .content .input-content {
+      
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 671px){
+    .content-div> .content > .span-content span {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 579px){
+    .content-div> .content > .span-content span {
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 529px){
+    .content-div> .content > .span-content span {
+       letter-spacing: 1px;
+    }
+}
+
+@media screen and (max-width: 482px){
+    .content-div> .content > .span-content span {
+        letter-spacing: 0px;
+    }
+
+    .content-div > .content > .input-content > .input-container {
+        height: 45px;
+    }
+    .content-div > .content > .content-button {
+        margin-top: 15px;
+    }
+    .content-div > .content > .content-button button {
+        padding: 11px 30px;
+        font-size: 17px;
+    }
+    .content-div > .content > img:nth-of-type(3) {
+        width: 124px;
+        height: 100px;
+        top: 493px;
+        left: 216px;
+    }
+}
+
+@media screen and (max-width: 431px){
+    .content-div> .content > .span-content span {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 391px){
+    .main .main-content .content-div .content {
+        gap: 15px;
+    }
+    .content-div {
+        padding: 22px 5px;
+    }
+    
+    .content-div> .content > .heading-content >h3 {
+        font-size: 35px;
+    }
+
+    .content-div> .content > .span-content span {
+        letter-spacing: 0px;
+        font-size: 13px;
+    }
+
+    .content-div > .content > .content-button {
+        margin-top: 15px;
+    }
+
+    .content-div > .content > .input-content > .input-container {
+        height: 43px;
+    }
+
+    .content-div > .content > .content-button button {
+        padding: 9px 32px;
+        font-size: 16px;
+    }
+    .content-div .content> img:first-child {
+        width: 230px;
+        height: 27px;
+        top: 95px;
+    }
+    .content-div .content> img:nth-of-type(2) {
+        width: 230px;
+        height: 27px;
+        top: 147px;
+    }
+
+    .content-div > .content > img:nth-of-type(3) {
+        width: 105px;
+        height: 85px;
+        top: 445px;
+        left: 210px;
+    }
+}
+
+@media screen and (max-width: 437px){
+
+}
+
+@media screen and (max-width: 425px){
+    .content-div {
+        padding: 22px 6px;
+    }
+}
+
