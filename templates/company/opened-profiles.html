@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% extends 'layouts/base.html' %}
+    {% load static %}
+    
+    {% block links %}
+    <link rel="stylesheet" href="{% static 'company/css/recent_searches.css' %}" />
+    <link rel="stylesheet" href="{% static 'company/css/opened_profiles.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/profile_card.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'modals/css/save_on_list_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/report_candidate_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/add_actions_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/share_profile_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/delete_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/search_page_tabs.css' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    {% endblock %}
+    
+    <title>{% block title %}Flunter Opened Profiles{% endblock %}</title>
+</head>
+<body>
+    {% block body %}    
+        <div class="main-content">
+            <div class="profile-search-container">
+                <div class="search-for-profile">
+                    <h2>Your profile is here, look for it !</h2>
+                    <form onsubmit="searchForm(event);">
+                        <!-- {% csrf_token %} -->
+                        <div class="search-filter-container">
+                            <div class="search-filters">
+                                <div class="keyword-search-inputs">
+                                    <div class="input-container">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="#070C29"/>
+                                        </svg>  
+                                        <input type="text" name="keywords" placeholder="Type something..." />
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 filter-btn-container">
+                                    <button class="filter-btn  w-100" id="search-result-btn" type="submit">Search</button>     
+                                </div>
+                            </div>
+                        </div>
+                        <small class="search-error-msg input-error-msg"></small>
+                    </form>
+                </div>
+                <div class="profile-search-svg">
+                    <img src="{% static 'company/images/search-svg.svg' %}" alt="">
+                </div>
+            </div>
+           
+            <div class="main-navbar">
+                {% include 'includes/search-page-tabs.html' %}
+                <div class="save-results">
+                    <span id="header-record-text">0</span>
+                    <span>results</span>
+                </div>
+            </div>
+            <div class="results-container">
+                <div class="order-details-table-wrapper">
+                    <div class="w-100 h-100 d-flex justify-content-center align-items-center pt-2 pb-2" id="table-loader">
+                        <span class="spinner-border spinner-border-md" style="color: #7C00F4;" role="status" aria-hidden="true">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content-container">
+                <div class="result-list">
+                    
+                </div>
+            </div>
+            <div class="pagination-div" id="pagination-container">
+                <span class="records">Showing <span id="start-record">0</span> to <span id="end-record" >0</span> from <span id="records-count"></span></span>
+                <div id="pagination-get-first-record-btn" class="prev-btn first-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.727 12L12.667 11.06L9.61366 8L12.667 4.94L11.727 4L7.72699 8L11.727 12Z" fill="#000000"/>
+                        <path d="M7.33344 12L8.27344 11.06L5.2201 8L8.27344 4.94L7.33344 4L3.33344 8L7.33344 12Z" fill="#000000"/>
+                    </svg>
+                </div>
+                <div id="pagination-get-previous-record-btn" class="prev-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.06 12L11 11.06L7.94667 8L11 4.94L10.06 4L6.06 8L10.06 12Z" fill="#000000"/>
+                    </svg>
+                </div>
+                <div class="pages" id="pages-container">
+                </div>
+                <div id="pagination-get-next-record-btn" class="rotate-180 next-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.06 12L11 11.06L7.94667 8L11 4.94L10.06 4L6.06 8L10.06 12Z" fill="#000000"/>
+                    </svg>
+                </div>
+                <div id="pagination-get-last-record-btn" class="rotate-180 next-btn last-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.727 12L12.667 11.06L9.61366 8L12.667 4.94L11.727 4L7.72699 8L11.727 12Z" fill="#000000"/>
+                        <path d="M7.33344 12L8.27344 11.06L5.2201 8L8.27344 4.94L7.33344 4L3.33344 8L7.33344 12Z" fill="#000000"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    {% include "modals/save-list-modal.html" %}
+    {% include "modals/report-candidate-modal.html" %}
+    {% include "modals/add-action-modal.html" %}
+    {% include "modals/share-profile-modal.html" %}
+    {% include "modals/delete-modal.html" %}
+
+    {{AISEARCHBOT_URL|json_script:"AISEARCHBOT_URL"}}
+    {{parent_user|json_script:"parent_user"}}
+    {{request.user.id|json_script:"current_user_id"}}
+    {{request.user.first_name|json_script:"current_user_first_name"}}
+    {{request.user.last_name|json_script:"current_user_last_name"}}
+    {{request.user.email|json_script:"current_user_email"}}
+    
+    {{request.user_data.data|json_script:"userData"}}
+
+    {% endblock %}
+</body>
+{% block scripts %}
+<script>
+    const AISEARCHBOT_URL = JSON.parse(document.getElementById('AISEARCHBOT_URL').textContent);
+    const parent_user = JSON.parse(document.getElementById('parent_user').textContent);
+    const current_user_id = JSON.parse(document.getElementById('current_user_id').textContent);
+    const current_user_first_name = JSON.parse(document.getElementById('current_user_first_name').textContent);
+    const current_user_last_name = JSON.parse(document.getElementById('current_user_last_name').textContent);
+    const current_user_email = JSON.parse(document.getElementById('current_user_email').textContent);
+    const userData = JSON.parse(document.getElementById('userData').textContent);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="{% static 'company/js/openedProfile.js' %}"></script>
+<script src="{% static 'modals/js/addActionModal.js' %}"></script>
+<script src="{% static 'modals/js/shareProfileModal.js' %}"></script>
+<script src="{% static 'modals/js/reportCandidateModal.js' %}"></script>
+<script src="{% static 'modals/js/saveOnListModal.js' %}"></script>
+<script src="{% static 'common/js/profileCard.js' %}"></script>
+{% endblock %}
+</html>

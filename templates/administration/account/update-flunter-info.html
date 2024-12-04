@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'administration/common/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/common/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/account/css/sidebar.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/account/css/update_personal_info.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/account/css/update_flunter_info.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static "common/css/bootstrap.min.css" %}">
+    <script src="{% static "common/js/bootstrap.bundle.min.js" %}"></script> {% endcomment %}
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="{% static 'common/images/favicon.svg' %}" />
+    
+    <title>Flunter | Change Flunter Info</title>
+</head>
+<body>
+
+    {% include '../includes/company-sidebar.html' %}
+
+    <div class="main-page">
+        <div class="nav-functions">
+            <div class="dropdown nav-user-dropdown">
+                <div class="nav-user-dropdown-btn" id="filter-menu2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="d-flex align-items-center justify-content-between h-100">
+                        <img 
+                            src="{% if request.user.is_authenticated and request.user.is_staff %}
+                                {{request.user.profile_picture.url}}
+                                {% else %}
+                                {% static 'administration/account/images/company-img.svg' %}
+                                {% endif %}" 
+                                alt="company image" />
+                        <div class="nav-user-details">
+                            <span class="nav-user-name">
+                                {% if request.user.is_authenticated and request.user.is_staff %}
+                                    {{request.user.first_name}} {{request.user.last_name}}
+                                {% else %}
+                                Paul James
+                                {% endif %}
+                            </span>
+                            <span class="nav-user-email">
+                                {% if request.user.is_authenticated and request.user.is_staff %}
+                                    {{request.user.email}}
+                                {% else %}
+                                paul02@gmail.com
+                                {% endif %}
+                            </span>
+                        </div>
+                        <svg width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.75 0.547949C18.4221 0.22201 17.9785 0.0390625 17.5162 0.0390625C17.0539 0.0390625 16.6104 0.22201 16.2825 0.547949L9.99997 6.74295L3.80497 0.547949C3.47709 0.22201 3.03355 0.0390625 2.57122 0.0390625C2.1089 0.0390625 1.66536 0.22201 1.33747 0.547949C1.17345 0.710635 1.04326 0.904186 0.954411 1.11744C0.865566 1.33069 0.819824 1.55943 0.819824 1.79045C0.819824 2.02147 0.865566 2.25021 0.954411 2.46346C1.04326 2.67671 1.17345 2.87026 1.33747 3.03295L8.75747 10.4529C8.92016 10.617 9.11371 10.7472 9.32696 10.836C9.54022 10.9249 9.76895 10.9706 9.99997 10.9706C10.231 10.9706 10.4597 10.9249 10.673 10.836C10.8862 10.7472 11.0798 10.617 11.2425 10.4529L18.75 3.03295C18.914 2.87026 19.0442 2.67671 19.133 2.46346C19.2219 2.25021 19.2676 2.02147 19.2676 1.79045C19.2676 1.55943 19.2219 1.33069 19.133 1.11744C19.0442 0.904186 18.914 0.710635 18.75 0.547949Z" fill="#7C00F4"/>
+                        </svg>
+                    </div>
+                </div>
+                <ul id="filter-menu2" class="dropdown-menu nav-user-dropdown-menu">
+                    <div class="dropdown-item" onclick="location.pathname = '/administration/account/'">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.372 2.5C8.87657 2.5 6.85366 4.52291 6.85366 7.01829C6.85366 9.51368 8.87657 11.5366 11.372 11.5366C13.8673 11.5366 15.8902 9.51368 15.8902 7.01829C15.8902 4.52291 13.8673 2.5 11.372 2.5ZM8.28049 7.01829C8.28049 5.31092 9.66458 3.92683 11.372 3.92683C13.0793 3.92683 14.4634 5.31092 14.4634 7.01829C14.4634 8.72566 13.0793 10.1098 11.372 10.1098C9.66458 10.1098 8.28049 8.72566 8.28049 7.01829Z" fill="#ABAEC7"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.51829 12.9634C6.02291 12.9634 4 14.9863 4 17.4817C4 19.9771 6.02291 22 8.51829 22H14.2256C16.721 22 18.7439 19.9771 18.7439 17.4817C18.7439 14.9863 16.721 12.9634 14.2256 12.9634H8.51829ZM5.42683 17.4817C5.42683 15.7743 6.81092 14.3902 8.51829 14.3902H14.2256C15.933 14.3902 17.3171 15.7743 17.3171 17.4817C17.3171 19.1891 15.933 20.5732 14.2256 20.5732H8.51829C6.81092 20.5732 5.42683 19.1891 5.42683 17.4817Z" fill="#ABAEC7"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.372 2.5C8.87657 2.5 6.85366 4.52291 6.85366 7.01829C6.85366 9.51368 8.87657 11.5366 11.372 11.5366C13.8673 11.5366 15.8902 9.51368 15.8902 7.01829C15.8902 4.52291 13.8673 2.5 11.372 2.5ZM8.28049 7.01829C8.28049 5.31092 9.66458 3.92683 11.372 3.92683C13.0793 3.92683 14.4634 5.31092 14.4634 7.01829C14.4634 8.72566 13.0793 10.1098 11.372 10.1098C9.66458 10.1098 8.28049 8.72566 8.28049 7.01829Z" stroke="#ABAEC7" stroke-width="0.4"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.51829 12.9634C6.02291 12.9634 4 14.9863 4 17.4817C4 19.9771 6.02291 22 8.51829 22H14.2256C16.721 22 18.7439 19.9771 18.7439 17.4817C18.7439 14.9863 16.721 12.9634 14.2256 12.9634H8.51829ZM5.42683 17.4817C5.42683 15.7743 6.81092 14.3902 8.51829 14.3902H14.2256C15.933 14.3902 17.3171 15.7743 17.3171 17.4817C17.3171 19.1891 15.933 20.5732 14.2256 20.5732H8.51829C6.81092 20.5732 5.42683 19.1891 5.42683 17.4817Z" stroke="#ABAEC7" stroke-width="0.4"/>
+                        </svg>
+                        <span>My Account</span>
+                    </div>
+                    
+                    <a class="text-decoration-none" href="{% url 'admin_logout' %}">
+                        <div class="dropdown-item" onclick="location.pathname = 'administration/login/'">
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.125 11.9793L20.9059 11.3546L21.4056 11.9793L20.9059 12.604L20.125 11.9793ZM11.9312 12.9793C11.379 12.9793 10.9312 12.5316 10.9312 11.9793C10.9312 11.427 11.379 10.9793 11.9312 10.9793V12.9793ZM17.2642 6.80255L20.9059 11.3546L19.3441 12.604L15.7025 8.05194L17.2642 6.80255ZM20.9059 12.604L17.2642 17.1561L15.7025 15.9067L19.3441 11.3546L20.9059 12.604ZM20.125 12.9793H11.9312V10.9793H20.125V12.9793Z" fill="#ABAEC7"/>
+                                <path d="M12.8418 8.45761V8.08434C12.8418 6.466 12.8418 5.65683 12.3678 5.09734C11.8939 4.53785 11.0957 4.40482 9.49939 4.13877L8.90319 4.0394C5.6601 3.49888 4.03855 3.22863 2.97767 4.12732C1.9168 5.02602 1.9168 6.66993 1.9168 9.95776V14.0006C1.9168 17.2884 1.9168 18.9323 2.97767 19.831C4.03855 20.7297 5.6601 20.4595 8.90319 19.9189L9.49939 19.8196C11.0957 19.5535 11.8939 19.4205 12.3678 18.861C12.8418 18.3015 12.8418 17.4923 12.8418 15.874V15.6809" stroke="#ABAEC7" stroke-width="2"/>
+                            </svg>
+                            <span>Logout</span>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="main-content-header">
+                <div class="back-btn" onclick="history.back();">
+                    <svg width="12" height="19" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.6263 16.8548L2.29297 9.50065L9.6263 2.14648" stroke="#7C00F4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="personal-info-container">
+                <h1 id="container-heading">Flunter Info</h1>
+                <div class="personal-info-inputs">
+                    <form method='post' onsubmit='updateFlunterInfoForm(event)'>
+                        {% csrf_token %}
+                        
+                    <div class="company-input-container" id="company-input-container">
+                        <div class="individual-input-container input-container">
+                            <div>
+                                <label for="phone">Phone</label>
+                                <div>
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.0504 13.4829L17.5438 13.1028C16.4107 12.817 15.2484 13.3228 14.6539 14.3612L14.5397 14.5604C14.3538 14.8838 14.052 15.1063 13.6884 15.188C13.3132 15.2738 12.9089 15.1913 12.5845 14.9655C11.3906 14.1329 10.3634 13.1062 9.53042 11.9128C9.30446 11.5886 9.22359 11.186 9.3078 10.8093C9.38951 10.446 9.61213 10.1443 9.93563 9.95928L10.1749 9.82178C11.1729 9.25007 11.674 8.07166 11.3939 6.95658L11.0145 5.45065C10.8111 4.64309 10.2516 4.00138 9.47872 3.69053C8.70498 3.37801 7.8587 3.45301 7.15083 3.89304C5.55666 4.88561 4.44774 6.51488 4.10923 8.36418C3.76905 10.2218 4.23179 12.1503 5.38073 13.6545C6.95239 15.7122 8.78919 17.5506 10.8411 19.1191C12.0209 20.0208 13.4625 20.5 14.9266 20.5C15.326 20.5 15.7278 20.4642 16.1264 20.3917C17.9782 20.0541 19.6107 18.9449 20.6079 17.3448C21.0473 16.6381 21.1215 15.7905 20.8097 15.0188C20.4979 14.2462 19.8559 13.687 19.0488 13.4837L19.0504 13.4829ZM19.5457 16.6864C18.7369 17.984 17.4096 18.8857 15.9038 19.1607C14.3921 19.4374 12.8247 19.0582 11.6023 18.1257C9.63881 16.6247 7.88038 14.8646 6.37542 12.8962C5.44076 11.6719 5.0639 10.1018 5.34071 8.59003C5.62003 7.06492 6.49799 5.774 7.81368 4.95561C8.02963 4.82144 8.26975 4.7531 8.51322 4.7531C8.6808 4.7531 8.85006 4.7856 9.01264 4.85144C9.41119 5.01145 9.69884 5.34231 9.80306 5.75733L10.1824 7.26244C10.3275 7.83664 10.069 8.44418 9.5546 8.73837L9.3153 8.87588C8.68414 9.23757 8.24891 9.82761 8.08882 10.5368C7.92791 11.2552 8.07965 12.0178 8.50571 12.6295C9.42369 13.9446 10.556 15.0755 11.8708 15.9922C12.482 16.4189 13.2449 16.5697 13.9644 16.4089C14.6748 16.2497 15.2643 15.8138 15.6253 15.183L15.7395 14.9838C16.053 14.4379 16.6567 14.1737 17.2395 14.3162L18.7453 14.6954C19.1613 14.8004 19.4923 15.0888 19.6532 15.4863C19.8133 15.8839 19.775 16.3197 19.5465 16.6872L19.5457 16.6864Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                    </svg>
+                                    {% if form.phone_number.value %}
+                                    <input type="tel" name="phone_number" value='{{form.phone_number.value}}' id="phone"  />
+                                    {% else %}
+                                    <input type="tel" name="phone_number" value='' id="phone"  />
+                                    {% endif %}
+                                </div>
+                                <small id="valid-msg" class="hide text-success">✓ Valid</small>
+                                <small id="error-msg" class="hide text-danger"></small>
+                                <small id='phone_number_errors' class='text-danger'></small>
+                                {% if form.phone_number.errors %}
+                                    {% for err in form.phone_number.errors %}
+                                        <small class="text-danger w-100">{{ err }}</small>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <div>
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.7143 7H4.88571C3.84606 7 3 7.79044 3 8.76176V16.9716C3 17.9429 3.84606 18.7333 4.88571 18.7333H18.7143C19.7539 18.7333 20.6 17.9429 20.6 16.9716V8.76176C20.6 7.79044 19.7539 7 18.7143 7ZM19.3429 16.9716C19.3429 17.2957 19.0613 17.5588 18.7143 17.5588H4.88571C4.53874 17.5588 4.25714 17.2957 4.25714 16.9716V10.9593L11.162 13.276C11.3675 13.3453 11.5838 13.3799 11.8 13.3799C12.0162 13.3799 12.2325 13.3453 12.4374 13.2766L19.3429 10.9593V16.9716ZM19.3429 9.71076L12.0118 12.1714C11.8754 12.2172 11.7252 12.2178 11.5875 12.1714L4.25714 9.71135V8.76176C4.25714 8.4376 4.53874 8.17451 4.88571 8.17451H18.7143C19.0613 8.17451 19.3429 8.4376 19.3429 8.76176V9.71076Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                    </svg>
+                                    {% if form.email.value %}
+                                    <input type="email" name="email" value='{{form.email.value}}' id="email"  placeholder="alex.123@work.com" />
+                                    {% else %}
+                                    <input type="email" name="email" value='' id="email"  placeholder="alex.123@work.com" />
+                                    {% endif %}
+                                </div>
+                                <small id='email_errors' class='text-danger'></small>
+                                {% if form.email.errors %}
+                                    {% for err in form.email.errors %}
+                                        <small class="text-danger w-100">{{ err }}</small>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div>
+                                <label for="company-first-name">Postal Address</label>
+                                <div>
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.7143 7H4.88571C3.84606 7 3 7.79044 3 8.76176V16.9716C3 17.9429 3.84606 18.7333 4.88571 18.7333H18.7143C19.7539 18.7333 20.6 17.9429 20.6 16.9716V8.76176C20.6 7.79044 19.7539 7 18.7143 7ZM19.3429 16.9716C19.3429 17.2957 19.0613 17.5588 18.7143 17.5588H4.88571C4.53874 17.5588 4.25714 17.2957 4.25714 16.9716V10.9593L11.162 13.276C11.3675 13.3453 11.5838 13.3799 11.8 13.3799C12.0162 13.3799 12.2325 13.3453 12.4374 13.2766L19.3429 10.9593V16.9716ZM19.3429 9.71076L12.0118 12.1714C11.8754 12.2172 11.7252 12.2178 11.5875 12.1714L4.25714 9.71135V8.76176C4.25714 8.4376 4.53874 8.17451 4.88571 8.17451H18.7143C19.0613 8.17451 19.3429 8.4376 19.3429 8.76176V9.71076Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                    </svg>
+                                    {% if form.postal_address.value %}
+                                    <input type="text" name="postal_address" value='{{form.postal_address.value}}' id="company-first-name" placeholder="+54000" />
+                                    {% else %}
+                                    <input type="text" name="postal_address" value='' id="company-first-name" placeholder="+54000" />
+                                    {% endif %}
+                                </div>
+                                <small id='company_address_errors' class='text-danger'></small>
+                                {% if form.postal_address.errors %}
+                                    {% for err in form.postal_address.errors %}
+                                        <small class="text-danger w-100">{{ err }}</small>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div>
+                                <label for="company-last-name">SIRET Number</label>
+                                <div>
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.7143 7H4.88571C3.84606 7 3 7.79044 3 8.76176V16.9716C3 17.9429 3.84606 18.7333 4.88571 18.7333H18.7143C19.7539 18.7333 20.6 17.9429 20.6 16.9716V8.76176C20.6 7.79044 19.7539 7 18.7143 7ZM19.3429 16.9716C19.3429 17.2957 19.0613 17.5588 18.7143 17.5588H4.88571C4.53874 17.5588 4.25714 17.2957 4.25714 16.9716V10.9593L11.162 13.276C11.3675 13.3453 11.5838 13.3799 11.8 13.3799C12.0162 13.3799 12.2325 13.3453 12.4374 13.2766L19.3429 10.9593V16.9716ZM19.3429 9.71076L12.0118 12.1714C11.8754 12.2172 11.7252 12.2178 11.5875 12.1714L4.25714 9.71135V8.76176C4.25714 8.4376 4.53874 8.17451 4.88571 8.17451H18.7143C19.0613 8.17451 19.3429 8.4376 19.3429 8.76176V9.71076Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                    </svg>
+                                    {% if form.siret_number.value %}
+                                    <input type="text" name="siret_number" value='{{form.siret_number.value}}' id="company-last-name" placeholder="1234" />
+                                    {% else %}
+                                    <input type="text" name="siret_number" value='' id="company-last-name" placeholder="1234" />
+                                    {% endif %}
+                                </div>
+                                <small id='company_siret_number_errors' class='text-danger'></small>
+                                {% if form.siret_number.errors %}
+                                    {% for err in form.siret_number.errors %}
+                                        <small class="text-danger w-100">{{ err }}</small>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="update-btn-container">
+                            <button class="cancel-btn" onclick="preventSubmission(event)" >Cancel</button>
+                            <button class="save-btn" type="submit" id="sumit_btn">Save</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        {{form.phone_number.value|json_script:"phone_number"}}
+
+        <script>
+            let phone_number = JSON.parse(document.getElementById('phone_number').textContent) || '';
+        </script>
+    <script src="{% static 'common/js/common.js' %}"></script>
+    <script src="{% static 'administration/common/js/intTelinput.js' %}"></script>
+    <script src="{% static 'administration/account/js/changeFlunterInfo.js' %}"></script>
+</body>
+</html>

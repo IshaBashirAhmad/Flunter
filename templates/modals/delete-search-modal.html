@@ -1,0 +1,31 @@
+<div class="modal fade" id="delsearchModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="delModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form>
+                {% comment %} {% csrf_token %} {% endcomment %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span id="del-modal-header">Delete Search</span>
+                </div>
+                <div class="modal-body">  
+                    <p id="warning-statement">Are you sure you want to delete this search?</p>
+                    <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.1" d="M42.5395 74.3138C61.7371 74.3138 77.2998 72.3116 77.2998 69.8418C77.2998 67.372 61.7371 65.3699 42.5395 65.3699C23.342 65.3699 7.7793 67.372 7.7793 69.8418C7.7793 72.3116 23.342 74.3138 42.5395 74.3138Z" fill="#1E274A"/>
+                        <path d="M30.9937 60.4597C29.7144 60.4597 28.6192 60.0042 27.7082 59.0932C26.7972 58.1822 26.3416 57.087 26.3416 55.8077V25.5694H24.0156V20.9173H35.6457V18.5913H49.6019V20.9173H61.232V25.5694H58.906V55.8077C58.906 57.087 58.4505 58.1822 57.5394 59.0932C56.6284 60.0042 55.5332 60.4597 54.2539 60.4597H30.9937ZM54.2539 25.5694H30.9937V55.8077H54.2539V25.5694ZM35.6457 51.1556H40.2978V30.2214H35.6457V51.1556ZM44.9498 51.1556H49.6019V30.2214H44.9498V51.1556Z" fill="#FF4D4D"/>
+                    </svg>    
+                </div>
+                <div class="error-div">
+                    <small class="delete-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" type="submit" id="delete_search_modal_button">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Delete</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="delsearchModal" data-bs-toggle="modal" data-bs-target="#delsearchModal" />

@@ -1,0 +1,193 @@
+#manageListModal .modal-dialog {
+    max-width: unset;
+    width: 400px;
+}
+
+#manageListModal .modal-header {
+    padding: 0!important;
+    border-radius: 15px!important;
+
+}
+
+#manageListModal .modal-content {
+    padding: 20px;
+    border: none;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+}
+
+#manageListModal .modal-footer,
+#manageListModal .modal-content {
+    border-radius: 15px!important;
+}
+
+#manageListModal .modal-header {
+    margin-bottom: 20px;
+}
+
+#manageListModal .modal-header > span {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 26.56px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+#manageListModal .modal-body {
+    padding: 0px!important;
+}
+
+#manageListModal .select-list-type-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+#manageListModal .select-list-type-container > span {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+}
+
+#manageListModal .list-type-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 28px;
+    width: 100%;
+    border: 2px solid var(--new-secondary-color);
+}
+
+#manageListModal .list-type-group .duration-radio-btn {
+    position: relative;
+    width: 100%;
+    height: 36px;
+    border-radius: 8px;
+}
+
+#manageListModal .list-type-group .duration-radio-btn .duration-radio-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 20.8px;
+    text-align: center;
+    color: #68759A;
+    background: #FFFFFF;
+    /* box-shadow: 0px 0px 5px 2px #7C00F41A; */
+    border-radius: 40px;
+    transition: background .2s;
+    cursor: pointer;
+}
+
+#manageListModal .list-type-group .duration-radio-btn:first-of-type .duration-radio-label {
+    border-radius: 30px;
+}
+
+#manageListModal .list-type-group .duration-radio-btn .duration-radio-label .savings {
+    font-size: .75rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 15.6px;
+    text-align: right;
+    color: var(--primary-color)!important;
+}
+
+#manageListModal .list-type-group input[name="list_type"] {
+    display: none;
+}
+
+#manageListModal .list-type-group input[name="list_type"]:checked + .duration-radio-label {
+    color: var(--primary-color)!important;
+    background: var(--new-secondary-color)!important;
+    border-radius: 28px!important;
+    border: 2px solid var(--new-secondary-color)!important;
+    box-shadow: none!important;
+}
+
+#manageListModal .modal-body .input-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    width: 100%;
+}
+
+#manageListModal .modal-body .input-wrapper label {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+#manageListModal .modal-body .input-wrapper > div {
+    display: flex;
+    align-items: center;
+}
+
+#manageListModal .modal-body .input-wrapper > div input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #E3E8F9;
+    border-radius: 14px;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 24px;
+    font-size: .875rem;
+}
+
+#manageListModal .modal-body .input-wrapper > div input:focus-visible {
+    outline: 2px solid var(--second-secondary-color);
+}
+
+#manageListModal .modal-body .input-wrapper > div svg {
+    position: absolute;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+
+#manageListModal .modal-footer {
+    padding: 0px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#manageListModal .modal-footer > button {
+    width: 122px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 40px;
+    /* box-shadow: 0px 0px 10px 0px #0C47AF4D; */
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: center;
+}
+
+#manageListModal .modal-footer > button:first-of-type {
+    background: transparent;
+}
+
+#manageListModal .modal-footer > button:last-of-type {
+    background: var(--second-secondary-color);
+}
+
+#manageListModal .modal-footer > button > span {
+    color: #FFFFFF;
+}

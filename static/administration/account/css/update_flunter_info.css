@@ -1,0 +1,27 @@
+
+.individual-input-container {
+    grid-template-columns: minmax(265px, 368px) minmax(265px, 368px) minmax(265px, 368px) minmax(265px, 368px)  ;
+}
+
+@media (max-width: 1536px) {
+    .individual-input-container {
+        grid-template-columns: minmax(265px, 368px) minmax(265px, 368px) minmax(265px, 368px);
+    }   
+}
+
+@media (max-width: 1220px) {
+    .individual-input-container {
+        grid-template-columns: minmax(200px, 368px) minmax(200px, 368px);
+    }
+}
+
+
+@media (max-width: 1020px) {
+    .personal-info-inputs {
+        flex-direction: column;
+    }
+
+    .individual-input-container {
+        grid-template-columns: minmax(200px, 368px);
+    }
+}

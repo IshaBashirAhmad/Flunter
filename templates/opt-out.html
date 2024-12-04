@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/opt-out.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/opt-out-modal.css' %}" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'common/images/favicon.svg' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+
+    <title>Opt Out</title>
+</head>
+<body>
+    {% include './includes/navbar.html' %}
+
+    <section class="opt-out-header">
+        <div class="get-in-touch-section-header">
+            <h2>Opt-Out Request for Personal Data Removal</h2>
+            <span class="helping-line">At Flunter, we respect your privacy and are committed to protecting your personal information. If you wish to request the removal of your personal data from our database, please follow the instructions below.</span>
+        </div>
+        <div class="get-in-touch-wrapper">
+            <div class="get-in-touch-info-wrapper">
+                <div class="get-in-touch-info-card">
+                    <div class="card-info">
+                        <span class="opt-heading">How to Request Data Removal</span>
+                        <span class="opt-body">To request the removal of your personal data, please provide the information:</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg>                            
+                    </div>
+                    <div class="card-info">
+                        <span>Full Name</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg>                            
+                    </div>
+                    <div class="card-info">
+                        <span>Email Address</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg>                            
+                    </div>
+                    <div class="card-info">
+                        <span>Phone Number(If applicable)</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg>                            
+                    </div>
+                    <div class="card-info">
+                        <span>Country</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg>                            
+                    </div>
+                    <div class="card-info">
+                        <span>Any Additional Information that can help us identify your data</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="get-in-touch-info-wrapper">
+                <div class="get-in-touch-info-card">
+                    <div class="card-info">
+                        <span class="opt-heading">Processing Your Request</span>
+                        <span class="opt-body">Upon receiving your request, we will:</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg>                            
+                    </div>
+                    <div class="card-info">
+                        <span>Confirm your identity to ensure the security of your data.</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg>                            
+                    </div>
+                    <div class="card-info">
+                        <span>Process your request and remove your personal data from our database.</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg>                            
+                    </div>
+                    <div class="card-info">
+                        <span>Send you a confirmation email once the removal is complete.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="opt-submission-method-section">
+        <div class="">
+            <span class="submission-methods">Submission Methods</span>
+            <h2>You can submit your opt-out request through the following methods:</h2>
+            <span class="contact-line">Send your request to <a href="mailto:optout@flunter.com">optout@flunter.com.</a></span>
+            <span>Complete the <span class="highlighted" onclick="openOptOutForm('openOptOutModal')">Opt-Out Request Form</span> on our website</span>
+        </div>
+    </section>
+
+    <section class="opt-out-header">
+        <div class="get-in-touch-section-header">
+            <h2>Prevention of Future Data Collection</h2>
+            <span class="helping-line">We use numerous data provision services and tools, all GDPR and CCPA compliant, and we only utilize the data provided by these suppliers. To prevent your contact details (emails and phone numbers) from being added to our database in the future, please provide these details so we can add them to our suppression list.</span>
+        </div>
+        <div class="get-in-touch-wrapper">
+            <div class="get-in-touch-info-wrapper">
+                <div class="get-in-touch-info-card">
+                    <div class="card-info">
+                        <span class="opt-heading">Important Notes</span>
+                        <!-- <span class="opt-body">To request the removal of your personal data, please provide the information:</span> -->
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg> 
+                    </div>
+                    <div class="card-info">
+                        <span>The removal process may take up to (Number of Days) business days.</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg> 
+                    </div>
+                    <div class="card-info">
+                        <span>We may retain certain information as required by law or for legitimate business purposes.</span>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                        </svg> 
+                    </div>
+                    <div class="card-info">
+                        <span>Data removal requests are handled in accordance with our <a class="highlited-text" href="/privacy-policy/">Privacy Policy</a> and applicable data protection laws.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="get-in-touch-info-wrapper">
+                <div class="get-in-touch-info-card">
+                    <div class="card-info">
+                        <span class="opt-heading">Use of Provided Information</span>
+                        <!-- <span class="opt-body">Upon receiving your request, we will:</span> -->
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="prevention-of-future-data-collection">
+                        <span>Flunter will use the information you provide solely for the purpose of handling your privacy request and to verify that you are the holder of the relevant email, and identify your information to fulfill your request.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-information">
+        <div class="">
+            <h2>Contact Information</h2>
+            <span>If you have any questions or need assistance, please contact our support team at <a href="mailto:optout@flunter.com.">optout@flunter.com.</a></span>
+            <span>By submitting a removal request, you acknowledge that you have read and understood our privacy practices as outlined in our <a href="/privacy-policy/">Privacy Policy.</a></span>
+        </div>
+    </section>
+
+
+    {% include './includes/footer.html' %}
+    {% include './modals/opt-out-modal.html' %}
+
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+    {{current_user.user_profile.country|json_script:"user_country"}}
+    <script>
+        let user_country = JSON.parse(document.getElementById('user_country').textContent) || null;
+    </script>
+</body>
+<script src="{% static 'common/js/common.js' %}"></script>
+<script src="{% static 'common/js/countries.js' %}"></script>
+<script src="{% static 'web/js/opt-out.js' %}"></script>
+</html>

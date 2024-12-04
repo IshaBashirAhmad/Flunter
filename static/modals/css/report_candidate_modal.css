@@ -1,0 +1,216 @@
+#reportCandidateModal .modal-dialog {
+    max-width: unset;
+    width: 450px;
+}
+
+#reportCandidateModal .modal-header {
+    padding: 0!important;
+    border-radius: 15px!important;
+
+}
+
+#reportCandidateModal .modal-content {
+    padding: 16px;
+    border: none;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+}
+
+#reportCandidateModal .modal-footer,
+#reportCandidateModal .modal-content {
+    border-radius: 15px!important;
+}
+
+#reportCandidateModal .modal-header {
+    margin-bottom: 16px;
+}
+
+#reportCandidateModal .modal-header > span {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 16.56px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+#reportCandidateModal .modal-body {
+    padding: 0px!important;
+}
+
+#reportCandidateModal .select-list-type-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#reportCandidateModal .select-list-type-container > span {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+}
+
+#reportCandidateModal .list-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+#reportCandidateModal .list-container .my-list-item {
+    width: 100%;
+    height: 40px;
+}
+
+#reportCandidateModal .list-container .my-list-item > label {
+    font-size: .75rem;
+    line-height: 14px;
+    width: 100%;
+    height: 100%;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #E3E8F9;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+}
+
+#reportCandidateModal .list-container .my-list-item:not(:first-of-type) > label {
+    /* border-bottom: 1px solid #E3E8F9; */
+    border-top: none;
+}
+
+#reportCandidateModal .list-container .my-list-item:first-of-type > label {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#reportCandidateModal .list-container .my-list-item:last-of-type > label {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#reportCandidateModal .list-container .my-list-item input[type="radio"] {
+    display: none;
+}
+
+#reportCandidateModal .list-container .my-list-item input[type="radio"]:checked + label {
+    background: var(--second-secondary-color);
+    color: #FFFFFF;
+}
+
+#reportCandidateModal .list-type-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 8px;
+    width: 100%;
+}
+
+#reportCandidateModal .list-type-group .duration-radio-btn {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+}
+
+input[name="list_type_radio"] {
+    display: none;
+}
+
+#reportCandidateModal .list-type-group .duration-radio-btn .duration-radio-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: center;
+    color: var(--text-field-heading);
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    border-radius: 0px 8px 8px 0px;
+    transition: background .2s;
+    cursor: pointer;
+}
+
+#reportCandidateModal .list-type-group .duration-radio-btn:first-of-type .duration-radio-label {
+    border-radius: 8px 0px 0px 8px;
+}
+
+#reportCandidateModal .list-type-group .duration-radio-btn .duration-radio-label .savings {
+    font-size: .65rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 12px;
+    text-align: right;
+    color: var(--primary-color)!important;
+}
+
+input[name="list_type_radio"]:checked + .duration-radio-label {
+    color: #FFFFFF!important;
+    background: var(--second-secondary-color)!important;
+    border-radius: 8px!important;
+    border: 2px solid var(--second-secondary-color)!important;
+    box-shadow: none!important;
+}
+
+#reportCandidateModal textarea {
+    width: 100%;
+    margin-top: 6px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px #C5C5C5;
+    padding: 10px;
+    resize: none;
+    height: 80px;
+    font-size: .75rem;
+}
+
+#reportCandidateModal textarea:focus-visible {
+    outline: 2px solid var(--second-secondary-color);
+}
+
+#reportCandidateModal .error-div {
+    text-align: left;
+    margin-top: 8px;
+}
+
+
+#reportCandidateModal .modal-footer {
+    padding: 0px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+#reportCandidateModal .modal-footer > button {
+    width: 110px;
+    height: 35px;
+    border: 2px solid #070C29;
+    border-radius: 40px;
+    /* box-shadow: 0px 0px 10px 0px #0C47AF4D; */
+    color: #070C29;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    /* padding: 7px 17px; */
+}
+
+#reportCandidateModal .modal-footer > button:first-of-type {
+    background: transparent;
+}
+
+#reportCandidateModal .modal-footer > button:last-of-type {
+    background: var(--second-secondary-color);
+}
+
+#reportCandidateModal .modal-footer > button > span {
+    color: #FFFFFF;
+}

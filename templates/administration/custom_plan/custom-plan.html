@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'administration/common/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/common/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/account/css/sidebar.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/account/css/recent_searches.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/custom_plan/css/custom_plan_list.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/modals/css/add_custom_plan_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/modals/css/delete_modal.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'common/css/bootstrap.min.css' %}">
+    <script src="{% static 'common/js/bootstrap.bundle.min.js' %}"></script> {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'common/images/favicon.svg' %}" />
+    
+    <title>Flunter | Custom Plans</title>
+</head>
+<body>
+    {% include '../includes/company-sidebar.html' %}
+    <div class="main-page">
+        {% include '../includes/admin-navbar.html' %}
+        <div class="main-content">
+            <div class="container d-flex justify-content-between p-0">
+                <h1>Custom Plans</h1>
+                <button class="add-company-btn" onclick="openCustomPlanModal('addCustomPlan');">Add Custom Plan</button>
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{message.tags}} alert-dismissible fade show d-flex index w-25 mt-4 w-100" role="alert">
+                        {% if message.tags == 'alert-danger' %}
+                        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#842029" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                        {% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 34 34" fill="none">
+                            <path d="M17 0.6875C13.7737 0.6875 10.6198 1.64421 7.93727 3.43665C5.25469 5.22909 3.16388 7.77676 1.92922 10.7575C0.694568 13.7382 0.371526 17.0181 1.00095 20.1824C1.63037 23.3467 3.18398 26.2533 5.46533 28.5347C7.74667 30.816 10.6533 32.3696 13.8176 32.9991C16.9819 33.6285 20.2618 33.3054 23.2425 32.0708C26.2232 30.8361 28.7709 28.7453 30.5634 26.0627C32.3558 23.3802 33.3125 20.2263 33.3125 17C33.3125 12.6737 31.5939 8.52451 28.5347 5.46532C25.4755 2.40613 21.3264 0.6875 17 0.6875ZM25.8594 10.745L15.7006 22.3606C15.6479 22.4206 15.583 22.4687 15.5103 22.5017C15.4376 22.5347 15.3586 22.5518 15.2788 22.5519C15.1551 22.5531 15.0345 22.5136 14.9356 22.4394L8.22501 17.2756C8.16628 17.2306 8.11701 17.1744 8.08 17.1103C8.04298 17.0462 8.01896 16.9754 8.0093 16.902C7.99963 16.8286 8.00452 16.7541 8.02368 16.6826C8.04283 16.6111 8.07589 16.544 8.12094 16.4853C8.16601 16.4266 8.22219 16.3773 8.28629 16.3403C8.3504 16.3033 8.42116 16.2793 8.49455 16.2696C8.56794 16.2599 8.64251 16.2648 8.71401 16.284C8.78551 16.3031 8.85253 16.3362 8.91126 16.3812L15.2 21.2244L25.01 9.97437C25.0588 9.9186 25.118 9.87298 25.1844 9.84011C25.2508 9.80725 25.323 9.78777 25.3969 9.78281C25.4708 9.77785 25.545 9.78749 25.6152 9.81119C25.6853 9.83489 25.7502 9.87218 25.8059 9.92094C25.8617 9.96969 25.9073 10.029 25.9402 10.0953C25.9731 10.1617 25.9925 10.2339 25.9975 10.3078C26.0025 10.3817 25.9928 10.4559 25.9691 10.5261C25.9454 10.5963 25.9081 10.6611 25.8594 10.7169V10.745Z" fill="#28A745"/>
+                          </svg>
+                        {% endif %}
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="container table-responsive p-0 m-0 main-content-container">
+                <div class="order-details-table-wrapper">
+                    <div class="w-100 h-100 d-flex justify-content-center align-items-center pt-2 pb-2" id="table-loader">
+                        <span class="spinner-border spinner-border-md" style="color: #7C00F4;" role="status" aria-hidden="true">
+                        </span>
+                    </div>
+                    <div id="table-container-div" class="hide">
+                        {% include '../../ajax/custom-plan-table.html' %}
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    {% include '../modals/add-custom-plan-modal.html' %}
+
+    {% include '../modals/delete-modal.html' %}
+
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    {{companies_data|json_script:'companyData'}}
+
+</body>
+<script>
+    const companyData = JSON.parse(document.getElementById('companyData').textContent) || [];
+</script>
+<script src="{% static 'common/js/common.js'%}"></script>
+<script src="{% static 'administration/common/js/common.js'%}"></script>
+<script src="{% static 'administration/custom_plan/js/customPlan.js' %}"></script>
+<script src="{% static 'administration/modals/js/addCustomPlanModal.js' %}"></script>
+</html>

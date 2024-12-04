@@ -1,0 +1,69 @@
+{% load static %}
+
+<div class="modal fade" id="addActionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="addActionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form onsubmit="addActionForm(event)">
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-between">
+                    <svg class="visibilty-hidden delete-action-btn" width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.75" y="0.75" width="35.5" height="35.5" rx="5.25" stroke="#FF3B30" stroke-width="1.5"/>
+                        <path d="M25.401 16.1143C25.401 16.1143 24.8894 22.4595 24.5927 25.1323C24.4513 26.4089 23.6628 27.157 22.3711 27.1805C19.9131 27.2248 17.4523 27.2276 14.9952 27.1758C13.7525 27.1504 12.9771 26.3929 12.8387 25.1389C12.54 22.4425 12.0312 16.1143 12.0312 16.1143" stroke="#FF3B30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M26.7051 13.0726H10.7285" stroke="#FF3B30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23.6265 13.0727C22.8869 13.0727 22.25 12.5499 22.1049 11.8254L21.876 10.6797C21.7347 10.1512 21.2561 9.78564 20.7106 9.78564H16.7225C16.177 9.78564 15.6984 10.1512 15.5571 10.6797L15.3282 11.8254C15.1831 12.5499 14.5462 13.0727 13.8066 13.0727" stroke="#FF3B30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="add-user-modal-header-text" id="action-modal-header-text">Add New Action</span>
+                    <svg class="visibilty-hidden delete-action-btn cursor-pointer" id="action-del-btn" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.83398 17.5C5.37565 17.5 4.98329 17.3368 4.6569 17.0104C4.33051 16.684 4.16732 16.2917 4.16732 15.8333V5H3.33398V3.33333H7.50065V2.5H12.5007V3.33333H16.6673V5H15.834V15.8333C15.834 16.2917 15.6708 16.684 15.3444 17.0104C15.018 17.3368 14.6257 17.5 14.1673 17.5H5.83398ZM14.1673 5H5.83398V15.8333H14.1673V5ZM7.50065 14.1667H9.16732V6.66667H7.50065V14.1667ZM10.834 14.1667H12.5007V6.66667H10.834V14.1667Z" fill="#68759A"/>
+                    </svg>                        
+                </div>
+                <div class="modal-body">
+                    <div class="action-preliminaries">
+                        <div class="dropdown action-type-dropdown">
+                            <div class="action-type-dropdown-btn" id="action-type" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="d-flex align-items-center justify-content-between h-100">
+                                    <span id="selected-action-type-text">Choose Type</span>
+                                </div>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.85355 6.85355C2.53857 6.53857 2.76165 6 3.20711 6H14.7929C15.2383 6 15.4614 6.53857 15.1464 6.85355L9.35355 12.6464C9.15829 12.8417 8.84171 12.8417 8.64645 12.6464L2.85355 6.85355Z" fill="#070C29"/>
+                                </svg>    
+                            </div>
+                            <div class="dropdown-menu action-type-dropdown-menu">
+                                <div onclick="selectActionType(this)" data-value="call">Call</div>
+                                <div onclick="selectActionType(this)" data-value="text_message">Text Messages</div>
+                                <div onclick="selectActionType(this)" data-value="voice_email">Voice Email</div>
+                                <div onclick="selectActionType(this)" data-value="email">Email</div>
+                                <div onclick="selectActionType(this)" data-value="note">Note</div>
+                                <div onclick="selectActionType(this)" data-value="convert">Convert</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" id="action-date-input-btn">
+                                <span id="selected-action-date-time">Choose Date/Time</span>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0968 9.07723C15.6635 9.80455 16 10.7179 16 11.7097C16 14.0775 14.0784 16 11.7097 16C10.7184 16 9.80387 15.6629 9.07677 15.0968H3.80645C3.32774 15.0968 2.8671 14.9064 2.52839 14.5677C2.18968 14.229 2 13.7695 2 13.2903V5.6129H15.0968V9.07723ZM11.7097 8.32258C13.5794 8.32258 15.0968 9.84023 15.0968 11.7097C15.0968 13.5791 13.5794 15.0968 11.7097 15.0968C9.84 15.0968 8.32258 13.5791 8.32258 11.7097C8.32258 9.84023 9.84 8.32258 11.7097 8.32258ZM13.2903 11.2581H12.1613V9.22581C12.1613 8.97652 11.9581 8.77419 11.7097 8.77419C11.4613 8.77419 11.2581 8.97652 11.2581 9.22581V11.7097C11.2581 11.9592 11.459 12.1613 11.7097 12.1613H13.2903C13.5387 12.1613 13.7419 11.959 13.7419 11.7097C13.7419 11.4604 13.5387 11.2581 13.2903 11.2581ZM2 4.70968H15.0968C15.0968 4.23052 14.9071 3.771 14.5684 3.43229C14.2297 3.09358 13.769 2.90323 13.2903 2.90323H12.8387V2.45161C12.8387 2.20232 12.6355 2 12.3871 2C12.1387 2 11.9355 2.20232 11.9355 2.45161V2.90323H5.16129V2.45161C5.16129 2.20232 4.95806 2 4.70968 2C4.46129 2 4.25806 2.20232 4.25806 2.45161V2.90323H3.80645C3.32774 2.90323 2.8671 3.09358 2.52839 3.43229C2.18968 3.771 2 4.23052 2 4.70968Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="comment-area">
+                        <label for="action-comment-textarea">Comment</label>
+                        <textarea name="comment" id="action-comment-textarea" placeholder="Write your comment here..."></textarea>
+                    </div>
+                </div>
+                <div class="error-div">
+                    <small class="action-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal" id="action-cancel-btn">Cancel</button>
+                    <button class="submit-btn" type="submit">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="addActionModal" data-bs-toggle="modal" data-bs-target="#addActionModal" />

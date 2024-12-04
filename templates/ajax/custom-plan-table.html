@@ -1,0 +1,96 @@
+{% load static %}
+
+
+<table class="table border" id='custom-plan-table' style="table-layout: fixed;">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" class="order" onclick="table_sort(event, 0)">
+                <span class='text-light me-1'>Name</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order" onclick="table_sort(event, 1)">
+                <span class='text-light me-1'>Monthly Payment</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order" onclick="table_sort(event, 2)">
+                <span class='text-light me-1'>Credit</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order">
+                <span class='text-light me-1'>Actions</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for custom_plan in page_obj %}
+            <tr>
+                <td>{{custom_plan.user.company_profile.company_name}}</td>
+                <td>€{{custom_plan.monthly_price}}</td>
+                <td>{{custom_plan.credits}}</td>
+                <td>
+                    <div class="actions">
+                        <svg style="width: 35px; height:35px" onclick="openUpdateCustomPlanModal('addCustomPlan', '{{custom_plan.id}}', '{{custom_plan.credits}}', '{{custom_plan.monthly_price}}', '{{custom_plan.users_limit}}', '{{custom_plan.searches_per_month}}', '{{custom_plan.saved_searches_limit}}', '{{custom_plan.simultaneous_connections_limit}}')" width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.375" y="1" width="38" height="38" rx="4" stroke="#7C00F4" stroke-width="2"/>
+                            <path opacity="0.4" d="M22.1689 28.3373H28.9002" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.2771 12.5646C22.055 11.5735 23.3122 11.6252 24.3044 12.4031L25.7716 13.5537C26.7639 14.3316 27.1154 15.5381 26.3374 16.5314L17.5879 27.6939C17.2955 28.0676 16.849 28.2882 16.374 28.2935L12.9994 28.3367L12.2352 25.0487C12.1275 24.5874 12.2352 24.1019 12.5276 23.7271L21.2771 12.5646Z" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path opacity="0.4" d="M19.6387 14.6553L24.699 18.6221" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg style="width: 35px; height:35px" onclick="openDelCustomPlanModal('delUserModal', '{{custom_plan.id}}')" class="cursor-pointer" onclick="openDeleteSearchModal(event, 'delsearchModal', '{{item.id}}')" width="35" height="35" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.375" width="40" height="40" rx="5" fill="#FF0000"/>
+                            <path d="M28.2232 17.2876C28.2232 17.2876 27.6414 24.5037 27.3039 27.5433C27.1432 28.9951 26.2464 29.8458 24.7775 29.8726C21.9821 29.923 19.1836 29.9262 16.3893 29.8672C14.9761 29.8383 14.0943 28.9769 13.9368 27.5508C13.5971 24.4844 13.0186 17.2876 13.0186 17.2876" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M29.7054 13.8287H11.5361" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M26.2046 13.8285C25.3635 13.8285 24.6393 13.2339 24.4743 12.41L24.2139 11.1071C24.0532 10.506 23.5089 10.0903 22.8885 10.0903H18.3532C17.7328 10.0903 17.1885 10.506 17.0278 11.1071L16.7675 12.41C16.6025 13.2339 15.8782 13.8285 15.0371 13.8285" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="">No Record Available</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<div class="pagination-div" id="pagination-container">
+    <div class="prev-btn first-btn {% if current_page == 1 %}opacity-point-3-5{% else %}cursor-pointer{% endif %}" {% if page_obj.has_previous %}onclick="getList('q={{search_params|default_if_none:''}}&page=1')"{% endif %}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.727 12L12.667 11.06L9.61366 8L12.667 4.94L11.727 4L7.72699 8L11.727 12Z" fill="#000000"/>
+            <path d="M7.33344 12L8.27344 11.06L5.2201 8L8.27344 4.94L7.33344 4L3.33344 8L7.33344 12Z" fill="#000000"/>
+        </svg>
+    </div>
+    <div class="prev-btn {% if current_page == 1 %}opacity-point-3-5{% else %}cursor-pointer{% endif %}" {% if page_obj.has_previous %}onclick="getList('q={{search_params|default_if_none:''}}&page={{ page_obj.previous_page_number }}')"{% endif %}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.06 12L11 11.06L7.94667 8L11 4.94L10.06 4L6.06 8L10.06 12Z" fill="#000000"/>
+        </svg>
+    </div>
+    <div class="pages" id="pages-container">
+    </div>
+    <div class="rotate-180 next-btn {% if current_page == total_pages %}opacity-point-3-5{% else %}cursor-pointer{% endif %}" {% if page_obj.has_next %}onclick="getList('q={{search_params|default_if_none:''}}&page={{ page_obj.next_page_number }}')"{% endif %}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.06 12L11 11.06L7.94667 8L11 4.94L10.06 4L6.06 8L10.06 12Z" fill="#000000"/>
+        </svg>
+    </div>
+    <div class="rotate-180 next-btn last-btn {% if current_page == total_pages %}opacity-point-3-5{% else %}cursor-pointer{% endif %}" {% if page_obj.has_next %}onclick="getList('q={{search_params|default_if_none:''}}&page={{ page_obj.paginator.num_pages }}')"{% endif %}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.727 12L12.667 11.06L9.61366 8L12.667 4.94L11.727 4L7.72699 8L11.727 12Z" fill="#000000"/>
+            <path d="M7.33344 12L8.27344 11.06L5.2201 8L8.27344 4.94L7.33344 4L3.33344 8L7.33344 12Z" fill="#000000"/>
+        </svg>
+    </div>
+</div>

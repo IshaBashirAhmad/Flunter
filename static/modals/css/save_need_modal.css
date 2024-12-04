@@ -1,0 +1,215 @@
+#saveNeedModal .modal-dialog {
+    max-width: unset;
+    width: 450px;
+}
+
+#saveNeedModal .modal-header {
+    padding: 0!important;
+    border-radius: 15px!important;
+
+}
+
+#saveNeedModal .modal-content {
+    padding: 24px;
+}
+
+#saveNeedModal .modal-footer,
+#saveNeedModal .modal-content {
+    border-radius: 15px!important;
+}
+
+#saveNeedModal .modal-header {
+    margin-bottom: 16px;
+}
+
+#saveNeedModal .modal-header > span {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+#saveNeedModal .modal-body {
+    padding: 0px!important;
+}
+
+#saveNeedModal .modal-body .input-wrapper {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    width: 100%;
+}
+
+#saveNeedModal .modal-body .input-wrapper label {
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+#saveNeedModal .modal-body .input-wrapper > div {
+    display: flex;
+    align-items: center;
+}
+
+#saveNeedModal .modal-body .input-wrapper > div input {
+    width: 100%;
+    height: 32px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px #C5C5C5;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 14px;
+    font-size: .75rem;
+}
+
+#saveNeedModal .modal-body .input-wrapper > div input:focus-visible{
+    outline: 2px solid var(--second-secondary-color);
+}
+
+.input-wrapper .show-hide-icon {
+    right: 10px;
+    left: unset !important;
+}
+#saveNeedModal .modal-body .input-wrapper > div svg {
+    position: absolute;
+    left: 10px;
+    /* bottom: 17px; */
+    width: 16px;
+    height: 16px;
+}
+
+#saveNeedModal .modal-body .profile-image-container {
+    position: relative;
+    flex-shrink: 0;
+}
+
+#saveNeedModal .modal-body .profile-image-container .profile-image-uploader {
+    width: 72px;
+    height: 72px;
+    position: relative;
+}
+
+#saveNeedModal .modal-body .profile-image {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid transparent; */
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center;
+}
+
+#saveNeedModal .modal-body .edit-btn {
+    width: 24px;
+    height: 24px;
+    pointer-events: all;
+    position: absolute;
+    /* bottom: -36px;
+    right: -50px; */
+    bottom: 5px;
+    right: -10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #7C00F41A;
+    border-radius: 6px;
+    box-shadow: 0px 13px 41px 0px #3B3B3D1B;
+}
+
+#saveNeedModal .modal-body .edit-btn > svg {
+    position: relative;
+    top: -1px;
+}
+
+#saveNeedModal .modal-body .added-user-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#saveNeedModal .modal-body .added-user-wrapper .added-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#saveNeedModal .modal-body .added-user-wrapper .added-user .added-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#saveNeedModal .modal-body .added-user-wrapper .added-user .added-user-info > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+#saveNeedModal .modal-body .added-user-wrapper .added-user .added-user-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#saveNeedModal .modal-body .added-user-wrapper .added-user .added-user-info > div > span:first-of-type {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 17px;
+    text-align: left;
+}
+
+#saveNeedModal .modal-body .added-user-wrapper .added-user .added-user-info > div > span:last-of-type {
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+}
+
+#saveNeedModal .error-div {
+    text-align: left;
+}
+
+
+#saveNeedModal .modal-footer {
+    padding: 0px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+#saveNeedModal .modal-footer > button {
+    width: 140px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: unset;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20.8px;
+    text-align: center;
+}
+
+#saveNeedModal .modal-footer > button:first-of-type {
+    background: #070C29;
+    color: #FFFFFF;
+}
+
+/* #saveNeedModal .modal-footer > button:last-of-type {
+    background: var(--second-secondary-color);
+} */
+
+/* #saveNeedModal .modal-footer > button > span {
+    color: #FFFFFF;
+} */

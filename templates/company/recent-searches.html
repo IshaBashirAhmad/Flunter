@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'company/css/sidebar.css' %}" />
+    <link rel="stylesheet" href="{% static 'company/css/recent_searches.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/delete_modal.css' %}" />
+    <link rel="stylesheet" href="{% static "modals/css/delete-search-modal.css" %}">
+
+    <!-- <link rel="stylesheet" href="{% static 'common/css/bootstrap.min.css' %}"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'common/images/favicon.svg' %}" />
+    
+    <title>Flunter Recent Searches</title>
+</head>
+<body>
+
+    {% include '../includes/company-sidebar.html' %}
+
+    <div class="main-page">
+        {% include '../includes/company-navbar.html' %}
+        
+        <div class="main-content">
+            <h1>Recent Searches</h1>
+            <form class="search-filters" onsubmit="searchForm(event);">
+                <div class="keyword-search-inputs">
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.4822 18.9645C15.6146 18.9645 18.9645 15.6146 18.9645 11.4822C18.9645 7.34992 15.6146 4 11.4822 4C7.34992 4 4 7.34992 4 11.4822C4 15.6146 7.34992 18.9645 11.4822 18.9645Z" stroke="#5D5D5D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.6855 17.0742L19.6188 20" stroke="#5D5D5D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <input type="text" name="keywords" required placeholder="Keywords: JAVA, React, IT Director..." />
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9946 1.5C7.85538 1.5 4.49463 4.86075 4.49463 9C4.49463 10.2802 5.06913 12.0315 5.91963 13.887C7.12413 16.518 8.86638 19.386 10.0536 21.3668C10.4511 22.0665 11.1944 22.5 11.9999 22.5C12.396 22.5 12.785 22.3949 13.1271 22.1952C13.4692 21.9956 13.7521 21.7086 13.9469 21.3638C15.1341 19.386 16.8719 16.518 18.0741 13.8862C18.9224 12.0307 19.4946 10.2802 19.4946 9C19.4946 4.86075 16.1346 1.5 11.9946 1.5ZM11.9946 3C15.3066 3 17.9946 5.68875 17.9946 9C17.9946 10.1198 17.4524 11.6392 16.7099 13.263C15.5294 15.846 13.8194 18.6607 12.6546 20.6025L12.6434 20.6227C12.5793 20.7371 12.4859 20.8323 12.3728 20.8986C12.2597 20.9649 12.131 20.9999 11.9999 21C11.8688 21.0001 11.74 20.9651 11.6269 20.8988C11.5138 20.8325 11.4204 20.7372 11.3564 20.6227C11.3526 20.616 11.3489 20.6093 11.3451 20.6033C10.1804 18.6608 8.46663 15.846 7.28313 13.2623C6.53913 11.6393 5.99463 10.1198 5.99463 9C5.99463 5.68875 8.68338 3 11.9946 3ZM11.9999 6C10.3439 6 8.99988 7.344 8.99988 9C8.99988 10.656 10.3439 12 11.9999 12C13.6559 12 14.9999 10.656 14.9999 9C14.9999 7.344 13.6559 6 11.9999 6ZM11.9999 7.5C12.8279 7.5 13.4999 8.172 13.4999 9C13.4999 9.828 12.8279 10.5 11.9999 10.5C11.1719 10.5 10.4999 9.828 10.4999 9C10.4999 8.172 11.1719 7.5 11.9999 7.5Z" fill="#5D5D5D"/>
+                        </svg>
+                        <input type="text" name="location" required placeholder="Location" />
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-2 w-100">
+                    <div class="dropdown search-by-dropdown">
+                        <div class="search-by-dropdown-btn" id="search-filter" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="d-flex align-items-center justify-content-between h-100">
+                                <span id="selected-filter-text">Search by</span>
+                            </div>
+                            <svg width="20" height="20" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.46154 12.5H17.5385M4 7.5H20M10.1538 17.5H13.8462" stroke="#070C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <ul id="search-filter" class="dropdown-menu search-by-dropdown-menu">
+                            <label for="phone-only" class="dropdown-item cursor-pointer" onclick="selectFilter('Phone Only');">
+                                <input type="radio" name="search_by_filter" value="Phone" id="phone-only" class="form-check-input cursor-pointer" />
+                                <span class="terms-checkbox-label cursor-pointer">Phone only</span>
+                            </label>
+                            <label for="email-only" class="dropdown-item cursor-pointer" onclick="selectFilter('Email Only');">
+                                <input type="radio" name="search_by_filter" value="Email" id="email-only" class="form-check-input cursor-pointer" />
+                                <span class="terms-checkbox-label cursor-pointer">Email only</span>
+                            </label>
+                            <label for="phone-email-only" class="dropdown-item cursor-pointer" onclick="selectFilter('Phone/Email')">
+                                <input type="radio" name="search_by_filter" value="Phone or Email" id="phone-email-only" class="form-check-input cursor-pointer" />
+                                <span class="terms-checkbox-label cursor-pointer">Phone or email only</span>
+                            </label>
+                        </ul>
+                    </div>
+                    <button class="filter-btn w-100" type="submit" id="search-result-btn">Search</button>
+                    <button class="filter-btn w-100" type="button" id="save-result-btn" disabled style="background: #888996;">Save</button>
+                </div>
+            </form>
+            <div class="results-container">
+                <h2>Last 50 Results</h2>
+                <div class="order-details-table-wrapper">
+                    <div class="w-100 h-100 d-flex justify-content-center align-items-center pt-2 pb-2" id="table-loader">
+                        <span class="spinner-border spinner-border-md" style="color: #7C00F4;" role="status" aria-hidden="true">
+                        </span>
+                    </div>
+                    <div id="table-container-div" class="hide">
+                        {% include '../ajax/recent-search-table.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include '../modals/delete-search-modal.html' %}
+
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- <script src="{% static 'common/js/bootstrap.bundle.min.js' %}"></script> -->
+
+</body>
+<script src="{% static 'common/js/common.js' %}"></script>
+<script src="{% static 'company/js/recentSearches.js' %}"></script>
+</html>

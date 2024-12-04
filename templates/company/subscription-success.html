@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% extends 'layouts/base.html' %}
+    {% load static %}
+    
+    {% block links %}
+    <link rel="stylesheet" href="{% static 'company/css/subscription.css' %}" />
+    <link rel="stylesheet" href="{% static 'company/css/subscription_successful.css' %}" />
+    {% endblock %}
+    
+    <title>{% block title %}Flunter Subscription Successful{% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+        <div class="main-content">
+            <div class="subscription-card-container">
+                <div class="success-card">
+                    <div class="post-content" id="post-content">
+                        <div class="post-content-container">
+                            <div class="content-header">
+                                <h2>Plan Subscribed</h2>
+                                <p>The selected plan has been subscribed successfully.</p>
+                            </div>
+                            <a class="back-link" href="{% url 'subscription' %}">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.3332 10H4.6665M4.6665 10L10.4998 15.8333M4.6665 10L10.4998 4.16667"
+                                        stroke="#475467" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span>Back to Subscription</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {{payment_method_id|json_script:"payment_method_id"}}
+
+    {% endblock %}
+</body>
+{% block scripts %}
+<script>
+    // let payment_method_id = JSON.parse(document.getElementById('payment_method_id').textContent);
+    // localStorage.setItem('payment_method_id', payment_method_id);
+</script>
+{% endblock %}
+</html>

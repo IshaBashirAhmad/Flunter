@@ -1,0 +1,112 @@
+.back-btn{
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    border: 3px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.back-btn:hover{
+    background: var(--primary-color);
+}
+.back-btn:hover svg path {
+    stroke: #FFFFFF;
+}
+
+.main-content-container{
+    max-height: 78vh;
+    overflow-y: auto;
+}
+.main-content .container{
+    margin-bottom: 10px;
+}
+.main-content .container > h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 44.72px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+.main-content .container > .add-company-btn{
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-color);
+    box-shadow: 0px 0px 10px 0px rgba(12, 71, 175, 0.3);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+table {
+    border-top-left-radius:  10px !important;
+    border-top-right-radius:  10px !important;
+    box-shadow: 0px 0px 5px 2px rgba(100, 14, 241, 0.1);
+    table-layout: fixed;
+}
+tr{
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0px 0px 5px 2px rgba(100, 14, 241, 0.1);
+    cursor:pointer;
+}
+    
+.thead-dark{
+    background-color: rgba(7, 12, 41, 1);
+}
+th:first-of-type {
+    border-top-left-radius: 10px;
+}
+th:last-of-type {
+    border-top-right-radius: 10px;
+}
+thead tr > th{
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    padding: .5rem .25rem!important;
+}
+
+thead tr > th svg {
+    width: 16px;
+    height: 18px;
+}
+
+tbody tr {
+    background: #FFFFFF;
+}
+
+tr td{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    word-wrap: break-word;
+    padding: .5rem .25rem!important;
+}
+
+@media screen and (max-width: 1318px) {
+    thead tr > th{
+        font-size: 16px;
+    }
+    tr td{
+        font-size: 14px;
+    }
+    thead span svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+    
+}
+
+

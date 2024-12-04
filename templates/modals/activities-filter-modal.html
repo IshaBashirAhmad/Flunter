@@ -1,0 +1,173 @@
+{% load static %}
+
+<div class="modal fade" id="activitiesFilterModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="activitiesFilterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form id="filters-form">
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span class="add-user-modal-header-text" id="add-user-modal-header-text">Filter</span>
+                </div>
+                <div class="modal-body">
+                    <div class="main-content-modal">
+                        <div class="skils-job-company">
+                            <div class="select-activity-users-div">
+                                <div class="mb-1 filter-header-section">    
+                                    <span>Activties By</span>
+                                </div>
+                                <button type="button" id="activity-user-select-btn">
+                                    <span id="selected-activity-user-name">Choose</span>
+                                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.853552 0.853552C0.53857 0.53857 0.761654 0 1.20711 0H12.7929C13.2383 0 13.4614 0.538571 13.1464 0.853553L7.35355 6.64645C7.15829 6.84171 6.84171 6.84171 6.64645 6.64645L0.853552 0.853552Z" fill="#070C29"/>
+                                    </svg>
+                                </button>
+                                <div class="activity-user-search-wrapper hide" id="activity-user-search-wrapper">
+                                    <div class="search-header">
+                                        <svg class="search-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18.4531 17.9219L13.4531 12.9219M15.1198 8.75521C15.1198 9.52125 14.9689 10.2798 14.6758 10.9875C14.3826 11.6953 13.9529 12.3383 13.4112 12.88C12.8696 13.4217 12.2265 13.8514 11.5188 14.1445C10.811 14.4377 10.0525 14.5885 9.28646 14.5885C8.52041 14.5885 7.76187 14.4377 7.05414 14.1445C6.34641 13.8514 5.70334 13.4217 5.16167 12.88C4.61999 12.3383 4.19031 11.6953 3.89716 10.9875C3.60401 10.2798 3.45312 9.52125 3.45313 8.75521C3.45313 7.20811 4.06771 5.72438 5.16167 4.63042C6.25563 3.53646 7.73936 2.92187 9.28646 2.92188C10.8336 2.92187 12.3173 3.53646 13.4112 4.63042C14.5052 5.72438 15.1198 7.20811 15.1198 8.75521Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <input maxlength="100" type="text" oninput="searchActivityUser(this);" onkeypress="checkEnter(event);" placeholder="Search name" />
+                                    </div>
+                                    <div class="activity-user-list-wrapper">
+                                        <div id="activity-user-list-items-wrapper">
+                                            <span class="hide" id="no-activity-user-text">No user</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-wrapper" id="city-dropdown-container">
+                                <div class="filter-header-section">
+                                    
+                                    <label for="shared-field">City</label>
+                                </div>
+                                <div>
+                                    <div class="selection-div">
+                                        <input type="text" name="search_city" id="city-field" placeholder="Choose" autocomplete="off" />
+                                    </div>
+                                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.853552 0.853552C0.53857 0.53857 0.761654 0 1.20711 0H12.7929C13.2383 0 13.4614 0.538571 13.1464 0.853553L7.35355 6.64645C7.15829 6.84171 6.84171 6.84171 6.64645 6.64645L0.853552 0.853552Z" fill="#070C29"/>
+                                        </svg>
+                                        
+                                    <div class="filter-dropdown custom-searchable-dropdown" id="city-dropdown">
+                                        <span class="hide" id="no-city-text">No City</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-wrapper" id="country-dropdown-container">
+                                <div class="filter-header-section">
+                                    <label for="country-field">Country</label>
+                                </div>
+                                <div>
+                                    <div class="selection-div">
+                                        <input type="text" name="search_country" id="country-field" placeholder="Choose" autocomplete="off" />
+                                    </div>
+                                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.853552 0.853552C0.53857 0.53857 0.761654 0 1.20711 0H12.7929C13.2383 0 13.4614 0.538571 13.1464 0.853553L7.35355 6.64645C7.15829 6.84171 6.84171 6.84171 6.64645 6.64645L0.853552 0.853552Z" fill="#070C29"/>
+                                    </svg>
+                                    <div class="filter-dropdown custom-searchable-dropdown" id="country-dropdown">
+                                        <span class="hide" id="no-country-text">No Country</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="employee-headcount">
+                            <div class="input-wrapper" id="starting-date-container">
+                                <div class="filter-header-section">
+                                    <label for="start-date-field">Start Date</label>
+                                </div>
+                                <div>
+                                    <div class="selection-div">
+                                        <input type="text" name="start_date" id="start-date-field" placeholder="Select starting date" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-wrapper" id="state-dropdown-container">
+                                <div class="filter-header-section">
+                                    <label for="shared-field">State</label>
+                                </div>
+                                <div>
+                                    <div class="selection-div">
+                                        <input type="text" name="search_state" id="state-field" placeholder="Choose" autocomplete="off" />
+                                    </div>
+                                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.853552 0.853552C0.53857 0.53857 0.761654 0 1.20711 0H12.7929C13.2383 0 13.4614 0.538571 13.1464 0.853553L7.35355 6.64645C7.15829 6.84171 6.84171 6.84171 6.64645 6.64645L0.853552 0.853552Z" fill="#070C29"/>
+                                    </svg>
+                                    <div class="filter-dropdown custom-searchable-dropdown" id="state-dropdown">
+                                        <span class="hide" id="no-state-text">No State</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-wrapper" id="action-type-dropdown-container">
+                                <div class="filter-header-section">
+                                    <label for="shared-field">Action Type</label>
+                                </div>
+                                <div>
+                                    <div class="selection-div">
+                                        <input type="text" readonly name="action_type_field" id="action-type-field" placeholder="Choose" autocomplete="off" />
+                                    </div>
+                                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.853552 0.853552C0.53857 0.53857 0.761654 0 1.20711 0H12.7929C13.2383 0 13.4614 0.538571 13.1464 0.853553L7.35355 6.64645C7.15829 6.84171 6.84171 6.84171 6.64645 6.64645L0.853552 0.853552Z" fill="#070C29"/>
+                                    </svg>
+                                    <div class="filter-dropdown custom-searchable-dropdown" id="action-type-dropdown">
+                                        <span onclick="filterActionType(this)" data-value="">All</span>
+                                        <span onclick="filterActionType(this)" data-value="call">Call</span>
+                                        <span onclick="filterActionType(this)" data-value="text_message">Text Messages</span>
+                                        <span onclick="filterActionType(this)" data-value="voice_email">Voice Email</span>
+                                        <span onclick="filterActionType(this)" data-value="email">Email</span>
+                                        <span onclick="filterActionType(this)" data-value="note">Note</span>
+                                        <span onclick="filterActionType(this)" data-value="convert">Convert</span>
+                                        <span onclick="filterActionType(this)" data-value="opened_profile">Opened Profile</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <div class="input-wrapper" id="ending-date-container">
+                                <div class="filter-header-section">
+                                    <label for="end-date-field">End Date</label>
+                                </div>
+                                <div>
+                                    <div class="selection-div">
+                                        <input type="text" name="end_date" id="end-date-field" placeholder="Select ending date" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-wrapper" id="region-dropdown-container">
+                                <div class="filter-header-section"> 
+                                    <label for="shared-field">Region</label>
+                                </div>
+                                <div>
+                                    <div class="selection-div">
+                                        <input type="text" name="search_region" id="region-field" placeholder="Choose" autocomplete="off" />
+                                    </div>
+                                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.853552 0.853552C0.53857 0.53857 0.761654 0 1.20711 0H12.7929C13.2383 0 13.4614 0.538571 13.1464 0.853553L7.35355 6.64645C7.15829 6.84171 6.84171 6.84171 6.64645 6.64645L0.853552 0.853552Z" fill="#070C29"/>
+                                    </svg>
+                                    <div class="filter-dropdown custom-searchable-dropdown" id="region-dropdown">
+                                        <span class="hide" id="no-region-text">No Region</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="error-div">
+                    <small class="filter-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" type="submit">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Apply Changes</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="activitiesFilterModal" data-bs-toggle="modal" data-bs-target="#activitiesFilterModal" />

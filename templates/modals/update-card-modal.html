@@ -1,0 +1,39 @@
+{% load static %}
+
+<div class="modal fade" id="updatecard" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="AddUserLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form id="custom-card-update-form">
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span class="add-user-modal-header-text" id="add-user-modal-header-text">Card Details</span>
+                </div>
+                <div class="modal-body">
+                    <div class="input-wrapper">
+                        <label for="card_holder">Card Holder</label>
+                        <div>
+                            <input maxlength="50" type="text" name="card_holder" id="card_holder" placeholder="Alex" />
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="card_holder">Card Details</label>
+                        <div>
+                            <div id="card-element" class="form-control" style="padding:17px; border: 1px solid #E3E8F9; border-radius: 10px;padding-left: 10px;padding-right: 10px;line-height: 24px"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="payment-message" class="hidden text-start"></div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" id='card-button' type="submit">
+                        <span id= 'spinner' class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text" id="btn-text">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="updatecard" data-bs-toggle="modal" data-bs-target="#updatecard" />

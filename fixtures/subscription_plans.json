@@ -1,0 +1,74 @@
+[
+    {
+        "model": "users.subscriptionplans",
+        "pk": 1,
+        "fields": {
+            "name": "Silver",
+            "monthly_price": 90,
+            "yearly_price": 1080,
+            "price_id_monthly": "price_1PU1XZLqUlDoFtLYIMGR1XZb",
+            "price_id_yearly": "price_1PU1XZLqUlDoFtLYW3R6LPxp",
+            "searches_per_month": 25,
+            "saved_searches_limit": 10,
+            "users_limit": 1,
+            "simultaneous_connections_limit": 1,
+            "credits": 500,
+            "created_at": "2024-09-19T10:30:00Z",
+            "updated_at": "2024-09-19T10:30:00Z"
+        }
+    },
+    {
+        "model": "users.subscriptionplans",
+        "pk": 2,
+        "fields": {
+            "name": "Gold",
+            "monthly_price": 600,
+            "yearly_price": 7200,
+            "price_id_monthly": "price_1PU1bBLqUlDoFtLY1uMt70TL",
+            "price_id_yearly": "price_1PU1bBLqUlDoFtLYMU22MK0Z",
+            "searches_per_month": 50,
+            "saved_searches_limit": 15,
+            "users_limit": 5,
+            "simultaneous_connections_limit": 3,
+            "credits": 4000,
+            "created_at": "2024-09-19T10:30:00Z",
+            "updated_at": "2024-09-19T10:30:00Z"
+        }
+    },
+    {
+        "model": "users.subscriptionplans",
+        "pk": 3,
+        "fields": {
+            "name": "Platinum",
+            "monthly_price": 1500,
+            "yearly_price": 18000,
+            "price_id_monthly": "price_1PU1hQLqUlDoFtLYuZg9r5tp",
+            "price_id_yearly": "price_1PU1hQLqUlDoFtLYF42uwe8j",
+            "searches_per_month": null,
+            "saved_searches_limit": null,
+            "users_limit": 15,
+            "simultaneous_connections_limit": 10,
+            "credits": 12000,
+            "created_at": "2024-09-19T10:30:00Z",
+            "updated_at": "2024-09-19T10:30:00Z"
+        }
+    },
+    {
+        "model": "users.subscriptionplans",
+        "pk": 4,
+        "fields": {
+            "name": "Enterprise",
+            "monthly_price": 5000,
+            "yearly_price": 60000,
+            "price_id_monthly": "price_1PQPZ5LqUlDoFtLYmC3ffc0K",
+            "price_id_yearly": "price_1PU1rsLqUlDoFtLYP29AKpCe",
+            "searches_per_month": null,
+            "saved_searches_limit": null,
+            "users_limit": 50,
+            "simultaneous_connections_limit": 30,
+            "credits": 50000,
+            "created_at": "2024-09-19T10:30:00Z",
+            "updated_at": "2024-09-19T10:30:00Z"
+        }
+    }
+]

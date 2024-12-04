@@ -1,0 +1,137 @@
+{% load static %}
+
+
+<table class="table border" id='contact_table'>
+    <thead class="thead-dark">
+        <tr>
+            <th width="8%" scope="col" class="order" onclick="table_sort_by_state(event, 0)" data-col="is_active">
+                <span class='text-light me-1'  data-col="is_active">State</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order" onclick="table_sort(event, 1)" data-col="full_name">
+                <span class='text-light me-1'  data-col="first_name">Contact Name</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order" onclick="table_sort(event, 2)" data-col="first_name">
+                <span class='text-light me-1'>Company</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order" onclick="table_sort(event, 3)" data-col="">
+                <span class='text-light me-1'>Position</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order" onclick="table_sort(event, 4)" data-col="user_profile__country">
+                <span class='text-light me-1'>Client Type</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order" onclick="table_sort(event, 5)" data-col="user_profile__country">
+                <span class='text-light me-1'>Location</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order" onclick="table_sort(event, 6)" data-col="phone_number">
+                <span class='text-light me-1'>Phone</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+            <th scope="col" class="order" onclick="table_sort(event, 7)" data-col="user_profile__country">
+                <span class='text-light me-1'>Email</span>
+                <span>
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                    </svg>
+                </span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contact in page_obj %}
+            <tr data-pk='{{contact.pk}}' data-state="{{contact.is_active}}" onclick="location.pathname = '/administration/contact-detail/{{contact.id}}'">
+                <td>
+                    {% if contact.is_active %}
+                    <svg width="17" height="16" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7.5" cy="7.5" r="7.5" fill="#55C543"/>
+                    </svg>
+                    {% else %}
+                    <svg width="16" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7.5" cy="7.5" r="7.5" fill="#FF0000"/>
+                    </svg>
+                    {% endif %}
+                </td>
+                <td>{{contact.first_name|title}} {{contact.last_name|title}}</td>
+                <td>{{contact.contact_profile.company.company_name|title}}</td>
+                <td>{{contact.contact_profile.designation|title}}</td>
+                <td>{{contact.contact_profile.company.client_type|default:"---"|title}}</td>
+                <td>{{contact.contact_profile.country}}</td>
+                <td>{{contact.phone_number}}</td>
+                <td>{{contact.email}}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8" class="no-record-row">No Record Available</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<div class="pagination-div" id="pagination-container">
+    <div class="prev-btn first-btn {% if current_page == 1 %}opacity-point-3-5{% else %}cursor-pointer{% endif %}" {% if page_obj.has_previous %}onclick="getList('q={{search_params|default_if_none:''}}&page=1')"{% endif %}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.727 12L12.667 11.06L9.61366 8L12.667 4.94L11.727 4L7.72699 8L11.727 12Z" fill="#000000"/>
+            <path d="M7.33344 12L8.27344 11.06L5.2201 8L8.27344 4.94L7.33344 4L3.33344 8L7.33344 12Z" fill="#000000"/>
+        </svg>
+    </div>
+    <div class="prev-btn {% if current_page == 1 %}opacity-point-3-5{% else %}cursor-pointer{% endif %}" {% if page_obj.has_previous %}onclick="getList('q={{search_params|default_if_none:''}}&page={{ page_obj.previous_page_number }}')"{% endif %}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.06 12L11 11.06L7.94667 8L11 4.94L10.06 4L6.06 8L10.06 12Z" fill="#000000"/>
+        </svg>
+    </div>
+    <div class="pages" id="pages-container">
+    </div>
+    <div class="rotate-180 next-btn {% if current_page == total_pages %}opacity-point-3-5{% else %}cursor-pointer{% endif %}" {% if page_obj.has_next %}onclick="getList('q={{search_params|default_if_none:''}}&page={{ page_obj.next_page_number }}')"{% endif %}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.06 12L11 11.06L7.94667 8L11 4.94L10.06 4L6.06 8L10.06 12Z" fill="#000000"/>
+        </svg>
+    </div>
+    <div class="rotate-180 next-btn last-btn {% if current_page == total_pages %}opacity-point-3-5{% else %}cursor-pointer{% endif %}" {% if page_obj.has_next %}onclick="getList('q={{search_params|default_if_none:''}}&page={{ page_obj.paginator.num_pages }}')"{% endif %}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.727 12L12.667 11.06L9.61366 8L12.667 4.94L11.727 4L7.72699 8L11.727 12Z" fill="#000000"/>
+            <path d="M7.33344 12L8.27344 11.06L5.2201 8L8.27344 4.94L7.33344 4L3.33344 8L7.33344 12Z" fill="#000000"/>
+        </svg>
+    </div>
+</div>

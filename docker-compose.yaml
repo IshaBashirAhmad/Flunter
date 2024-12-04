@@ -1,0 +1,44 @@
+version: '3.2'
+
+services:
+  flunter-frontend:
+    container_name: "${PROJECT_NAME}_frontend_${ENV}"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: bash -c 'python manage.py migrate && python manage.py runserver 0.0.0.0:8000'
+    volumes:
+      - "./:/code"
+    ports:
+      - $WEB_PORT:8000
+    depends_on:
+      - flunter-db
+
+  flunter-db:
+    container_name: "${PROJECT_NAME}_postgres_${ENV}"
+    image: postgis/postgis:14-3.3
+    volumes:
+      - flunter-postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "${FLUNTER_DB_NAME}"
+      POSTGRES_USER: "${FLUNTER_DB_USER}"
+      POSTGRES_PASSWORD: "${FLUNTER_DB_PASSWORD}"
+  
+  nginx:
+    container_name: "${PROJECT_NAME}_nginx_${ENV}"
+    image: nginx:latest
+    volumes:
+      - "./:/code/"
+      - "./nginx/nginx-$ENV.conf:/etc/nginx/conf.d/default.conf"
+      - "/etc/letsencrypt/:/etc/letsencrypt/"
+    ports:
+      - $NGINX_PORT:80
+      - 443:443
+    depends_on:
+      - flunter-frontend
+    restart: always
+    links:
+      - flunter-frontend:flunter-frontend
+
+volumes:
+  flunter-postgres-data:

@@ -1,0 +1,328 @@
+.nav-functions {
+    padding-right: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: #FFFFFF;
+    height: 60px;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    position: absolute;
+    width: 102%;
+    left: -28px;
+}
+
+.nav-functions .nav-user-dropdown .nav-user-dropdown-menu {
+    position: absolute!important;
+}
+
+.main-content {
+    padding: 100px 30px 30px 30px;
+    width: 100%;
+}
+
+.main-content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.main-content-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-content-header > .back-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    border: 3px solid var(--primary-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.main-content-header > .back-btn:hover {
+    background: var(--primary-color);
+}
+
+.main-content-header .back-btn:hover svg path {
+    stroke: #FFFFFF;
+}
+
+.personal-info-container {
+    width: 100%;
+    border-radius: 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    padding: 30px;
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+.personal-info-container > h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 36.4px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.personal-info-inputs {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.profile-image-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid transparent; */
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center;
+}
+
+.edit-btn {
+    width: 40px;
+    height: 40px;
+    pointer-events: all;
+    position: absolute;
+    /* bottom: -36px;
+    right: -50px; */
+    bottom: 19px;
+    right: -10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #7C00F41A;
+    border-radius: 6px;
+    box-shadow: 0px 13px 41px 0px #3B3B3D1B;
+}
+
+.edit-btn > svg {
+    position: relative;
+    top: -1px;
+}
+
+.individual-input-container {
+    display: grid;
+    grid-template-columns: minmax(300px, 426px) minmax(300px, 426px) minmax(300px, 426px);
+    justify-content: center;
+    row-gap: 25px;
+    column-gap: 22px;
+}
+
+.input-container > div > div {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-container label {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+.input-container input {
+    width: 100%;
+    height: 55px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    padding-left: 44px;
+    padding-right: 10px;
+    line-height: 24px;
+}
+
+.input-container input:focus {
+    border: 2px solid var(--primary-color);
+    outline: none;
+}
+
+.input-container > div > div svg {
+    position: absolute;
+    left: 10px;
+}
+
+.input-container input[type="password"] {
+    padding-right: 35px!important;
+}
+
+.input-container .show-hide-icon {
+    position: absolute;
+    right: 10px;
+    left: unset;
+}
+
+.input-container .change-password-btn {
+    max-width: 230px;
+    width: 100%;
+    height: 55px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #0C47AF4D;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+    color: var(--primary-color);
+    background: #FFFFFF;
+    position: relative;
+    bottom: -27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.update-btn-container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.update-btn-container > button {
+    max-width: 230px;
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #0C47AF4D;
+    color: #FFFFFF;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.update-btn-container .cancel-btn {
+    background: #FF0000;
+}
+
+.update-btn-container .save-btn {
+    background: var(--primary-color);
+}
+
+.iti--allow-dropdown{
+    width: 100%;
+}
+@media (max-width: 1536px) {
+    .individual-input-container {
+        grid-template-columns: minmax(300px, 426px) minmax(300px, 426px);
+    }   
+}
+
+
+@media (max-width: 1220px) {
+    .individual-input-container {
+        grid-template-columns: minmax(200px, 426px) minmax(200px, 426px);
+    }
+}
+
+
+@media (max-width: 1020px) {
+    .personal-info-inputs {
+        flex-direction: column;
+    }
+
+    .individual-input-container {
+        grid-template-columns: minmax(200px, 426px);
+    }
+}
+
+
+
+.selection-div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.selection-div > input {
+    padding-right: 30px;
+}
+
+.selection-div + svg {
+    left: unset!important;
+    right: 15px;
+}
+
+.filter-dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute!important;
+    z-index: 1;
+    top: 58px;
+    background-color: #FFFFFF;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #E0E0DD;
+}
+
+#company-dropdown {
+    max-height: 216px;
+    overflow-y: auto;
+}
+
+.radio-btn > label {
+    width: 100%;
+    padding: 0px 15px;
+    min-height: 40px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 16px;
+    word-wrap: break-word;
+}
+/* 
+.radio-btn > label:first-of-type {
+    border-radius: 8px 0px 8px 0px;
+}
+
+.radio-btn > label:last-of-type {
+    border-radius: 0px 8px 8px 0px;
+} */
+
+.radio-btn:not(:first-child) {
+    border-top: 1px solid #E0E0DD;
+}
+
+.radio-btn > label:hover {
+    background-color: #DDDDDD;
+}
+
+.filter-dropdown input {
+    display: none;
+}
+
+
+#no-company-text {
+    font-weight: 500;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% extends 'layouts/base.html' %}
+    {% load static %}
+    
+    {% block links %}
+    <link rel="stylesheet" href="{% static 'company/css/plans_comparison.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/subscription_modal.css' %}" />
+    {% endblock %}
+    
+    <title>{% block title %}Flunter Plans Comparison{% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+        <div class="main-content">
+            <div class="main-content-header">
+                <div class="heading">
+                    <div class="back-btn" onclick="history.back();">
+                        <svg width="12" height="19" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.6263 16.8548L2.29297 9.50065L9.6263 2.14648" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h1>Plans Comparison</h1>
+                </div>
+                <div class="subscription-filters">
+                    <div class="dropdown subscription-currency-dropdown">
+                        <div class="subscription-currency-dropdown-btn" id="subscription-menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="d-flex align-items-center justify-content-between h-100">
+                                <div class="currency-details">
+                                    <span id="currency-icon">€</span>
+                                    <span id="currency-name">Euro</span>
+                                </div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.0002 1.1697C10.8128 0.983448 10.5594 0.878906 10.2952 0.878906C10.031 0.878906 9.77756 0.983448 9.59019 1.1697L6.00019 4.7097L2.46019 1.1697C2.27283 0.983448 2.01938 0.878906 1.75519 0.878906C1.49101 0.878906 1.23756 0.983448 1.05019 1.1697C0.956464 1.26266 0.88207 1.37326 0.831301 1.49512C0.780533 1.61698 0.754395 1.74769 0.754395 1.8797C0.754395 2.01171 0.780533 2.14242 0.831301 2.26428C0.88207 2.38613 0.956464 2.49674 1.05019 2.5897L5.29019 6.8297C5.38316 6.92343 5.49376 6.99782 5.61562 7.04859C5.73747 7.09936 5.86818 7.1255 6.00019 7.1255C6.1322 7.1255 6.26291 7.09936 6.38477 7.04859C6.50663 6.99782 6.61723 6.92343 6.71019 6.8297L11.0002 2.5897C11.0939 2.49674 11.1683 2.38613 11.2191 2.26428C11.2699 2.14242 11.296 2.01171 11.296 1.8797C11.296 1.74769 11.2699 1.61698 11.2191 1.49512C11.1683 1.37326 11.0939 1.26266 11.0002 1.1697Z" fill="#070C29"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <ul id="subscription-menu" class="dropdown-menu subscription-currency-menu">
+                            <div class="dropdown-item" onclick="selectCurrency('€', 'Euro')">
+                                <span>€</span>
+                                <span>Euro</span>
+                            </div>
+                            <!-- <div class="dropdown-item" onclick="selectCurrency('£', 'Sterling')">
+                                <span>£</span>
+                                <span>Sterling</span>
+                            </div>
+                            <div class="dropdown-item" onclick="selectCurrency('$', 'Dollar')">
+                                <span>$</span>
+                                <span>Dollar</span>
+                            </div> -->
+                        </ul>
+                    </div>
+                    <div class="subscription-duration-group">
+                        <div class="duration-radio-btn">
+                            <input type="radio" onclick="changeSubscriptionInterval('monthly');" {% if request.user_data.data.user.sub == None or request.user_data.data.user.sub.current_plan == 'Monthly' %}checked{% endif %} id="monthly-duration" name="subscription_duration_radio" />
+                            <label for="monthly-duration" class="duration-radio-label">Monthly</label>
+                        </div>
+                        <div class="duration-radio-btn">
+                            <input type="radio" onclick="changeSubscriptionInterval('yearly');" {% if request.user_data.data.user.sub and request.user_data.data.user.sub.current_plan == 'Yearly' %}checked{% endif %} id="annually-duration" name="subscription_duration_radio" />
+                            <label for="annually-duration" class="duration-radio-label">Annually <span class="savings">Save upto 20%</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-details-table-wrapper">
+                
+            </div>
+        </div>
+
+
+    {% include '../modals/subscription-modal.html' %}
+
+    {{request.user_data.data|json_script:"userData"}}
+    {{stripe_publishable_key|json_script:"stripe_publishable_key"}}
+
+
+    {% endblock %}
+</body>
+{% block scripts %}
+<script>
+    const userData = JSON.parse(document.getElementById("userData").textContent);
+    const stripe_publishable_key = JSON.parse(document.getElementById('stripe_publishable_key').textContent);
+    let selectedSubscriptionInterval = userData.user.sub?.current_plan == 'Yearly' ? 'yearly' : 'monthly';
+</script>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="{% static 'company/js/planComparison.js' %}"></script>
+{% endblock %}
+</html>

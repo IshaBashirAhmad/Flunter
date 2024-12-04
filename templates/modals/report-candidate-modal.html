@@ -1,0 +1,51 @@
+{% load static %}
+
+<div class="modal fade" id="reportCandidateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="reportCandidateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form>
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span class="add-user-modal-header-text" id="report-modal-header-text">Report</span>
+                </div>
+                <div class="modal-body">
+                    <div class="list-container" id="report-reasons-list">
+                        <div class="my-list-item">
+                            <input type="radio" id="incorrect-mobile-phone-number" value="mobile" name="reason" />
+                            <label for="incorrect-mobile-phone-number">Incorrect Mobile Phone Number</label>
+                        </div>
+                        <div class="my-list-item">
+                            <input type="radio" id="incorrect-personal-email" value="personal_email" name="reason" />
+                            <label for="incorrect-personal-email">Incorrect Personal Email</label>
+                        </div>
+                        <div class="my-list-item">
+                            <input type="radio" id="incorrect-professional-email" value="professional_email" name="reason" />
+                            <label for="incorrect-professional-email">Incorrect Professional Email</label>
+                        </div>
+                        <div class="my-list-item">
+                            <input type="radio" id="incorrect-landline-number" value="landline" name="reason" />
+                            <label for="incorrect-landline-number">Incorrect Landline Number</label>
+                        </div>
+                        <div class="my-list-item">
+                            <input type="radio" id="other-reasons" value="other" name="reason" />
+                            <label for="other-reasons">Other</label>
+                        </div>
+                    </div>
+                    <textarea class="hide" name="description" id="report-reason-textarea" placeholder="Write your report description here..."></textarea>
+                </div>
+                <div class="error-div">
+                    <small class="create-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" type="submit">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Report</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="reportCandidateModal" data-bs-toggle="modal" data-bs-target="#reportCandidateModal" />

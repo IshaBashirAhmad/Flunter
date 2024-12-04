@@ -1,0 +1,213 @@
+#addUser .modal-dialog {
+    max-width: unset;
+    width: 450px;
+}
+
+#addUser .modal-header {
+    padding: 0!important;
+    border-radius: 15px!important;
+
+}
+
+#addUser .modal-content {
+    padding: 24px;
+}
+
+#addUser .modal-footer,
+#addUser .modal-content {
+    border-radius: 15px!important;
+}
+
+#addUser .modal-header {
+    margin-bottom: 16px;
+}
+
+#addUser .modal-header > span {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+#addUser .modal-body {
+    padding: 0px!important;
+}
+
+#addUser .modal-body .input-wrapper {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    width: 100%;
+}
+
+#addUser .modal-body .input-wrapper label {
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+#addUser .modal-body .input-wrapper > div {
+    display: flex;
+    align-items: center;
+}
+
+#addUser .modal-body .input-wrapper > div input {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #E3E8F9;
+    border-radius: 8px;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+    padding-left: 15px;
+    padding-right: 10px;
+    line-height: 14px;
+    font-size: .75rem;
+}
+
+#addUser .modal-body .input-wrapper > div input:focus-visible {
+    outline: 2px solid var(--second-secondary-color);
+}
+
+.input-wrapper .show-hide-icon {
+    right: 10px;
+    left: unset !important;
+}
+#addUser .modal-body .input-wrapper > div svg {
+    position: absolute;
+    left: 10px;
+    /* bottom: 17px; */
+    width: 16px;
+    height: 16px;
+}
+
+#addUser .modal-body .profile-image-container {
+    position: relative;
+    flex-shrink: 0;
+}
+
+#addUser .modal-body .profile-image-container .profile-image-uploader {
+    width: 72px;
+    height: 72px;
+    position: relative;
+}
+
+#addUser .modal-body .profile-image {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid transparent; */
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center;
+}
+
+#addUser .modal-body .edit-btn {
+    width: 24px;
+    height: 24px;
+    pointer-events: all;
+    position: absolute;
+    /* bottom: -36px;
+    right: -50px; */
+    bottom: 5px;
+    right: -10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #E3E8F9;
+    border-radius: 6px;
+    box-shadow: 0px 13px 41px 0px #3B3B3D1B;
+}
+
+#addUser .modal-body .edit-btn > svg {
+    position: relative;
+    top: 0px;
+}
+
+#addUser .modal-body .added-user-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#addUser .modal-body .added-user-wrapper .added-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#addUser .modal-body .added-user-wrapper .added-user .added-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#addUser .modal-body .added-user-wrapper .added-user .added-user-info > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+#addUser .modal-body .added-user-wrapper .added-user .added-user-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#addUser .modal-body .added-user-wrapper .added-user .added-user-info > div > span:first-of-type {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 17px;
+    text-align: left;
+}
+
+#addUser .modal-body .added-user-wrapper .added-user .added-user-info > div > span:last-of-type {
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+}
+
+#addUser .error-div {
+    text-align: left;
+}
+
+
+#addUser .modal-footer {
+    padding: 0px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+#addUser .modal-footer > button {
+    width: 110px;
+    height: 35px;
+    border: 2px solid var(--primary-color);
+    border-radius: 40px;
+    /* box-shadow: 0px 0px 10px 0px #0C47AF4D; */
+    color: var(--primary-color);
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+}
+
+#addUser .modal-footer > button:first-of-type {
+    background: transparent;
+}
+
+#addUser .modal-footer > button:last-of-type {
+    background: var(--second-secondary-color);
+}
+
+#addUser .modal-footer > button > span {
+    color: #FFFFFF;
+}

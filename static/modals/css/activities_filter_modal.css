@@ -1,0 +1,564 @@
+#activitiesFilterModal .modal-dialog {
+    max-width: unset;
+    width: 800px;
+    border-radius: 15px;
+}
+
+#activitiesFilterModal .modal-header {
+    padding: 0!important;
+    border-radius: 15px!important;
+
+}
+
+#activitiesFilterModal .modal-content {
+    padding: 16px;
+    border: none;
+}
+
+#activitiesFilterModal .modal-footer,
+#activitiesFilterModal .modal-content {
+    border-radius: 15px!important;
+}
+
+#activitiesFilterModal .modal-header {
+    margin-bottom: 16px;
+}
+
+#activitiesFilterModal .modal-header > span {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+#activitiesFilterModal .modal-body {
+    padding: 0px!important;
+}
+
+#activitiesFilterModal .modal-body .input-wrapper {
+    /* margin-bottom: 20px; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    width: 100%;
+}
+
+#activitiesFilterModal .modal-body .filter-header-section {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+#activitiesFilterModal .modal-body .filter-header-section > label,
+#activitiesFilterModal .modal-body .filter-header-section > span {
+    font-size: .875rem;
+    line-height: 16px;
+    text-align: left;
+    font-weight: 500;
+    color: var(--text-field-heading);
+}
+
+#activitiesFilterModal .modal-body .filter-header-section svg {
+    position: static!important;
+    width: 20px;
+    height: 20px;
+}
+
+#activitiesFilterModal .modal-body .input-wrapper > div input {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #E3E8F9;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+    padding-left: 10px;
+    padding-right: 30px;
+    font-size: .75rem;
+    line-height: 14px;
+}
+
+#activitiesFilterModal .modal-body .input-wrapper > div input:focus-visible {
+    outline: 2px solid var(--second-secondary-color);
+}
+
+.input-wrapper .show-hide-icon {
+    right: 10px;
+    left: unset !important;
+}
+#activitiesFilterModal .modal-body .input-wrapper > div svg {
+    position: absolute;
+    left: 10px;
+    bottom: 13px;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > div { 
+    padding: 8px;
+    flex-basis: 30%;
+    /* background: #F6F6F6; */
+    border-radius: 10px;
+    border: 1px solid #E3E8F9;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > div:first-child > .skils-job-company {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .skills > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .skills > .header > svg {
+    width: 20px;
+    height: 20px;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .skills > .header > span > label {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #5D5D5D;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .skills > div:last-child {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    border: none;
+    border-radius: 9px;
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    max-height: 100px;
+    resize: none;
+    font-size: .75rem;
+    overflow-y: auto;
+}
+
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > .header > svg {
+    width: 20px;
+    height: 20px;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > .header > span > label {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #5D5D5D;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .jobs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > div:last-child {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    border: none;
+    border-radius: 9px;
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    max-height: 100px;
+    resize: none;
+    font-size: .75rem;
+    overflow-y: auto;
+}
+
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .company > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .company > .header > svg {
+    width: 20px;
+    height: 20px;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .company > .header > span > label {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #5D5D5D;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .company {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#activitiesFilterModal .modal-body > .main-content-modal > .skils-job-company > .company > div:last-child {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    border: none;
+    border-radius: 9px;
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    max-height: 100px;
+    resize: none;
+    font-size: .75rem;
+    overflow-y: auto;
+}
+
+#activitiesFilterModal .error-div {
+    text-align: left;
+    /* padding: 0px 30px; */
+    /* margin-top: 5px; */
+}
+
+
+#activitiesFilterModal .modal-footer {
+    padding: 0px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+#activitiesFilterModal .modal-footer > button {
+    width: 140px;
+    height: 35px;
+    border: 2px solid var(--primary-color);
+    border-radius: 40px;
+    /* box-shadow: 0px 0px 10px 0px #0C47AF4D; */
+    color: var(--primary-color);
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+}
+
+#activitiesFilterModal .modal-footer > button:first-of-type {
+    background: transparent;
+}
+
+#activitiesFilterModal .modal-footer > button:last-of-type {
+    background: var(--second-secondary-color);
+}
+
+#activitiesFilterModal .modal-footer > button > span {
+    color: #FFFFFF;
+}
+
+
+
+@media (max-width: 1280px) {
+    #activitiesFilterModal .modal-dialog {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 890px) {
+    .individual-input-container {
+        grid-template-columns: minmax(200px, 454px);
+        justify-content: center;
+        row-gap: 15px;
+        column-gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    #activitiesFilterModal .modal-dialog {
+        max-width: 100%;
+        background: transparent;
+        justify-content: center;
+        box-shadow: none;
+    }
+
+    #activitiesFilterModal .modal-content {
+        max-width: 80%;
+        box-shadow: 0px 0px 5px 2px #7C00F41A;
+    }
+
+    #activitiesFilterModal .modal-footer {
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    #activitiesFilterModal .modal-footer button {
+        margin: 0px;
+        width: 100%;
+    }
+}
+
+
+/* ------------------------------------------------------- */
+
+
+.selection-div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.selection-div > input {
+    padding-right: 30px;
+}
+
+.selection-div + svg {
+    left: unset!important;
+    right: 15px;
+}
+
+.filter-dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute!important;
+    z-index: 1;
+    top: 65px;
+    background-color: #FFFFFF;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #E0E0DD;
+}
+
+#company-dropdown,
+.custom-searchable-dropdown {
+    max-height: 216px;
+    overflow-y: auto;
+}
+
+.radio-btn > label {
+    width: 100%;
+    padding: 0px 15px;
+    min-height: 30px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 16px;
+    word-wrap: break-word;
+}
+
+.radio-btn:not(:first-child),
+.custom-searchable-dropdown > span {
+    border-top: 1px solid #E0E0DD;
+}
+
+.radio-btn > label:hover,
+.custom-searchable-dropdown > span:hover {
+    background-color: #DDDDDD;
+}
+
+.filter-dropdown input {
+    display: none;
+}
+
+
+#no-company-text {
+    font-size: .875rem;
+    font-weight: 500;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-searchable-dropdown {
+    align-items: flex-start;
+}
+
+.custom-searchable-dropdown > span {
+    padding: 4px 15px;
+    font-size: .875rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+
+#activitiesFilterModal .modal-body .select-activity-users-div {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+#activitiesFilterModal .modal-body > input,
+#activitiesFilterModal .modal-body .select-activity-users-div button {
+    width: 100%;
+    height: 40px;
+    padding: 0px 18px;
+
+    color: rgba(3, 7, 6, 1);
+    font-size: .875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 10px;
+
+    border-radius: 8px;
+    border: 0.8px solid #515254;
+    background: #FFF;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 35px;
+    border: 1px solid #E3E8F9;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+    padding-left: 10px;
+    padding-right: 15px;
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div button > span {
+    color: #A6A7A8;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper {
+    position: absolute;
+    top: 63px;
+    padding: 8px;
+    /* width: 581px; */
+    border-radius: 8px;
+    border: 1px solid #CECECE;
+    background: #FFF;
+    width: 100%;
+}
+
+/* #activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .search-header {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+} */
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .search-header {
+    width: 100%;
+    height: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: .75rem;
+    line-height: 14px;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .search-header > input {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 0.8px solid var(--secondary-line-color, #515254);
+    background: var(--primary-white, #FFF);
+    padding-left: 30px;
+    padding-right: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .search-header > input:focus-visible {
+    outline: 1px solid var(--second-secondary-color);
+    border: unset;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .search-header > svg {
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .activity-user-list-wrapper {
+    border-radius: 6px;
+    border: 1px solid #CECECE;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .activity-user-list-wrapper .activity-user-list-item {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #CECECE;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .activity-user-list-wrapper .activity-user-list-item:last-of-type {
+    border-bottom: unset;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .activity-user-list-wrapper .activity-user-list-item > label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 8px;
+
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 14px;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .activity-user-list-wrapper .activity-user-list-item > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+    border-left: 1px solid #CECECE;
+}
+
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .activity-user-list-wrapper .activity-user-list-item > div > input {
+    border: 1px solid #CECECE;
+    width: 14px;
+    height: 14px;
+    appearance: none;
+    content: none;
+    outline: none;
+    margin: 0;
+    cursor: pointer;
+}
+ 
+#activitiesFilterModal .modal-body .select-activity-users-div .activity-user-search-wrapper .activity-user-list-wrapper .activity-user-list-item > div > input:checked {
+    border: 1px solid var(--second-secondary-color)!important;
+    background-color: var(--second-secondary-color);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}

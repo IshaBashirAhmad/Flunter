@@ -1,0 +1,75 @@
+{% load static %}
+{% load custom_tags %}
+
+<table class="table border " id='company_table'>
+    <thead class="thead-dark">
+        <tr>
+            {% for field in field_names %}
+                <th scope="col" id='state' onclick="table_sort(event, {{ forloop.counter0 }})" data-col='' >
+                    <span class='text-light me-1'>{{field | title}}</span>
+                    <span>
+                        <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                            <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                        </svg>
+                    </span>
+                </th>
+            {% endfor %}
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in page_obj %}
+        <tr>
+            <td title="{{item.full_name}}">{{item.full_name}}</td>
+            <td title="{{item.first_name}}">{{item.first_name}}</td>
+            <td title="{{item.last_name}}">{{item.last_name}}</td>
+            <td title="{{item.headline}}">{{item.headline}}</td>
+            <td title="{{item.current_position}}">{{item.current_position}}</td>
+            <td title="{{item.company_name}}">{{item.company_name}}</td>
+            <td title="{{item.person_city}}">{{item.person_city}}</td>
+            <td title="{{item.person_state}}">{{item.person_state}}</td>
+            <td title="{{item.person_country}}">{{item.person_country}}</td>
+            <td title="{{item.person_industry}}">{{item.person_industry}}</td>
+            <td title="{{item.tags}}">{{item.tags}}</td>
+            <td class="skills-row">
+                <div class="skills-cotainer">
+                    {% for skills in item.person_skills|values_from_comma_separated_string %}
+                    <span>{{skills}}</span>
+                    {% endfor %}
+                </div>
+            </td>
+            <td title="{{item.education_experience}}">{{item.education_experience}}</td>
+            <td><a href="{{item.company_website}}" target="_blank">Company Website</a></td>
+            <td title="{{item.email1}}">{{item.email1}}</td>
+            <td title="{{item.email2}}">{{item.email2}}</td>
+            <td title="{{item.phone1}}">{{item.phone1}}</td>
+            <td title="{{item.phone2}}">{{item.phone2}}</td>
+            <td><a href="{{item.person_linkedin_url}}" target="_blank">LinkedIn</a></td>
+            <td title="{{item.company_size_from}}">{{item.company_size_from}}</td>
+            <td title="{{item.company_size_to}}">{{item.company_size_to}}</td>
+            <td title="{{item.current_position_2}}">{{item.current_position_2}}</td>
+            <td title="{{item.current_company_2}}">{{item.current_company_2}}</td>
+            <td title="{{item.previous_position_2}}">{{item.previous_position_2}}</td>
+            <td title="{{item.previous_company_2}}">{{item.previous_company_2}}</td>
+            <td title="{{item.previous_position_3}}">{{item.previous_position_3}}</td>
+            <td title="{{item.previous_company_3}}">{{item.previous_company_3}}</td>
+            <td title="{{item.company_city}}">{{item.company_city}}</td>
+            <td title="{{item.company_state}}">{{item.company_state}}</td>
+            <td title="{{item.company_country}}">{{item.company_country}}</td>
+            <td><a href="{{item.person_angellist_url}}" target="_blank">AngelList</a></td>
+            <td><a href="{{item.person_crunchbase_url}}" target="_blank">Crunchbase</a></td>
+            <td><a href="{{item.person_twitter_url}}" target="_blank">Twitter</a></td>
+            <td><a href="{{item.person_facebook_url}}" target="_blank">Facebook</a></td>
+            <td><a href="{{item.company_linkedin_url}}" target="_blank">Company Linkedin</a></td>
+            <td><a href="{{item.person_image_url}}" target="_blank">Person Image</a></td>
+            <td><a href="{{item.company_logo_url}}" target="_blank">Company Logo</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="8" class="no-record-row">No Record Available</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

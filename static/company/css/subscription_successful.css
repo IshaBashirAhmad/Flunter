@@ -1,0 +1,102 @@
+.success-section {
+    background-image: url('../images/authentication_bg.svg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-container {
+    margin-top: 40px;
+    margin-bottom: 80px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.success-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.post-content {
+    padding: 28px 44px;
+    background-color: #FFFFFF;
+    border-radius: 0px 0px 5px 5px;
+    max-width: 434px;
+    border-radius: 10px;
+}
+
+.content-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.content-header > svg {
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.content-header > h2 {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 18px;
+    text-align: center;
+    color: #101828;
+}
+
+.content-header > p {
+    font-size: .7rem;
+    line-height: 16px;
+    text-align: center;
+    color: #475467;
+    margin-bottom: 0px;
+}
+
+.post-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.post-content-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.post-content-form button {
+    font-weight: 600;
+    font-size: .7rem;
+    line-height: 14rem;
+    color: #8DC63F;
+    background-color: white;
+    border: none;
+    min-width: 96px;
+}
+
+.back-link {
+    align-self: center;
+    text-decoration: none;
+    color: #475467;
+    font-weight: 600;
+    font-size: .7rem;
+    line-height: 14px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .success-content {
+        padding: 36px 30px;
+    }
+}
+
+
+@media (max-width: 435px) {
+    .success-container {
+        width: calc(100vw - 20px);
+    }
+}

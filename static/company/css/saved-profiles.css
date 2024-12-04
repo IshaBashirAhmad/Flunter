@@ -1,0 +1,47 @@
+.main-content-container {
+    max-height: calc(100vh - 240px);
+    overflow-y: auto;
+}
+
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    padding-bottom: 32px;
+}
+
+.pagination-container > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #7C00F41A;
+    border-radius: 5px;
+    color: #333333;
+    font-size: .813;
+    font-weight: 600;
+    line-height: 19.5px;
+    width: 32px;
+    height: 32px;
+}
+
+.pagination-container > .active {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: #FFFFFF;
+}
+
+.pagination-div > .records {
+    font-size: .65rem;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: left;
+    color: #000000;
+}
+
+@media (min-width: 1920px) {
+    .main-content-container {
+        max-height: 75vh;
+    }
+}

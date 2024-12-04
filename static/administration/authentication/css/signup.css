@@ -1,0 +1,345 @@
+.auth-section {
+    max-width: 1920px;
+}
+
+.signup-section {
+    background: #FFFFFF;
+    max-width: 1513px;
+    width: 78.8%;
+    height: fit-content;
+    border-radius: 30px;
+    padding: 30px 50px;
+    margin: 50px;
+}
+
+.signup-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.signup-section-header h1 {
+    font-size: 2.375rem;
+    font-weight: 800;
+    line-height: 57px;
+    margin-bottom: 0px;
+}
+
+.signup-section-header span {
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 33px;
+    text-align: center;
+    color: var(--text-field-heading);
+}
+
+.input-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.toggleContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background: #FFFFFF;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 20.8px;
+}
+
+.toggleContainer::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius: 8px;
+    background: #7C00F41A;
+    transition: all 0.3s;
+    border: 2px solid var(--primary-color);
+
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 20.8px;
+}
+
+.toggleCheckbox:checked + .toggleContainer::before {
+     left: 50%;
+}
+
+.toggleContainer div {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 225px;
+}
+
+.toggleCheckbox {
+    display: none;
+}
+
+.toggleCheckbox:checked + .toggleContainer div:first-child{
+    color: var(--text-field-heading);
+    transition: color 0.3s;
+}
+
+.toggleCheckbox:checked + .toggleContainer div:last-child{
+    color: #000000;
+    transition: color 0.3s;
+}
+
+.toggleCheckbox + .toggleContainer div:first-child{
+    color: #000000;
+    transition: color 0.3s;
+}
+
+.toggleCheckbox + .toggleContainer div:last-child{
+    color: var(--text-field-heading);
+    transition: color 0.3s;
+}
+
+.individual-input-container {
+    display: grid;
+    grid-template-columns: minmax(300px, 454px) minmax(300px, 454px) minmax(300px, 454px);
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 25px;
+}
+
+.input-container > div > div {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-container label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+.input-container input {
+    width: 100%;
+    height: 55px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    padding-left: 44px;
+    padding-right: 10px;
+    line-height: 24px;
+}
+
+.input-container input:focus {
+    border: 2px solid var(--primary-color);
+    outline: none;
+}
+
+.input-container > div > div svg {
+    position: absolute;
+    left: 10px;
+}
+
+.input-container input[type="password"] {
+    padding-right: 35px!important;
+}
+
+.input-container .show-hide-icon {
+    position: absolute;
+    right: 10px;
+    left: unset;
+}
+
+.company-other-inputs {
+    display: grid;
+    grid-template-columns: minmax(200px, 334px) minmax(200px, 334px) minmax(200px, 334px) minmax(200px, 334px);
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 25px;
+    margin-top: 20px;
+}
+
+
+.terms-checkbox-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terms-checkbox-container > input {
+    margin-top: 0px;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px!important;
+    box-shadow: none;
+    flex-shrink: 0;
+}
+
+.terms-checkbox-container > input:checked[type=checkbox] {
+    background-color: var(--primary-color);
+    box-shadow: none;
+    border-color: transparent;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23FFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+.terms-checkbox-label {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.terms-checkbox-label > a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.register-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 27px;
+}
+
+.register-btn {
+    max-width: 300px;
+    width: 100%;
+    height: 59px;
+    border: none;
+    border-radius: 15px;
+    background: var(--primary-color);
+
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+}
+
+.register-btn-container > span {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+}
+
+.register-btn-container > span > a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.bottom-div {
+    background: #070C29;
+    box-shadow: 0px 0px 5px 2px #5266FF1A;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bottom-div span,
+.bottom-div a {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 23.4px;
+    color: #ABAEC7;
+    text-decoration: none;
+}
+
+.copyright-div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+
+@media (max-width: 1280px) {
+    .individual-input-container {
+        grid-template-columns: minmax(300px, 454px) minmax(300px, 454px);
+    }
+
+    .company-other-inputs {
+        grid-template-columns: minmax(300px, 454px) minmax(300px, 454px);
+    }
+}
+
+
+@media (max-width: 900px) {
+    .signup-section {
+        padding: 15px 20px;
+        margin: 30px 20px;
+        width: 90%;
+    }
+
+    .signup-section-header {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .signup-section-header h1 {
+        font-size: 1.875rem;
+        line-height: 44px;
+        text-align: center;
+    }
+    
+    .signup-section-header span {
+        font-size: 1rem;
+        line-height: 26px;
+    }
+
+    .input-toggle-container {
+        margin-bottom: 20px;
+    }
+
+    .individual-input-container {
+        grid-template-columns: minmax(200px, 454px);
+    }
+
+    .company-other-inputs {
+        grid-template-columns: minmax(200px, 454px);
+    }
+
+    .terms-checkbox-container {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .toggleContainer {
+        width: 100%;
+    }
+
+    .toggleContainer div {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}

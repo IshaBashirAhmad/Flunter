@@ -1,0 +1,27 @@
+<div class="modal fade" id="subscription-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="delUserLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0 justify-content-end">
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center pt-0">
+                <div class="stripe-div">
+                    <form id="payment-form">
+                        <div id="payment-element">
+                          <!--Stripe.js injects the Payment Element-->
+                        </div>
+                        <button id="submit">
+                          <div class="spinner hidden" id="spinner"></div>
+                          <span id="button-text">Pay now</span>
+                        </button>
+                        <div id="payment-message" class="hidden"></div>
+                    </form>
+                </div>
+                <div class="back-link pb-3 cursor-pointer" data-bs-dismiss="modal">
+                    <span>Go Back</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="subscription-modal" data-bs-toggle="modal" data-bs-target="#subscription-modal" />

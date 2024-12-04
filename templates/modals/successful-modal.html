@@ -1,0 +1,29 @@
+<div class="modal fade" id="successModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form>
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span id="success-modal-header">Successful</span>
+                </div>
+                <div class="modal-body">
+                    <svg width="115" height="114" viewBox="0 0 115 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.1" d="M56.89 100.114C82.3379 100.114 102.968 97.4597 102.968 94.1858C102.968 90.9118 82.3379 88.2578 56.89 88.2578C31.4421 88.2578 10.8125 90.9118 10.8125 94.1858C10.8125 97.4597 31.4421 100.114 56.89 100.114Z" fill="#070C29"/>
+                        <rect width="96" height="96" transform="translate(9 9)" fill="white"/>
+                        <path d="M49.2016 21.6C53.7016 17.8 60.3016 17.8 64.8016 21.6L66.9016 23.4C68.8016 25 71.2016 26 73.7016 26.2L76.5016 26.4C82.4016 26.9 87.0016 31.5 87.5016 37.4L87.7016 40.2C87.9016 42.7 88.9016 45.1 90.5016 47L92.3016 49.1C96.1016 53.6 96.1016 60.2 92.3016 64.7L90.5016 66.8C88.9016 68.7 87.9016 71.1 87.7016 73.6L87.5016 76.4C87.0016 82.3 82.4016 86.9 76.5016 87.4L73.7016 87.6C71.2016 87.8 68.8016 88.8 66.9016 90.4L64.8016 92.2C60.3016 96 53.7016 96 49.2016 92.2L47.1016 90.4C45.2016 88.8 42.8016 87.8 40.3016 87.6L37.5016 87.4C31.6016 86.9 27.0016 82.3 26.5016 76.4L26.3016 73.6C26.1016 71.1 25.1016 68.7 23.5016 66.8L21.7016 64.7C17.9016 60.2 17.9016 53.6 21.7016 49.1L23.5016 47C25.1016 45.1 26.1016 42.7 26.3016 40.2L26.5016 37.4C27.0016 31.5 31.6016 26.9 37.5016 26.4L40.3016 26.2C42.8016 26 45.2016 25 47.1016 23.4L49.2016 21.6Z" fill="#070C29" stroke="#070C29" stroke-width="5"/>
+                        <path d="M44.5 58.8992L49.6 63.9992C51.6 65.9992 54.7 65.9992 56.7 63.9992L71.5 49.1992" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                    </svg>                        
+                    <p id="success-statement">New user has been added successfully.</p>
+                </div>
+                <div class="error-div">
+                    <small class="success-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="successModal" data-bs-toggle="modal" data-bs-target="#successModal" />

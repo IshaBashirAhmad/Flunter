@@ -1,0 +1,615 @@
+#filterModal .modal-dialog {
+    max-width: unset;
+    width: 800px;
+    /* box-shadow: 0px 0px 5px 2px #7C00F41A; */
+    /* background: #FFFFFF; */
+    border-radius: 15px;
+}
+
+#filterModal .modal-header {
+    padding: 0!important;
+    border-radius: 15px!important;
+
+}
+
+#filterModal .modal-content {
+    padding: 16px;
+    border: none;
+}
+
+#filterModal .modal-footer,
+#filterModal .modal-content {
+    border-radius: 15px!important;
+}
+
+#filterModal .modal-header {
+    margin-bottom: 16px;
+    flex-direction: column;
+}
+
+#filterModal .modal-header span:last-of-type{
+    color: #68759A;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+#filterModal .modal-header > span {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+#filterModal .modal-body {
+    padding: 0px!important;
+}
+
+#filterModal .modal-body > .main-content-modal {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+#filterModal .modal-body > .main-content-modal > div { 
+    padding: 8px;
+    flex-basis: 30%;
+    /* background: #F8FAFB; */
+    border: 1px solid #E3E8F9;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+#filterModal .modal-body > .main-content-modal > div:first-child > .skils-job-company {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .skills > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .skills > .header > svg {
+    width: 20px;
+    height: 20px;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .skills > .header > span > label {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #5D5D5D;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .skills > div:last-child {
+    background: #FFFFFF;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+    border: none;
+    border-radius: 9px;
+    background-color: #F8F9FD;
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    max-height: 100px;
+    resize: none;
+    font-size: .75rem;
+    overflow-y: auto;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .skills > div > textarea {
+    background: transparent;
+    border: none;
+    resize: none;
+    width: 100%;
+    height: 30px;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .skills > div > textarea:focus-visible {
+    outline: none;
+}
+
+/* ----------------------tags--------------------------------- */
+
+#filterModal .tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 36px;
+}
+
+#filterModal .tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 24px;
+    height: fit-content;
+    /* background-color: #e0e0e0 ; */
+    border-radius: 6px;
+    padding: 0px 12px;
+    background-color: var(--new-secondary-color);
+    /* border: 1px solid #E3E8F9; */
+    /* background: linear-gradient(42.26deg, rgba(1, 19, 66, 0.1) 32.43%, rgba(101, 41, 231, 0.1) 126.07%, rgba(101, 41, 231, 0.1) 126.75%); */
+    position: relative;
+    padding-left: 12px;
+    padding-right: 5px;
+}
+
+#filterModal .tag span {
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: center;
+    color: var(--second-secondary-color) !important;
+    word-break: break-all;
+}
+
+#filterModal .tag .remove-tag {
+    cursor: pointer;
+    color: #392680 !important;
+    /* position: absolute; */
+    top: 0px;
+    right: 2px;
+}
+
+#filterModal .tag-input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    margin: 4px;
+}
+
+/* ------------------------------------------------------------ */
+
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > .header > svg {
+    width: 20px;
+    height: 20px;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > .header > span > label {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #5D5D5D;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .jobs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > div:last-child {
+    background: #FFFFFF;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+    background-color: #F8F9FD;
+    border: none;
+    border-radius: 9px;
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    max-height: 100px;
+    resize: none;
+    font-size: .75rem;
+    overflow-y: auto;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > div > textarea {
+    background: transparent;
+    border: none;
+    resize: none;
+    width: 100%;
+    height: 30px;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .jobs > div > textarea:focus-visible {
+    outline: none;
+}
+
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .company > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .company > .header > svg {
+    width: 20px;
+    height: 20px;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .company > .header > span > label {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #5D5D5D;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .company {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .company > div:last-child {
+    background: #FFFFFF;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+    border: none;
+    background-color: #F8F9FD;
+    border-radius: 9px;
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    max-height: 100px;
+    resize: none;
+    font-size: .75rem;
+    overflow-y: auto;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .company > div > textarea {
+    background: transparent;
+    border: none;
+    resize: none;
+    width: 100%;
+    height: 30px;
+}
+
+#filterModal .modal-body > .main-content-modal > .skils-job-company > .company > div > textarea:focus-visible {
+    outline: none;
+}
+
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount  > .header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount  > .header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount  > .header > div > div:last-child > svg{
+    width: 20px;
+    height: 20px;
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount  > .header > div > span {
+    width: 100%;
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #5D5D5D;
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount  > .header > span {
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: #000000;
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount > .body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount  > .body > label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount  > .body > label input {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    content: none;
+    border: 1px solid var(--text-field-heading);
+    border-radius: 4px;
+    margin-top: 0px!important;
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount  > .body > label input:checked {
+    border: 1px solid var(--second-secondary-color) !important;
+    background-color: var(--second-secondary-color);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+#filterModal .modal-body > .main-content-modal > .employee-headcount  > .body > label > span {
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: #000000;
+}
+
+
+#filterModal .modal-body > .main-content-modal > .contact { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .header > svg {
+    width: 20px;
+    height: 20px;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .header > span > label {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #5D5D5D;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .contact-details-radio-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .contact-details-radio-btn > label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .contact-details-radio-btn > label > span{
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: #000000;
+    display: flex;
+    justify-content: start;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .contact-details-radio-btn > label > div {
+    display: flex;
+    align-items: center;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .contact-details-radio-btn > label > div > .radio-btn-container > input{
+    display: none;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .contact-details-radio-btn > label > div > .radio-btn-container > label{
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 32px;
+    align-items: center;
+    background: #FFFFFF;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+    cursor: pointer;
+
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: center;
+    color: #000000;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .contact-details-radio-btn > label > div > .radio-btn-container:first-child > label{
+    border-radius: 40px;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .contact-details-radio-btn > label > div > .radio-btn-container:last-child > label{
+    border-radius: 40px;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .contact-details-radio-btn > label > div > .radio-btn-container > input:checked + label {
+    border: 1px solid var(--new-secondary-color);
+    background: var(--new-secondary-color);
+    color: #070C29;
+    box-shadow: unset;
+}
+.contact-details .redios{
+    border-radius: 40px;
+    border: 1px solid #E5DEFF;
+}
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .body > label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .body > label input{
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    content: none;
+    border: 1px solid var(--text-field-heading);
+    border-radius: 4px;
+    margin-top: 0px!important;
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .body > label input:checked{
+    border: 1px solid var(--second-secondary-color) !important;
+    background-color: var(--second-secondary-color);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+#filterModal .modal-body > .main-content-modal > .contact > .contact-details > .body > label span{
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: #000000;
+}
+
+#filterModal .modal-body > .main-content-modal .contact-name {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+}
+
+#filterModal .modal-body > .main-content-modal .contact-name > div:first-child > label {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #5D5D5D;
+}
+
+#filterModal .modal-body > .main-content-modal div:last-child > input {
+    width: 100%;
+    height: 28px;
+    padding: 8px;
+    border: 0;
+    border-radius: 8px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px 0px #C5C5C5;
+    font-size: .75rem
+
+}
+
+#filterModal .error-div {
+    text-align: left;
+    /* padding: 0px 30px; */
+    /* margin-top: 5px; */
+}
+
+
+#filterModal .modal-footer {
+    padding: 0px!important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+    margin-right: 20px;
+}
+
+#filterModal .modal-footer > button {
+    /* width: 150px;
+    height: 35px; */
+    border: 2px solid #070C29;
+    border-radius: 20px;
+    color: #070C29;
+    font-size: .800rem;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    padding: 10px 17px;
+}
+
+#filterModal .modal-footer > button:first-of-type {
+    background: transparent;
+}
+
+#filterModal .modal-footer > button:last-of-type {
+    background: var(--second-secondary-color);
+}
+
+#filterModal .modal-footer > button > span {
+    color: #FFFFFF;
+}
+
+
+
+@media (max-width: 1280px) {
+    #filterModal .modal-dialog {
+        max-width: 80%;
+    }
+}
+
+
+@media (max-width: 890px) {
+    .individual-input-container {
+        grid-template-columns: minmax(200px, 454px);
+        justify-content: center;
+        row-gap: 15px;
+        column-gap: 15px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    #filterModal .modal-dialog {
+        max-width: 100%;
+        background: transparent;
+        justify-content: center;
+        box-shadow: none;
+    }
+
+    #filterModal .modal-content {
+        max-width: 80%;
+        box-shadow: 0px 0px 5px 2px #7C00F41A;
+    }
+
+    #filterModal .modal-footer {
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    #filterModal .modal-footer button {
+        margin: 0px;
+        width: 100%;
+    }
+}

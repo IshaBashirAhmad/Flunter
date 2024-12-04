@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% extends 'layouts/base.html' %}
+    {% load static %}
+    
+    {% block links %}
+    <link rel="stylesheet" href="{% static 'company/css/list-candidates.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/profile_card.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'modals/css/save_on_list_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/report_candidate_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/add_actions_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/share_profile_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/delete_modal.css' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    {% endblock %}
+    
+    <title>{% block title %}Flunter My List{% endblock %}</title>
+</head>
+<body>
+    {% block body %}        
+        <div class="main-content">
+            <div class="">
+                <svg onclick="history.back();" width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1.5" y="2" width="47" height="47" rx="2.5" stroke="#000000" stroke-width="3"/>
+                    <path d="M27.6263 32.8548L20.293 25.5007L27.6263 18.1465" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                    
+                <h1 class="list-name">List</h1>
+            </div>
+            <div class="">
+                <form onsubmit="searchForm(event);">
+                    <div class="search-filter-container w-100">
+                        <div class="search-filters">
+                            <div class="keyword-search-inputs">
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.4822 18.9645C15.6146 18.9645 18.9645 15.6146 18.9645 11.4822C18.9645 7.34992 15.6146 4 11.4822 4C7.34992 4 4 7.34992 4 11.4822C4 15.6146 7.34992 18.9645 11.4822 18.9645Z" stroke="#5D5D5D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16.6855 17.0742L19.6188 20" stroke="#5D5D5D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <input type="text" name="keywords" placeholder="Type something..." />
+                                    <input class="hide" type="text" name="list_id" id="listid">
+                                </div>
+                                <button class="filter-btn" type="submit" id="search-result-btn">Search</button>                            </div>
+                        </div>
+                    </div>
+                    <small class="search-error-msg input-error-msg"></small>
+                </form>
+            </div>
+            <div class="main-content-container">
+                <div class="w-100 h-100 d-flex justify-content-center align-items-center pt-2 pb-2" id="table-loader">
+                    <span class="spinner-border spinner-border-md" style="color: #7C00F4;" role="status" aria-hidden="true">
+                    </span>
+                </div>
+                <div class="result-list">
+
+                </div>
+            </div>
+            <div class="pagination-div" id="pagination-container">
+                <span class="records">Showing <span id="start-record">0</span> to <span id="end-record" >0</span> from <span id="record-count"></span></span>
+                <div id="pagination-get-first-record-btn" class="prev-btn first-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.727 12L12.667 11.06L9.61366 8L12.667 4.94L11.727 4L7.72699 8L11.727 12Z" fill="#000000"/>
+                        <path d="M7.33344 12L8.27344 11.06L5.2201 8L8.27344 4.94L7.33344 4L3.33344 8L7.33344 12Z" fill="#000000"/>
+                    </svg>
+                </div>
+                <div id="pagination-get-previous-record-btn" class="prev-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.06 12L11 11.06L7.94667 8L11 4.94L10.06 4L6.06 8L10.06 12Z" fill="#000000"/>
+                    </svg>
+                </div>
+                <div class="pages" id="pages-container">
+                </div>
+                <div id="pagination-get-next-record-btn" class="rotate-180 next-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.06 12L11 11.06L7.94667 8L11 4.94L10.06 4L6.06 8L10.06 12Z" fill="#000000"/>
+                    </svg>
+                </div>
+                <div id="pagination-get-last-record-btn" class="rotate-180 next-btn last-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.727 12L12.667 11.06L9.61366 8L12.667 4.94L11.727 4L7.72699 8L11.727 12Z" fill="#000000"/>
+                        <path d="M7.33344 12L8.27344 11.06L5.2201 8L8.27344 4.94L7.33344 4L3.33344 8L7.33344 12Z" fill="#000000"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    {% include "modals/save-list-modal.html" %}
+    {% include "modals/report-candidate-modal.html" %}
+    {% include "modals/add-action-modal.html" %}
+    {% include "modals/share-profile-modal.html" %}
+    {% include "modals/delete-modal.html" %}
+
+    {{list_id|json_script:"list_id"}}
+    {{request.user_data.data|json_script:"userData"}}
+
+    {% endblock %}
+</body>
+{% block scripts %}
+<script>
+    const list_id = JSON.parse(document.getElementById('list_id').textContent);
+    const userData = JSON.parse(document.getElementById('userData').textContent);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="{% static 'company/js/get_list_candidates.js' %}"></script>
+<script src="{% static 'modals/js/addActionModal.js' %}"></script>
+<script src="{% static 'modals/js/shareProfileModal.js' %}"></script>
+<script src="{% static 'modals/js/reportCandidateModal.js' %}"></script>
+<script src="{% static 'modals/js/saveOnListModal.js' %}"></script>
+<script src="{% static 'common/js/profileCard.js' %}"></script>
+{% endblock %}
+</html>

@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/contact_us_modal.css' %}" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'common/images/favicon.svg' %}" />
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.min.js" integrity="sha512-EkS8Kq86l7dHt/dOBniHgtYvAScDqFw/lIPX5VCwaVKsufs0pY44I2cguqZ45QaFOGGwVd3T1nXvVJYIEjRsjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.messagestore.min.js" integrity="sha512-Ejnbo8F6SIU18Tj9hZyJzVbhWtbC40Fyvuyfs6InZloy043xEvICul37BxuUGZG1ia8RQky7uBOwBdLsGKDu1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.fallbacks.min.js" integrity="sha512-FvKl0c+LXuYS0OlbGXHLIt/VUxLHgVG2wMHB8BwMDzEwwNACtxhutxl4jxlnuNfEuzKPLarLsf17UP7UgPMs6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.language.min.js" integrity="sha512-XaRK7YZ6nqPsjMAMUysMC0J7zqEOp3K74pUzIADUd3Ql8qpFpuwpR5jm+TVyzJc8C5fvVkjC3yOjF0gWmmCtDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.parser.min.js" integrity="sha512-v3mCT0T3rETWJU4RZKWHobzvOdJUcaojtxFBYVY371L/3aaWj9Dg2MNl6Q46wr19u4YHHnyzAR99wWAr9mB3ZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.emitter.min.js" integrity="sha512-FXATL79ewicv4U54AgQVVHBBsinKwHuIZJZFUIJqhqpA6UV0XuAFAhTjGuA9JX0HmzwKW+frVH2MuHCzpDgSMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.emitter.bidi.min.js" integrity="sha512-EP79zV22G1pPO28sRgwfVyEPEhu1RXA2ovHJNqlev1pIGEAs0CBzi6F6UMkPBaPS78O3KeEVqpicEYah+zbXhg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'common/js/common.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+
+    <title>Flunter</title>
+</head>
+<body>
+    {% include './includes/navbar.html' %}
+
+    <header class="homepage-header" id="quicksearchcontainer">
+        <div class="header-headline-section">
+            <div>
+                <h1 class="main-line" id="home-main-line" data-i18n="home-main-line-sentence">
+                    The Best
+                    <span class="custom-underline">prospecting
+                       <svg width="296" height="26" viewBox="0 0 296 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_365_737)">
+                                <path d="M0.203576 25.9998C2.23934 25.9998 4.07153 25.1446 6.10729 24.9735C8.14305 24.8025 9.97524 24.4604 12.011 23.9472C16.4897 22.9209 21.5791 22.9209 26.2613 22.2367C36.033 20.6972 46.0083 19.4998 55.9835 18.4735C65.5516 17.6183 74.9161 15.7367 84.4842 14.8814C94.4594 14.0262 104.435 13.1709 114.41 12.4867C134.564 11.1183 154.718 10.0919 174.872 8.72353C194.823 7.35511 214.773 6.32879 234.52 6.32879C245.717 6.32879 256.913 6.84195 267.906 8.21037C272.792 8.89458 277.882 9.74984 282.564 11.1183C287.043 12.3156 292.132 13.8551 295.186 16.9341C294.779 16.5919 295.186 14.1972 295.186 13.6841C295.186 12.9998 295.593 10.9472 295.186 10.4341C292.539 7.86826 288.468 6.49984 284.6 5.30247C280.325 3.93405 275.846 3.07879 271.367 2.39458C261.596 0.855106 251.62 0.170895 241.849 -0.000157155C221.898 -0.342262 201.948 0.513001 182.201 1.71037C162.047 2.90774 141.893 4.27616 121.739 5.47353C102.195 6.84195 82.4484 8.38142 63.1087 11.2893C52.1155 12.8288 41.1224 13.6841 30.1293 15.2235C24.8363 15.9077 19.5433 16.4209 14.0468 17.1051C11.6039 17.4472 9.56809 18.3025 7.12517 18.4735C4.68226 18.6446 2.44292 19.6709 0 19.6709C0.203576 19.6709 0 25.9998 0.203576 25.9998Z" fill="#070C29"/>
+                                <path d="M13.8433 19.1583C15.339 19.1583 16.8346 18.8162 18.3303 18.4741C20.467 18.132 22.3901 18.132 24.5268 17.6188C28.8002 16.7635 33.2873 16.9346 37.7744 16.4214C46.5348 15.3951 55.509 14.5399 64.2695 13.8556C73.03 13.1714 81.7905 11.9741 90.551 11.4609C99.5251 10.9477 108.499 10.2635 117.26 9.92143C135.422 8.89512 153.797 8.38196 171.959 7.35564C190.121 6.50038 208.497 5.64512 226.873 5.64512C237.129 5.64512 247.171 5.98722 257.428 6.84248C262.128 7.35564 266.829 7.8688 271.53 8.72406C275.803 9.57933 280.504 10.4346 283.923 12.8293C283.709 12.6583 283.923 10.6056 283.923 10.4346C283.923 10.0925 284.35 8.21091 283.923 8.03985C281.145 5.98722 277.085 5.13196 273.453 4.2767C269.393 3.42143 265.12 2.73722 260.846 2.22406C251.872 1.19775 242.898 0.855643 233.71 0.68459C215.548 0.513537 197.386 1.19775 179.438 2.05301C161.276 2.90827 142.9 3.76354 124.738 4.6188C106.79 5.47406 88.8416 6.50038 70.8933 8.55301C61.0644 9.57933 51.0219 10.0925 41.1931 11.2899C36.2787 11.803 31.1506 12.1451 26.2361 12.6583C24.0994 12.8293 22.1764 13.3425 20.0397 13.5135C17.903 13.6846 15.98 14.3688 13.8433 14.1977V19.1583Z" fill="#070C29"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_365_737">
+                                    <rect width="296" height="26" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>                                        
+                    </span> 
+                    and 
+                    <span class="custom-underline">recruitment
+                        <svg width="296" height="26" viewBox="0 0 296 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_365_737)">
+                                <path d="M0.203576 25.9998C2.23934 25.9998 4.07153 25.1446 6.10729 24.9735C8.14305 24.8025 9.97524 24.4604 12.011 23.9472C16.4897 22.9209 21.5791 22.9209 26.2613 22.2367C36.033 20.6972 46.0083 19.4998 55.9835 18.4735C65.5516 17.6183 74.9161 15.7367 84.4842 14.8814C94.4594 14.0262 104.435 13.1709 114.41 12.4867C134.564 11.1183 154.718 10.0919 174.872 8.72353C194.823 7.35511 214.773 6.32879 234.52 6.32879C245.717 6.32879 256.913 6.84195 267.906 8.21037C272.792 8.89458 277.882 9.74984 282.564 11.1183C287.043 12.3156 292.132 13.8551 295.186 16.9341C294.779 16.5919 295.186 14.1972 295.186 13.6841C295.186 12.9998 295.593 10.9472 295.186 10.4341C292.539 7.86826 288.468 6.49984 284.6 5.30247C280.325 3.93405 275.846 3.07879 271.367 2.39458C261.596 0.855106 251.62 0.170895 241.849 -0.000157155C221.898 -0.342262 201.948 0.513001 182.201 1.71037C162.047 2.90774 141.893 4.27616 121.739 5.47353C102.195 6.84195 82.4484 8.38142 63.1087 11.2893C52.1155 12.8288 41.1224 13.6841 30.1293 15.2235C24.8363 15.9077 19.5433 16.4209 14.0468 17.1051C11.6039 17.4472 9.56809 18.3025 7.12517 18.4735C4.68226 18.6446 2.44292 19.6709 0 19.6709C0.203576 19.6709 0 25.9998 0.203576 25.9998Z" fill="#070C29"/>
+                                <path d="M13.8433 19.1583C15.339 19.1583 16.8346 18.8162 18.3303 18.4741C20.467 18.132 22.3901 18.132 24.5268 17.6188C28.8002 16.7635 33.2873 16.9346 37.7744 16.4214C46.5348 15.3951 55.509 14.5399 64.2695 13.8556C73.03 13.1714 81.7905 11.9741 90.551 11.4609C99.5251 10.9477 108.499 10.2635 117.26 9.92143C135.422 8.89512 153.797 8.38196 171.959 7.35564C190.121 6.50038 208.497 5.64512 226.873 5.64512C237.129 5.64512 247.171 5.98722 257.428 6.84248C262.128 7.35564 266.829 7.8688 271.53 8.72406C275.803 9.57933 280.504 10.4346 283.923 12.8293C283.709 12.6583 283.923 10.6056 283.923 10.4346C283.923 10.0925 284.35 8.21091 283.923 8.03985C281.145 5.98722 277.085 5.13196 273.453 4.2767C269.393 3.42143 265.12 2.73722 260.846 2.22406C251.872 1.19775 242.898 0.855643 233.71 0.68459C215.548 0.513537 197.386 1.19775 179.438 2.05301C161.276 2.90827 142.9 3.76354 124.738 4.6188C106.79 5.47406 88.8416 6.50038 70.8933 8.55301C61.0644 9.57933 51.0219 10.0925 41.1931 11.2899C36.2787 11.803 31.1506 12.1451 26.2361 12.6583C24.0994 12.8293 22.1764 13.3425 20.0397 13.5135C17.903 13.6846 15.98 14.3688 13.8433 14.1977V19.1583Z" fill="#070C29"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_365_737">
+                                    <rect width="296" height="26" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                    tool dedicated to IT.
+                </h1>
+            </div>
+            <span class="helping-line" data-i18n="home-header-helping-line">Find candidates and prospects easily and quickly with our application that replaces all your current tools.</span>
+            <div class="quick-search-container">
+                <form onsubmit="searchForm(event);">
+                    <div class="quick-search-inputs">
+                        <div class="for-border">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="#070C29"/>
+                            </svg>                                
+                            <input type="text" name="keywords" placeholder="Keywords: JAVA, React, IT Director..." data-i18n="[placeholder]home-header-keywords-placeholder" />
+                        </div>
+                        <div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C11.7667 22 11.5667 21.9333 11.4 21.8C11.2333 21.6667 11.1083 21.4917 11.025 21.275C10.7083 20.3417 10.3083 19.4667 9.825 18.65C9.35833 17.8333 8.7 16.875 7.85 15.775C7 14.675 6.30833 13.625 5.775 12.625C5.25833 11.625 5 10.4167 5 9C5 7.05 5.675 5.4 7.025 4.05C8.39167 2.68333 10.05 2 12 2C13.95 2 15.6 2.68333 16.95 4.05C18.3167 5.4 19 7.05 19 9C19 10.5167 18.7083 11.7833 18.125 12.8C17.5583 13.8 16.9 14.7917 16.15 15.775C15.25 16.975 14.5667 17.975 14.1 18.775C13.65 19.5583 13.275 20.3917 12.975 21.275C12.8917 21.5083 12.7583 21.6917 12.575 21.825C12.4083 21.9417 12.2167 22 12 22ZM12 18.425C12.2833 17.8583 12.6 17.3 12.95 16.75C13.3167 16.2 13.85 15.4667 14.55 14.55C15.2667 13.6167 15.85 12.7583 16.3 11.975C16.7667 11.175 17 10.1833 17 9C17 7.61667 16.5083 6.44167 15.525 5.475C14.5583 4.49167 13.3833 4 12 4C10.6167 4 9.43333 4.49167 8.45 5.475C7.48333 6.44167 7 7.61667 7 9C7 10.1833 7.225 11.175 7.675 11.975C8.14167 12.7583 8.73333 13.6167 9.45 14.55C10.15 15.4667 10.675 16.2 11.025 16.75C11.3917 17.3 11.7167 17.8583 12 18.425ZM12 11.5C12.7 11.5 13.2917 11.2583 13.775 10.775C14.2583 10.2917 14.5 9.7 14.5 9C14.5 8.3 14.2583 7.70833 13.775 7.225C13.2917 6.74167 12.7 6.5 12 6.5C11.3 6.5 10.7083 6.74167 10.225 7.225C9.74167 7.70833 9.5 8.3 9.5 9C9.5 9.7 9.74167 10.2917 10.225 10.775C10.7083 11.2583 11.3 11.5 12 11.5Z" fill="#070C29"/>
+                            </svg>                                
+                            <input type="text" name="location" placeholder="Location" data-i18n="[placeholder]home-header-location-placeholder" id="location-address" />
+                        </div>
+                    </div>
+                    {% if request.user.is_authenticated == False %}
+                    <button class="quick-search-btn mt-4" type="button" onclick="window.location.href = '/signup'" data-i18n="home-header-start-trial">Start 14-day trial</button>
+                    {% elif current_plan != None %}
+                    <button class="quick-search-btn mt-4" type="submit" data-i18n="home-header-quick-search">Quick Search</button>
+                    {% elif parent.has_used_trial == True %}
+                    <button class="quick-search-btn mt-4" type="submit" data-i18n="home-header-quick-search">Quick Search</button>
+                    {% else %}
+                    <button class="quick-search-btn mt-4" type="submit" data-i18n="home-header-start-trial">Start 14-day trial</button>
+                    <!-- <button class="quick-search-btn mt-4" type="submit">{% if current_plan != None %}Quick Search{% elif parent.has_used_trial == True %}Quick Search{% else %}Start 14-day trial{% endif %}</button> -->
+                    {% endif %}
+                    <img class="arrow" src="{% static 'web/images/arrow.svg'%}" alt="">
+                </form>
+            </div>
+        </div>
+        <div class="header-image-section">
+            <!-- <img id="home-top-image-1" src="{% static 'web/images/homepage-top-image.svg' %}" alt="header-image" /> -->
+            <img id="home-top-image-2" src="{% static 'web/images/homepage-top-image-2.svg' %}" alt="header-image" />
+        </div>
+    </header>
+
+    <section class="tools-section" id="Services">
+        <div class="tools-section-header">
+            <h2 data-i18n="home-all-tools-section-header">All Tools in One Place</h2>
+            <span data-i18n="home-all-tools-section-header-paragraph" class="helping-line">Flunter replaces all recruitment and prospecting tools for all types of companies operating in the digital field</span>
+        </div>
+        <div class="tools-container">
+            <div class="tool-card">
+                <div class="tool-details">
+                    <h3 data-i18n="home-all-tools-section-exceptional-roi-header" class="tool-heading">Exceptional ROI</h3>
+                    <span data-i18n="home-all-tools-section-exceptional-roi-paragraph">More than 87% of our clients recoup at least 8 times - and up to more than 30 times for some - the cost of a Platinum license over a year. More than 83% of our clients have reported double-digit growth, and 100% of these clients consider Flunter an essential tool to support their growth.</span>
+                </div>
+                <div class="tool-image">
+                    <img src="{% static 'web/images/tool-img-new-1.svg' %}" alt="tool-image" />
+                </div>
+            </div>
+            <div class="banner">
+                <div class="clients-section-header">
+                    <h2>300+ clients</h2>
+                    <span class="helping-line" data-i18n="home-clients-use-for-growth">More than 300 clients use Flunter to accelerate their growth!</span>
+                </div>
+                <div class="logo-container">
+                    <img loading="lazy" src="https://www.seyos.fr/wp-content/uploads/2024/05/29/logo.svg" alt="seyos" />
+                    <img loading="lazy" src="https://media.glassdoor.com/sqll/7590803/extia-ing%C3%A9nierie-squareLogo-1658741846303.png" alt="extia" />
+                    <img loading="lazy" src="https://avatars.githubusercontent.com/u/3440218?s=280&v=4" alt="softwire" />
+                    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/fr/thumb/2/21/Agap2_logo.svg/640px-Agap2_logo.svg.png" alt="agap2" />
+                    <img loading="lazy" src="https://welovesalt.com/wp-content/themes/welovesalt/assets/images/global-logo.svg" alt="salt" />
+                    <img loading="lazy" src="https://www.frenchtechbordeaux.com/wp-content/uploads/2023/06/logo-apside-bleu-16.png" alt="apside" />
+                    <img loading="lazy" src="https://soff.se/app/uploads/2017/01/KnowIt-webben-400x300.png" alt="knowit" />
+                    <img loading="lazy" src="https://www.visiativ.com/wp-content/uploads/visiativ-logo-black.svg" alt="visiativ" />
+                    <img loading="lazy" src="https://uploads-ssl.webflow.com/6121dceb4f585443ef0d8564/646e113ff475db0bdbe8a6d3_Untitled%20design%20(28).png" alt="singular" />
+                </div>
+                <!-- <div class="zigzag-layout">
+                    <div class="logo-row-container">
+                        <div class="logo-row">
+                            <img loading="lazy" src="https://www.seyos.fr/wp-content/uploads/2024/05/29/logo.svg" alt="Logo 1">
+                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/3440218?s=280&v=4" alt="Logo 2">
+                            <img loading="lazy" src="https://media.glassdoor.com/sqll/7590803/extia-ing%C3%A9nierie-squareLogo-1658741846303.png" alt="Logo 3">
+                            <img loading="lazy" src="https://welovesalt.com/wp-content/themes/welovesalt/assets/images/global-logo.svg" alt="Logo 4">
+                            <img loading="lazy" src="https://www.growthcapital.co.uk/wp-content/uploads/2022/03/InfinityWorks-logo_FINAL_Secondary-Orange-RGB41548065398.png" alt="Logo 5">
+                            <img loading="lazy" src="https://www.techbarcelona.com/wp-content/uploads/image-366.png" alt="logo 6" />
+                            <img loading="lazy" src="https://i0.wp.com/jobfairvub.be/wp-content/uploads/2017/02/easi.png?resize=500%2C500&ssl=1" alt="logo 7" />
+                            <img loading="lazy" src="https://www.ratbacher.de/typo3conf/ext/provider_tpl/Resources/Public/Images/Ratbacher_Logo.svg" alt="logo 8" />
+                        </div>
+                    </div>
+                    <div class="logo-row-container offset-row-container">
+                        <div class="logo-row offset-row">
+                            <img loading="lazy" src="https://soff.se/app/uploads/2017/01/KnowIt-webben-400x300.png" alt="logo 9" />
+                            <img loading="lazy" src="https://mnd-assets.mynewsdesk.com/image/upload/c_limit,dpr_auto,f_auto,q_auto:good,w_600/mwtzujpnfzaugfyuxxa0" alt="logo 10" />
+                            <img loading="lazy" src="https://www.arobase.ch/wp-content/uploads/2022/10/arobase.png" alt="logo 11" />
+                            <img loading="lazy" src="https://www.netapp.com/media/1-lutech-logo-red_tcm19-99660.jpg?v=272460" alt="logo 12" />
+                            <img loading="lazy" src="https://www.solutec.fr/fr/wp-content/uploads/sites/2/2018/04/logo_SOLUTEC.svg" alt="logo 13" />
+                            <img loading="lazy" src="https://www.vesterling.com/wp-content/uploads/2021/08/Logo.svg" alt="logo 14" />
+                            <img loading="lazy" src="https://www.nunsys.com/wp-content/uploads/2024/07/Nunsys_Group_logo.png" alt="logo 15" />
+                            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/fr/thumb/2/21/Agap2_logo.svg/640px-Agap2_logo.svg.png" alt="logo 15" />
+                        </div>
+                    </div>
+                    <div class="logo-row-container">
+                        <div class="logo-row">
+                            <img loading="lazy" src="https://res.cloudinary.com/studentbe/image/upload/c_fill,f_auto,fl_progressive,q_auto:best,w_800/job_company_logos_1579177514_800" alt="logo 16" />
+                            <img loading="lazy" src="https://www.visiativ.com/wp-content/uploads/visiativ-logo-black.svg" alt="logo 17" />
+                            <img loading="lazy" src="https://www.frenchtechbordeaux.com/wp-content/uploads/2023/06/logo-apside-bleu-16.png" alt="logo 18" />
+                            <img loading="lazy" src="https://smartprofile.io/wp-content/uploads/2019/11/Inspark.png" alt="logo 19" />
+                            <img loading="lazy" src="https://uploads-ssl.webflow.com/6121dceb4f585443ef0d8564/646e113ff475db0bdbe8a6d3_Untitled%20design%20(28).png" alt="logo 20" />
+                            <img loading="lazy" src="https://www.exprivia.it/wp-content/themes/exprivia/assets/images/logo-exprivia.svg" alt="logo 21" />
+                            <img loading="lazy" src="https://quadira.com/files/2023/11/Footer_logo_CONCLUSION.png" alt="logo 22" />
+                            <img loading="lazy" src="https://static.wixstatic.com/media/c0ec68_07eaa2df3fe94c399aedb0b7973e42c4~mv2.jpg/v1/fill/w_179,h_27,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c0ec68_07eaa2df3fe94c399aedb0b7973e42c4~mv2.jpg" alt="logo 23" />
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="tool-card">
+                <div class="tool-details">
+                    <h3 data-i18n="home-all-tools-section-data-quality-header" class="tool-heading">Data Quality</h3>
+                    <span data-i18n="home-all-tools-section-data-quality-paragraph">All the data you find on Flunter has been pre-researched by our IT specialist teams. We also regularly refine and process the data to provide only up-to-date and perfectly targeted data.</span>
+                </div>
+                <div class="tool-image">
+                    <img src="{% static 'web/images/tool-new-2.svg' %}" alt="tool-image" />
+                </div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-details">
+                    <h3 data-i18n="home-all-tools-section-simple-use-header" class="tool-heading">Very simple to use</h3>
+                    <span data-i18n="home-all-tools-section-simple-use-paragraph">Flunter was designed so that any recruiter or salesperson can use the tool in just a few minutes. Flunter simply and effectively replaces all your current recruitment and prospecting tools. Your teams will love it!</span>
+                </div>
+                <div class="tool-image">
+                    <img src="{% static 'web/images/tool-new-2.svg' %}" alt="tool-image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-info-section" id="Aboutus">
+        <div class="search-info-section-header">
+            <h2 data-i18n="home-find-info-section-header">Find any information on the web about millions of candidates and prospects in seconds.</h2>
+            <span data-i18n="home-find-info-section-header-paragraph" class="helping-line">AI search is a platform gives companies a fresh and functional data for converting  accelerating revenue growth.</span>
+        </div>
+        <div class="search-features-wrapper">
+            <div class="search-features-container">
+                <div class="search-features">
+                    <div>
+                        <span>382+</span>
+                        <svg width="177" height="20" viewBox="0 0 177 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_365_813)">
+                                <path d="M0.121733 20.9999C1.33906 20.9999 2.43466 20.342 3.65199 20.2104C4.86933 20.0788 5.96492 19.8157 7.18226 19.4209C9.86038 18.6315 12.9037 18.6315 15.7036 18.1051C21.5468 16.9209 27.5117 15.9999 33.4766 15.2104C39.1981 14.5525 44.7978 13.1051 50.5193 12.4472C56.4842 11.7894 62.4491 11.1315 68.414 10.6051C80.4656 9.55251 92.5172 8.76304 104.569 7.71041C116.499 6.65777 128.428 5.8683 140.237 5.8683C146.932 5.8683 153.627 6.26304 160.201 7.31567C163.122 7.84198 166.166 8.49988 168.966 9.55251C171.644 10.4736 174.687 11.6578 176.513 14.0262C176.27 13.763 176.513 11.9209 176.513 11.5262C176.513 10.9999 176.757 9.42093 176.513 9.0262C174.931 7.05251 172.496 5.99988 170.183 5.07883C167.627 4.02619 164.948 3.3683 162.27 2.84198C156.427 1.65777 150.462 1.13146 144.619 0.999879C132.689 0.736721 120.759 1.39462 108.951 2.31567C96.8996 3.23672 84.848 4.28935 72.7964 5.21041C61.11 6.26304 49.3019 7.44725 37.7373 9.68409C31.1637 10.8683 24.5901 11.5262 18.0165 12.7104C14.8514 13.2367 11.6864 13.6315 8.39959 14.1578C6.93879 14.4209 5.72146 15.0788 4.26066 15.2104C2.79986 15.342 1.4608 16.1315 0 16.1315C0.121733 16.1315 0 20.9999 0.121733 20.9999Z" fill="#070C29"/>
+                                <path d="M8 16C8.89652 16 9.79304 15.7226 10.6896 15.4452C11.9703 15.1679 13.123 15.1679 14.4037 14.7518C16.9652 14.0583 19.6548 14.197 22.3443 13.7809C27.5954 12.9488 32.9745 12.2553 38.2256 11.7006C43.4766 11.1458 48.7277 10.175 53.9787 9.75891C59.3579 9.34284 64.737 8.78808 69.9881 8.5107C80.8744 7.67855 91.8888 7.26248 102.775 6.43034C113.661 5.73688 124.676 5.04343 135.69 5.04343C141.838 5.04343 147.857 5.32081 154.005 6.01426C156.823 6.43034 159.64 6.84641 162.458 7.53986C165.019 8.23332 167.837 8.92677 169.886 10.8684C169.758 10.7298 169.886 9.06546 169.886 8.92677C169.886 8.64939 170.142 7.12379 169.886 6.9851C168.221 5.32081 165.788 4.62736 163.611 3.9339C161.177 3.24045 158.616 2.68568 156.054 2.26961C150.675 1.43747 145.296 1.16009 139.789 1.02139C128.902 0.882704 118.016 1.43747 107.258 2.13092C96.3714 2.82438 85.357 3.51783 74.4707 4.21128C63.7124 4.90474 52.9542 5.73688 42.1959 7.40117C36.3045 8.23332 30.285 8.64939 24.3935 9.62022C21.4478 10.0363 18.374 10.3137 15.4283 10.7298C14.1476 10.8684 12.9949 11.2845 11.7142 11.4232C10.4334 11.5619 9.28075 12.1167 8 11.978V16Z" fill="#070C29"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_365_813">
+                                    <rect width="177" height="20" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span data-i18n="home-find-info-results-per-search-sentence">Results per search on average</span>
+                </div>
+                <div class="search-features">
+                    <div>
+                        <span>96%+</span>
+                        <svg width="177" height="20" viewBox="0 0 177 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_365_813)">
+                                <path d="M0.121733 20.9999C1.33906 20.9999 2.43466 20.342 3.65199 20.2104C4.86933 20.0788 5.96492 19.8157 7.18226 19.4209C9.86038 18.6315 12.9037 18.6315 15.7036 18.1051C21.5468 16.9209 27.5117 15.9999 33.4766 15.2104C39.1981 14.5525 44.7978 13.1051 50.5193 12.4472C56.4842 11.7894 62.4491 11.1315 68.414 10.6051C80.4656 9.55251 92.5172 8.76304 104.569 7.71041C116.499 6.65777 128.428 5.8683 140.237 5.8683C146.932 5.8683 153.627 6.26304 160.201 7.31567C163.122 7.84198 166.166 8.49988 168.966 9.55251C171.644 10.4736 174.687 11.6578 176.513 14.0262C176.27 13.763 176.513 11.9209 176.513 11.5262C176.513 10.9999 176.757 9.42093 176.513 9.0262C174.931 7.05251 172.496 5.99988 170.183 5.07883C167.627 4.02619 164.948 3.3683 162.27 2.84198C156.427 1.65777 150.462 1.13146 144.619 0.999879C132.689 0.736721 120.759 1.39462 108.951 2.31567C96.8996 3.23672 84.848 4.28935 72.7964 5.21041C61.11 6.26304 49.3019 7.44725 37.7373 9.68409C31.1637 10.8683 24.5901 11.5262 18.0165 12.7104C14.8514 13.2367 11.6864 13.6315 8.39959 14.1578C6.93879 14.4209 5.72146 15.0788 4.26066 15.2104C2.79986 15.342 1.4608 16.1315 0 16.1315C0.121733 16.1315 0 20.9999 0.121733 20.9999Z" fill="#070C29"/>
+                                <path d="M8 16C8.89652 16 9.79304 15.7226 10.6896 15.4452C11.9703 15.1679 13.123 15.1679 14.4037 14.7518C16.9652 14.0583 19.6548 14.197 22.3443 13.7809C27.5954 12.9488 32.9745 12.2553 38.2256 11.7006C43.4766 11.1458 48.7277 10.175 53.9787 9.75891C59.3579 9.34284 64.737 8.78808 69.9881 8.5107C80.8744 7.67855 91.8888 7.26248 102.775 6.43034C113.661 5.73688 124.676 5.04343 135.69 5.04343C141.838 5.04343 147.857 5.32081 154.005 6.01426C156.823 6.43034 159.64 6.84641 162.458 7.53986C165.019 8.23332 167.837 8.92677 169.886 10.8684C169.758 10.7298 169.886 9.06546 169.886 8.92677C169.886 8.64939 170.142 7.12379 169.886 6.9851C168.221 5.32081 165.788 4.62736 163.611 3.9339C161.177 3.24045 158.616 2.68568 156.054 2.26961C150.675 1.43747 145.296 1.16009 139.789 1.02139C128.902 0.882704 118.016 1.43747 107.258 2.13092C96.3714 2.82438 85.357 3.51783 74.4707 4.21128C63.7124 4.90474 52.9542 5.73688 42.1959 7.40117C36.3045 8.23332 30.285 8.64939 24.3935 9.62022C21.4478 10.0363 18.374 10.3137 15.4283 10.7298C14.1476 10.8684 12.9949 11.2845 11.7142 11.4232C10.4334 11.5619 9.28075 12.1167 8 11.978V16Z" fill="#070C29"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_365_813">
+                                    <rect width="177" height="20" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span data-i18n="home-find-info-results-contain-email-sentence">Results contain an email address</span>
+                </div>
+                <div class="search-features">
+                    <div>
+                        <span>23%+</span>
+                        <svg width="177" height="20" viewBox="0 0 177 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_365_813)">
+                                <path d="M0.121733 20.9999C1.33906 20.9999 2.43466 20.342 3.65199 20.2104C4.86933 20.0788 5.96492 19.8157 7.18226 19.4209C9.86038 18.6315 12.9037 18.6315 15.7036 18.1051C21.5468 16.9209 27.5117 15.9999 33.4766 15.2104C39.1981 14.5525 44.7978 13.1051 50.5193 12.4472C56.4842 11.7894 62.4491 11.1315 68.414 10.6051C80.4656 9.55251 92.5172 8.76304 104.569 7.71041C116.499 6.65777 128.428 5.8683 140.237 5.8683C146.932 5.8683 153.627 6.26304 160.201 7.31567C163.122 7.84198 166.166 8.49988 168.966 9.55251C171.644 10.4736 174.687 11.6578 176.513 14.0262C176.27 13.763 176.513 11.9209 176.513 11.5262C176.513 10.9999 176.757 9.42093 176.513 9.0262C174.931 7.05251 172.496 5.99988 170.183 5.07883C167.627 4.02619 164.948 3.3683 162.27 2.84198C156.427 1.65777 150.462 1.13146 144.619 0.999879C132.689 0.736721 120.759 1.39462 108.951 2.31567C96.8996 3.23672 84.848 4.28935 72.7964 5.21041C61.11 6.26304 49.3019 7.44725 37.7373 9.68409C31.1637 10.8683 24.5901 11.5262 18.0165 12.7104C14.8514 13.2367 11.6864 13.6315 8.39959 14.1578C6.93879 14.4209 5.72146 15.0788 4.26066 15.2104C2.79986 15.342 1.4608 16.1315 0 16.1315C0.121733 16.1315 0 20.9999 0.121733 20.9999Z" fill="#070C29"/>
+                                <path d="M8 16C8.89652 16 9.79304 15.7226 10.6896 15.4452C11.9703 15.1679 13.123 15.1679 14.4037 14.7518C16.9652 14.0583 19.6548 14.197 22.3443 13.7809C27.5954 12.9488 32.9745 12.2553 38.2256 11.7006C43.4766 11.1458 48.7277 10.175 53.9787 9.75891C59.3579 9.34284 64.737 8.78808 69.9881 8.5107C80.8744 7.67855 91.8888 7.26248 102.775 6.43034C113.661 5.73688 124.676 5.04343 135.69 5.04343C141.838 5.04343 147.857 5.32081 154.005 6.01426C156.823 6.43034 159.64 6.84641 162.458 7.53986C165.019 8.23332 167.837 8.92677 169.886 10.8684C169.758 10.7298 169.886 9.06546 169.886 8.92677C169.886 8.64939 170.142 7.12379 169.886 6.9851C168.221 5.32081 165.788 4.62736 163.611 3.9339C161.177 3.24045 158.616 2.68568 156.054 2.26961C150.675 1.43747 145.296 1.16009 139.789 1.02139C128.902 0.882704 118.016 1.43747 107.258 2.13092C96.3714 2.82438 85.357 3.51783 74.4707 4.21128C63.7124 4.90474 52.9542 5.73688 42.1959 7.40117C36.3045 8.23332 30.285 8.64939 24.3935 9.62022C21.4478 10.0363 18.374 10.3137 15.4283 10.7298C14.1476 10.8684 12.9949 11.2845 11.7142 11.4232C10.4334 11.5619 9.28075 12.1167 8 11.978V16Z" fill="#070C29"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_365_813">
+                                    <rect width="177" height="20" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span data-i18n="home-find-info-results-contain-phone-sentence">Results contain a valid phone number.</span>
+                </div>
+                <div class="search-features">
+                    <div>
+                        <span data-i18n="home-find-info-results-searches-average-header">32 searches</span>
+                        <svg width="177" height="20" viewBox="0 0 177 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_365_813)">
+                                <path d="M0.121733 20.9999C1.33906 20.9999 2.43466 20.342 3.65199 20.2104C4.86933 20.0788 5.96492 19.8157 7.18226 19.4209C9.86038 18.6315 12.9037 18.6315 15.7036 18.1051C21.5468 16.9209 27.5117 15.9999 33.4766 15.2104C39.1981 14.5525 44.7978 13.1051 50.5193 12.4472C56.4842 11.7894 62.4491 11.1315 68.414 10.6051C80.4656 9.55251 92.5172 8.76304 104.569 7.71041C116.499 6.65777 128.428 5.8683 140.237 5.8683C146.932 5.8683 153.627 6.26304 160.201 7.31567C163.122 7.84198 166.166 8.49988 168.966 9.55251C171.644 10.4736 174.687 11.6578 176.513 14.0262C176.27 13.763 176.513 11.9209 176.513 11.5262C176.513 10.9999 176.757 9.42093 176.513 9.0262C174.931 7.05251 172.496 5.99988 170.183 5.07883C167.627 4.02619 164.948 3.3683 162.27 2.84198C156.427 1.65777 150.462 1.13146 144.619 0.999879C132.689 0.736721 120.759 1.39462 108.951 2.31567C96.8996 3.23672 84.848 4.28935 72.7964 5.21041C61.11 6.26304 49.3019 7.44725 37.7373 9.68409C31.1637 10.8683 24.5901 11.5262 18.0165 12.7104C14.8514 13.2367 11.6864 13.6315 8.39959 14.1578C6.93879 14.4209 5.72146 15.0788 4.26066 15.2104C2.79986 15.342 1.4608 16.1315 0 16.1315C0.121733 16.1315 0 20.9999 0.121733 20.9999Z" fill="#070C29"/>
+                                <path d="M8 16C8.89652 16 9.79304 15.7226 10.6896 15.4452C11.9703 15.1679 13.123 15.1679 14.4037 14.7518C16.9652 14.0583 19.6548 14.197 22.3443 13.7809C27.5954 12.9488 32.9745 12.2553 38.2256 11.7006C43.4766 11.1458 48.7277 10.175 53.9787 9.75891C59.3579 9.34284 64.737 8.78808 69.9881 8.5107C80.8744 7.67855 91.8888 7.26248 102.775 6.43034C113.661 5.73688 124.676 5.04343 135.69 5.04343C141.838 5.04343 147.857 5.32081 154.005 6.01426C156.823 6.43034 159.64 6.84641 162.458 7.53986C165.019 8.23332 167.837 8.92677 169.886 10.8684C169.758 10.7298 169.886 9.06546 169.886 8.92677C169.886 8.64939 170.142 7.12379 169.886 6.9851C168.221 5.32081 165.788 4.62736 163.611 3.9339C161.177 3.24045 158.616 2.68568 156.054 2.26961C150.675 1.43747 145.296 1.16009 139.789 1.02139C128.902 0.882704 118.016 1.43747 107.258 2.13092C96.3714 2.82438 85.357 3.51783 74.4707 4.21128C63.7124 4.90474 52.9542 5.73688 42.1959 7.40117C36.3045 8.23332 30.285 8.64939 24.3935 9.62022C21.4478 10.0363 18.374 10.3137 15.4283 10.7298C14.1476 10.8684 12.9949 11.2845 11.7142 11.4232C10.4334 11.5619 9.28075 12.1167 8 11.978V16Z" fill="#070C29"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_365_813">
+                                    <rect width="177" height="20" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span data-i18n="home-find-info-results-searches-average-sentence">searches on average are enough to make a Platinum subscription profitable</span>
+                </div>
+            </div>
+        </div>
+        {% if request.user.is_authenticated == False %}
+        <a href="/signup" class="text-decoration-none"><button class="search-demo-btn" data-i18n="home-find-info-try-14-days">Try for 14 days</button></a>
+        {% else %}
+        <a href="#Contactus" class="text-decoration-none">
+            {% if current_plan != None %}
+            <button class="search-demo-btn" data-i18n="home-find-info-try-14-days">Request a Demo</button>
+            {% else %}
+            <button class="search-demo-btn" data-i18n="home-find-info-try-14-days">Try for 14 days</button>
+            {% endif %}
+        </a>
+        {% endif %}
+    </section>
+
+    <section class="testimonial-section">
+        <div class="testimonial-section-header">
+            <h2 data-i18n="home-testimonial-header">Testimonials</h2>
+        </div>
+        <div class="testimonial-section-container">
+            <div class="row row-cols-md-3 row-cols-1 g-4">
+                <div class="col">
+                    <div class="card h-100 testimonial-section-card">
+                        <div class="client-info-container">
+                            <div class="image-container">
+                                <img  src="{% static '/web/images/test-img.png'%}" alt="">
+                            </div>
+                            <div class="client-demographics">
+                                <span class="name">Alex Bill</span>
+                                <span class="headline">Alpa</span>
+                            </div>
+                        </div>
+                        <div class="review-stars-container">
+                            <div class="">
+                                <div class="review-container">
+                                    <p>“Most of the dealing i get from Flunter are highly accurate so I don’t need anything else. Most of the dealing i get from Flunter are highly accurate so I don't need anything else.”</p>
+                                </div>
+                                <div class="rating-stars">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 testimonial-section-card">
+                        <div class="client-info-container">
+                            <div class="image-container">
+                                <img  src="{% static '/web/images/test-img.png'%}" alt="">
+                            </div>
+                            <div class="client-demographics">
+                                <span class="name">Alex Bill</span>
+                                <span class="headline">Alpa</span>
+                            </div>
+                        </div>
+                        <div class="review-stars-container">
+                            <div class="">
+                                <div class="review-container">
+                                    <p>“Most of the dealing i get from Flunter are highly accurate so I don’t need anything else. Most of the dealing i get from Flunter are highly accurate so I don't need anything else.”</p>
+                                </div>
+                                <div class="rating-stars">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 testimonial-section-card">
+                        <div class="client-info-container">
+                            <div class="image-container">
+                                <img  src="{% static '/web/images/test-img.png'%}" alt="">
+                            </div>
+                            <div class="client-demographics">
+                                <span class="name">Alex Bill</span>
+                                <span class="headline">Alpa</span>
+                            </div>
+                        </div>
+                        <div class="review-stars-container">
+                            <div class="">
+                                <div class="review-container">
+                                    <p>“Most of the dealing i get from Flunter are highly accurate so I don’t need anything else. Most of the dealing i get from Flunter are highly accurate so I don't need anything else.”</p>
+                                </div>
+                                <div class="rating-stars">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.7255 31.7815C26.5926 32.5885 19.3232 27.4732 17.9309 27.4619C16.5386 27.4508 9.18741 32.4484 8.0677 31.6233C6.94798 30.7982 9.58038 22.3235 9.16087 20.9998C8.74137 19.676 1.703 14.2487 2.14389 12.9319C2.58488 11.615 11.4812 11.4927 12.6141 10.6857C13.747 9.87885 16.7484 1.52695 18.1408 1.5381C19.5329 1.54934 22.3987 9.94844 23.5184 10.7735C24.6381 11.5985 33.5314 11.8641 33.951 13.1878C34.3705 14.5116 27.2453 19.8249 26.8044 21.1418C26.3635 22.4586 28.8584 30.9745 27.7255 31.7815Z" fill="url(#paint0_linear_2438_220)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_2438_220" x1="2.12406" y1="16.703" x2="33.9688" y2="16.703" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FCD635"/>
+                                        <stop offset="1" stop-color="#F7A928"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <section class="subscription-info-section" id="Pricing">
+        <div class="subscription-info-section-header">
+            <h2 data-i18n="home-subscription-header">Scale your business with our 14-day risk-free subscriptions</h2>
+            <span class="helping-line" data-i18n="home-subscription-header-helping-line-1">Flunter has saved us a lot of time and money. It has become an essential tool for our teams.</span>
+            <span class="helping-line-second">Denis, Head of Talent Acquisition – ELCA (ESN)</span>
+        </div>
+        <div class="subscription-filters">
+            <div class="">
+                <div class="dropdown subscription-currency-dropdown">
+                    <div class="subscription-currency-dropdown-btn" id="subscription-menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="d-flex align-items-center justify-content-between h-100">
+                            <div class="currency-details">
+                                <span id="currency-icon">€</span>
+                                <span id="currency-name">Euro</span>
+                            </div>
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.0002 1.1697C10.8128 0.983448 10.5594 0.878906 10.2952 0.878906C10.031 0.878906 9.77756 0.983448 9.59019 1.1697L6.00019 4.7097L2.46019 1.1697C2.27283 0.983448 2.01938 0.878906 1.75519 0.878906C1.49101 0.878906 1.23756 0.983448 1.05019 1.1697C0.956464 1.26266 0.88207 1.37326 0.831301 1.49512C0.780533 1.61698 0.754395 1.74769 0.754395 1.8797C0.754395 2.01171 0.780533 2.14242 0.831301 2.26428C0.88207 2.38613 0.956464 2.49674 1.05019 2.5897L5.29019 6.8297C5.38316 6.92343 5.49376 6.99782 5.61562 7.04859C5.73747 7.09936 5.86818 7.1255 6.00019 7.1255C6.1322 7.1255 6.26291 7.09936 6.38477 7.04859C6.50663 6.99782 6.61723 6.92343 6.71019 6.8297L11.0002 2.5897C11.0939 2.49674 11.1683 2.38613 11.2191 2.26428C11.2699 2.14242 11.296 2.01171 11.296 1.8797C11.296 1.74769 11.2699 1.61698 11.2191 1.49512C11.1683 1.37326 11.0939 1.26266 11.0002 1.1697Z" fill="#070C29"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul id="subscription-menu" class="dropdown-menu subscription-currency-menu">
+                        <div class="dropdown-item" onclick="selectCurrency('€', 'Euro')">
+                            <span>€</span>
+                            <span>Euro</span>
+                        </div>
+                        <!-- <div class="dropdown-item" onclick="selectCurrency('£', 'Sterling')">
+                            <span>£</span>
+                            <span>Sterling</span>
+                        </div>
+                        <div class="dropdown-item" onclick="selectCurrency('$', 'Dollar')">
+                            <span>$</span>
+                            <span>Dollar</span>
+                        </div> -->
+                    </ul>
+                </div>
+                <div class="subscription-duration-group">
+                    <div class="duration-radio-btn">
+                        <input type="radio" onclick="changeSubscriptionInterval('monthly');" {% if current_plan.subscription_interval == 'monthly' %}checked{% endif %} id="monthly-duration" name="subscription_duration_radio" />
+                        <label for="monthly-duration" class="duration-radio-label" data-i18n="home-subscription-monthly">Monthly</label>
+                    </div>
+                    <div class="duration-radio-btn">
+                        <input type="radio" onclick="changeSubscriptionInterval('annually');" {% if current_plan.subscription_interval == 'yearly' %}checked{% endif %} id="annually-duration" name="subscription_duration_radio" />
+                        <label for="annually-duration" class="duration-radio-label"><span data-i18n="home-subscription-annually">Annually</span> <span class="savings" data-i18n="home-subscription-save-upto">Save upto 20%</span></label>
+                    </div>
+                </div>
+            </div>
+            {% if parent.has_used_trial == False %}
+            <span data-i18n="home-subscription-choose-a-plan-sentence">Choose a plan and start your 14 days trial!</span>
+            {% endif %}
+        </div>
+        <div class="subscription-card-container">
+            <div class="row row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-1 g-4">
+                <div class="col">
+                    <div class="card h-100 subscription-card {% if current_plan.plan_id == 1 %}active{% endif %}">
+                        <div class="card-body">
+                            <div>
+                               <div class="d-flex flex-column justify-content-between">
+                                    <h3 class="subscription-type text-center">Silver</h5>
+                                    <span class="credits d-none">500 Credits/Month</span>
+                               </div>
+                                <h4 class="subscription-fee {% if current_plan.subscription_interval != 'monthly' %}hide{% endif %}" data-i18n="home-subscription-silver-monthly-price" id="silver-plan-monthly"><script>if (getCookie('lang') == 'en') document.write('€90/month'); else document.write('90€/mois');</script></h4>
+                                <h4 class="subscription-fee {% if current_plan.subscription_interval == 'monthly' %}hide{% endif %}" data-i18n="home-subscription-silver-yearly-price" id="silver-plan-yearly"><script>if (getCookie('lang') == 'en') document.write('€1080/year'); else document.write('1080€/an');</script></h4>
+                                <div class="subscription-points">
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>1 <span data-i18n="home-subscription-silver-user">user</span></span>
+                                    </div>
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>500 <span data-i18n="home-subscription-credits-per-month">Credits Per Month</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subscription-btn-container">
+                            {% if request.user.is_authenticated == False %}
+                            <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-start-trial">Start Trial</button>
+                            {% else %}
+                                {% if use_trial %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-start-trial">Start Trial</button>
+                                {% elif current_plan.is_trial == True %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-choose">Choose</button>
+                                {% else %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-choose">Choose</button>
+                                {% endif %}
+                            {% endif %}
+                            <!-- <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %}>{% if request.user.is_authenticated == False %}Start Trial{% else %}{% if use_trial %}Start Trial{% elif current_plan.is_trial == True %}Choose{% else %}Choose{% endif %}{% endif %}</button> -->
+                            {% if current_plan.is_trial == True and current_plan.plan_id == 1 %}
+                                <span style="color: red!important; position: absolute; bottom: 5px; font-size: .875rem;">Your trial ends in {{remaining_days}} day&#40;s&#41;</span>
+                            {% endif %}
+                        </div>
+                    </div>                  
+                </div>
+                <div class="col">
+                    <div class="card h-100 subscription-card {% if current_plan.plan_id == 2 %}active{% endif %}">
+                        <div class="card-body">
+                            <div>
+                                <div class="d-flex flex-column justify-content-between">
+                                    <h3 class="subscription-type text-center">Gold</h5>
+                                    <span class="credits d-none">4,000 Credits/Month</span>
+                               </div>
+                                <h4 class="subscription-fee {% if current_plan.subscription_interval != 'monthly' %}hide{% endif %}" data-i18n="home-subscription-gold-monthly-price" id="gold-plan-monthly"><script>if (getCookie('lang') == 'en') document.write('€600/month'); else document.write('600€/mois');</script></h4>
+                                <h4 class="subscription-fee {% if current_plan.subscription_interval == 'monthly' %}hide{% endif %}" data-i18n="home-subscription-gold-yearly-price" id="gold-plan-yearly"><script>if (getCookie('lang') == 'en') document.write('€7200/year'); else document.write('7200€/an');</script></h4>
+                                <div class="subscription-points">
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>5 <span data-i18n="home-subscription-users">users</span></span>
+                                    </div>
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>3 <span data-i18n="home-subscription-simultaneous-connections">simultaneous connections</span></span>
+                                    </div>
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>4000 <span data-i18n="home-subscription-credits-per-month">Credits Per Month</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subscription-btn-container">
+                            {% if request.user.is_authenticated == False %}
+                            <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-start-trial">Start Trial</button>
+                            {% else %}
+                                {% if use_trial %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-start-trial">Start Trial</button>
+                                {% elif current_plan.is_trial == True %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-choose">Choose</button>
+                                {% else %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-choose">Choose</button>
+                                {% endif %}
+                            {% endif %}
+                            <!-- <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %}>{% if request.user.is_authenticated == False %}Start Trial{% else %}{% if use_trial %}Start Trial{% elif current_plan.is_trial == True %}Choose{% else %}Choose{% endif %}{% endif %}</button> -->
+                            {% if current_plan.is_trial == True and current_plan.plan_id == 2 %}
+                                <span style="color: red!important; position: absolute; bottom: 5px; font-size: .875rem;">Your trial ends in {{remaining_days}} day&#40;s&#41;</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 subscription-card {% if current_plan.plan_id == 3 %}active{% endif %}">
+                        <div class="card-body">
+                            <div>
+                                <div class="d-flex flex-column justify-content-between">
+                                    <h3 class="subscription-type text-center">Platinum</h5>
+                                    <span class="credits d-none">12,000 Credits/Month</span>
+                                </div>
+                                <h4 class="subscription-fee {% if current_plan.subscription_interval != 'monthly' %}hide{% endif %}" data-i18n="home-subscription-platinum-monthly-price" id="platinum-plan-monthly"><script>if (getCookie('lang') == 'en') document.write('€1500/month'); else document.write('1500€/mois');</script></h4>
+                                <h4 class="subscription-fee {% if current_plan.subscription_interval == 'monthly' %}hide{% endif %}" data-i18n="home-subscription-platinum-yearly-price" id="platinum-plan-yearly"><script>if (getCookie('lang') == 'en') document.write('€18000/year'); else document.write('18000€/an');</script></h4>
+                                <div class="subscription-points">
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>15 <span data-i18n="home-subscription-users">users</span></span>
+                                    </div>
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>10 <span data-i18n="home-subscription-simultaneous-connections">simultaneous connections</span></span>
+                                    </div>
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>12,000 <span data-i18n="home-subscription-credits-per-month">Credits Per Month</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subscription-btn-container">
+                            {% if request.user.is_authenticated == False %}
+                            <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-start-trial">Start Trial</button>
+                            {% else %}
+                                {% if use_trial %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-start-trial">Start Trial</button>
+                                {% elif current_plan.is_trial == True %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-choose">Choose</button>
+                                {% else %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-choose">Choose</button>
+                                {% endif %}
+                            {% endif %}
+                            <!-- <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %}>{% if request.user.is_authenticated == False %}Start Trial{% else %}{% if use_trial %}Start Trial{% elif current_plan.is_trial == True %}Choose{% else %}Choose{% endif %}{% endif %}</button> -->
+                            {% if current_plan.is_trial == True and current_plan.plan_id == 3 %}
+                                <span style="color: red!important; position: absolute; bottom: 5px; font-size: .875rem;">Your trial ends in {{remaining_days}} day&#40;s&#41;</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 subscription-card {% if current_plan.plan_id == 4 %}active{% endif %}">
+                        <div class="card-body">
+                            <div>
+                                <div class="d-flex flex-column justify-content-between">
+                                    <h3 class="subscription-type text-center">Enterprise</h5>
+                                    <span class="credits d-none">50,000 Credits/Month</span>
+                               </div>
+                                <h4 class="subscription-fee {% if current_plan.subscription_interval != 'monthly' %}hide{% endif %}" data-i18n="home-subscription-enterprise-monthly-price" id="enterprise-plan-monthly"><script>if (getCookie('lang') == 'en') document.write('€5000/month'); else document.write('5000€/mois');</script></h4>
+                                <h4 class="subscription-fee {% if current_plan.subscription_interval == 'monthly' %}hide{% endif %}" data-i18n="home-subscription-enterprise-yearly-price" id="enterprise-plan-yearly"><script>if (getCookie('lang') == 'en') document.write('€60000/year'); else document.write('60000€/an');</script></h4>
+                                <div class="subscription-points">
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>50 <span data-i18n="home-subscription-users">users</span></span>
+                                    </div>
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>30 <span data-i18n="home-subscription-simultaneous-connections">simultaneous connections</span></span>
+                                    </div>
+                                    <div>
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15Z" fill="#070C29"/>
+                                            <path d="M20.0379 11.2121C20.404 11.5782 20.404 12.1718 20.0379 12.5379L13.7879 18.7879C13.4217 19.154 12.8282 19.154 12.4621 18.7879L9.96208 16.2879C9.59597 15.9217 9.59597 15.3282 9.96208 14.9621C10.3282 14.596 10.9218 14.596 11.2879 14.9621L13.125 16.7991L15.9185 14.0056L18.7121 11.2121C19.0782 10.846 19.6717 10.846 20.0379 11.2121Z" fill="white"/>
+                                        </svg>
+                                        <span>50,000 <span data-i18n="home-subscription-credits-per-month">Credits Per Month</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subscription-btn-container">
+                            {% if request.user.is_authenticated == False %}
+                            <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-start-trial">Start Trial</button>
+                            {% else %}
+                                {% if use_trial %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-start-trial">Start Trial</button>
+                                {% elif current_plan.is_trial == True %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-choose">Choose</button>
+                                {% else %}
+                                <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %} data-i18n="home-subscription-choose">Choose</button>
+                                {% endif %}
+                            {% endif %}
+                            <!-- <button class="subscription-choose-btn" {% if request.user.is_authenticated == False %}onclick="location.pathname = '/login/'"{% elif request.user.role == 'company' or request.user.role == 'user' or request.user.role == 'auth_user' %}onclick="location.pathname = '/subscription/'"{% endif %}>{% if request.user.is_authenticated == False %}Start Trial{% else %}{% if use_trial %}Start Trial{% elif current_plan.is_trial == True %}Choose{% else %}Choose{% endif %}{% endif %}</button> -->
+                            {% if current_plan.is_trial == True and current_plan.plan_id == 4 %}
+                                <span style="color: red!important; position: absolute; bottom: 5px; font-size: .875rem;">Your trial ends in {{remaining_days}} day&#40;s&#41;</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-us-div">
+            <h3 data-i18n="home-subscription-section-contact-sentence">Contact Our Sale Team For More</h3>
+            <button data-i18n="home-subscription-section-contact-button-text" onclick="openContactUsModal('contactUsModal');">Contact Us</button>
+        </div>
+    </section>
+
+    <section class="questions-section" id="FAQ's">
+        <div class="questions-section-header">
+            <h2 data-i18n="home-question-section-header">Questions? Look here</h2>
+            <div>
+                <span class="helping-line" data-i18n="home-question-section-header-helping-line-1">There are most frequently asked questions added.</span>
+                <span class="helping-line" data-i18n="home-question-section-header-helping-line-2">We are here to entertain your queries and to solve your problems.</span>
+            </div>
+        </div>
+        <div class="common-questions-section" id="accordionExample">
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingOne">
+                    <button data-i18n="home-question-section-question-1" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        What is the Flunter application used for?
+                    </button>
+                </div>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-1">The application is used to search for candidates or prospects based on keywords (such as technology names or company functions) and a location. Over the years, Flunter has accumulated millions of data points that allow the application to replace all other hunting tools for prospecting and recruitment.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingTwo">
+                    <button data-i18n="home-question-section-question-2" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What type of companies is Flunter for?
+                    </button>
+                </div>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-2">All companies whose employees or clients are IT profiles. The list is therefore very long and varied but includes IT Service Companies, Software Publishers, IT Recruitment Agencies, Tech Startups, Web and Mobile Development Agencies, Prospecting Agencies, Cloud Service Providers, IT Consulting Firms, IT Integrators, Cybersecurity Solution Providers, IT Equipment Suppliers, Telecom Operators, Data Management Service Providers, IT Freelancers, Digital Marketing Agencies, etc.
+                            <br>More broadly, any company that has sales and/or recruitment teams addressing IT candidates or prospects has every interest in using Flunter to significantly accelerate their development.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingThree">
+                    <button data-i18n="home-question-section-question-3" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Why does the Flunter application alone replace my prospecting and recruitment aid tools?
+                    </button>
+                </div>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-3">Simply because it is the largest database available on the IT market (email addresses, mobile phone numbers, etc.).
+                            Moreover, and most importantly, the Flunter application has been designed and conceived in such a way that it can provide 5 to 10 times more targeted results than other tools in the sector. The data has been filtered, processed, and refined in advance by specialized teams, so you have perfectly targeted results, which saves you a lot of time and increases efficiency. More than 91% of the data on Flunter is up-to-date, correct, and targeted.
+                            <br>Finally, unlike most tools, Flunter allows you to find both candidates and prospects (not one or the other) with the same quality and efficiency. You can therefore centralize and rationalize your tools for sales and recruitment teams.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingFour">
+                    <button data-i18n="home-question-section-question-4" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        How can I get trained on using Flunter?
+                    </button>
+                </div>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-4">Flunter is so easy to use and has been designed in such a way that any novice can use the platform in no time.
+                            However, there is documentation available in the 'Resources' section.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingFive">
+                    <button data-i18n="home-question-section-question-5" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        How do subscriptions work?
+                    </button>
+                </div>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-5">Subscriptions are either monthly or annual. Each subscription level gives you a number of credits, a number of users, and a number of simultaneous connections. Once subscribed, you can then search unlimitedly on the Flunter application. However, each time you want to obtain contact details, you will need to use credits.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingSix">
+                    <button data-i18n="home-question-section-question-6" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        How do credits work?
+                    </button>
+                </div>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-6">Credits are used to unlock access to the contact details of people who match your search. A mobile phone number, for example, requires 10 credits, while a professional email address requires 1 credit. Unused credits in a month are carried over to the next month.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingSeven">
+                    <button data-i18n="home-question-section-question-7" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Can we get even more credits and users?
+                    </button>
+                </div>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-7">You can indeed have access to a customized offer. To do so, please contact our sales teams by email at ssddssqdqsddqs@sdfsdsfd. One of our experts will get back to you within 72 hours to offer you an offer tailored to your expectations and needs.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingEight">
+                    <button data-i18n="home-question-section-question-8" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Can I cancel at any time?
+                    </button>
+                </div>
+                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-8">You can cancel your subscription for free and without conditions within the first fourteen days of using Flunter and if so, get a full refund of the amounts paid.
+                            After that, the cancellation terms will depend on the type of subscription you have chosen and the specific conditions related to it.
+                            In many cases, we have found that fourteen days are enough for our clients to recoup a year's subscription to Platinum.
+                        </span>
+                    </div>
+                </div>
+            </div> 
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingNine">
+                    <button data-i18n="home-question-section-question-9" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        What return on investment can I expect from using Flunter?
+                    </button>
+                </div>
+                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-9">In the IT market, we know that on average a converted candidate or prospect equals an average of 18,000 euros of margin generated. That's precisely why the Gold subscription price is €1,500 per month.
+                            Indeed, statistics from the last 3 years allow us to say that more than 87% of our users fall into the '8 and more' range. This means that more than 87% of our clients convert 8 or more candidates and/or prospects per year of using Flunter. If we assume that a converted candidate or prospect equals €18,000 in margin generated, then more than 87% of our clients generate at least 18,000 x 8, or at least €144,000 over 12 months of using the platform. This is a return on investment of over 800% per year.
+                        </span>
+                    </div>
+                </div>
+            </div> 
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingTen">
+                    <button data-i18n="home-question-section-question-10" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                        How do you guarantee the confidentiality of my searches?
+                    </button>
+                </div>
+                <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-10">Data protection is not only one of our priorities, it is THE priority. Therefore, we implement rigorous security measures to protect your data and ensure the confidentiality of your searches. All data transmitted is encrypted using cutting-edge protocols. Your information is stored on secure servers with advanced encryption. We employ authentication methods and strict access controls to ensure that only authorized persons can access the data. Our systems are continuously monitored by intrusion detection and prevention solutions. We strictly comply with security standards such as GDPR and CCPA. Regular backups are performed to ensure data recovery in case of loss. We conduct regular audits to improve our protocols.</span>
+                    </div>
+                </div>
+            </div> 
+            <div class="accordion-item">
+                <div class="accordion-header" id="headingEleven">
+                    <button data-i18n="home-question-section-question-11" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                        Is Flunter 'GDPR compliant' and how is data managed?
+                    </button>
+                </div>
+                <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <span data-i18n="home-question-section-answer-11">Yes, Flunter is compliant, and that's precisely why choosing Flunter to replace your usual tools is beneficial. Flunter strictly adheres to all GDPR and CCPA guidelines and standards for data access, processing, and storage, ensuring its compliance with these regulations. We have implemented a clear and effective right-to-forget policy allowing users to easily manage their personal data. All transmitted and stored data is secured with end-to-end encryption, ensuring protection against unauthorized interception. Additionally, our systems are subject to regular audits and tests to identify and correct any potential vulnerabilities, ensuring continuous and optimal protection.</span>
+                    </div>
+                </div>
+            </div>      
+        </div>
+    </section>
+
+    <section class="get-in-touch-section" id="Contactus">
+        <div class="get-in-touch-section-header">
+            <h2 data-i18n="home-get-in-touch-header">Get In Touch</h2>
+            <span data-i18n="home-get-in-touch-header-paragraph" class="helping-line">We are here to answer any questions you may have? Feel Free to reach out to us.</span>
+        </div>
+        <div class="get-in-touch-wrapper">
+            <div class="get-in-touch-info-wrapper">
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.2232 9H7.02679C5.35802 9 4 10.2688 4 11.8278V25.0055C4 26.5646 5.35802 27.8333 7.02679 27.8333H29.2232C30.892 27.8333 32.25 26.5646 32.25 25.0055V11.8278C32.25 10.2688 30.892 9 29.2232 9ZM30.2321 25.0055C30.2321 25.5258 29.7801 25.9481 29.2232 25.9481H7.02679C6.46986 25.9481 6.01786 25.5258 6.01786 25.0055V15.3551L17.1009 19.0737C17.4309 19.1849 17.7779 19.2405 18.125 19.2405C18.4721 19.2405 18.8191 19.1849 19.1481 19.0746L30.2321 15.3551V25.0055ZM30.2321 13.3511L18.465 17.3006C18.2461 17.3741 18.0049 17.3751 17.784 17.3006L6.01786 13.352V11.8278C6.01786 11.3075 6.46986 10.8852 7.02679 10.8852H29.2232C29.7801 10.8852 30.2321 11.3075 30.2321 11.8278V13.3511Z" fill="white" stroke="white" stroke-width="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="card-info">
+                        <span data-i18n="home-get-in-touch-email">Email</span>
+                        <a class="text-decoration-none" href="mailto:contact@flunter.com"><span>contact@flunter.com</span></a>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card d-none">
+                    <div class="card-icon">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.7889 20.4424L26.3074 19.8164C24.4412 19.3456 22.5268 20.1788 21.5477 21.8891L21.3595 22.2172C21.0533 22.7498 20.5562 23.1163 19.9574 23.2508C19.3395 23.3922 18.6734 23.2563 18.1392 22.8843C16.1727 21.513 14.4808 19.8219 13.1089 17.8563C12.7368 17.3223 12.6036 16.6594 12.7423 16.0389C12.8768 15.4404 13.2435 14.9435 13.7763 14.6388L14.1705 14.4123C15.8143 13.4707 16.6396 11.5298 16.1782 9.69319L15.5533 7.21283C15.2183 5.88274 14.2968 4.8258 13.0238 4.31381C11.7494 3.79907 10.3555 3.92261 9.1896 4.64736C6.56391 6.28218 4.73746 8.96569 4.17991 12.0116C3.61961 15.0712 4.38178 18.2475 6.27415 20.7251C8.86277 24.1142 11.8881 27.1422 15.2677 29.7255C17.2109 31.2107 19.5853 32 21.9967 32C22.6545 32 23.3165 31.941 23.9729 31.8216C27.0229 31.2656 29.7118 29.4387 31.3542 26.8032C32.0779 25.6392 32.2001 24.2432 31.6865 22.9721C31.1729 21.6997 30.1155 20.7787 28.7862 20.4437L28.7889 20.4424ZM29.6047 25.7188C28.2726 27.856 26.0863 29.3412 23.6062 29.7942C21.1165 30.2499 18.5347 29.6253 16.5215 28.0893C13.2874 25.6172 10.3912 22.7182 7.91246 19.476C6.37302 17.4596 5.75231 14.8735 6.20823 12.3836C6.66828 9.87164 8.11433 7.74541 10.2814 6.39748C10.637 6.17648 11.0325 6.06393 11.4335 6.06393C11.7096 6.06393 11.9883 6.11746 12.2561 6.2259C12.9125 6.48945 13.3863 7.03438 13.558 7.71796L14.1828 10.197C14.4218 11.1427 13.9961 12.1434 13.1487 12.6279L12.7546 12.8544C11.7151 13.4501 10.9982 14.4219 10.7345 15.5901C10.4695 16.7733 10.7194 18.0292 11.4212 19.0368C12.9331 21.2028 14.798 23.0655 16.9637 24.5754C17.9703 25.2782 19.2268 25.5266 20.412 25.2617C21.582 24.9995 22.5529 24.2816 23.1475 23.2425L23.3357 22.9145C23.852 22.0154 24.8463 21.5803 25.8062 21.815L28.2863 22.4395C28.9716 22.6125 29.5168 23.0874 29.7818 23.7422C30.0455 24.3969 29.9823 25.1148 29.606 25.7202L29.6047 25.7188Z" fill="white" stroke="white" stroke-width="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="card-info">
+                        <span>Phone</span>
+                        <a class="text-decoration-none" href="tel:+1 000 000 000"><span>+1 000 000 000</span></a>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card d-none">
+                    <div class="card-icon">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_177_400)">
+                                <path d="M17.4018 35.872L17.5 35.9571L17.5982 35.872C22.2719 31.8221 25.7827 28.048 28.1255 24.5494C30.4679 21.0513 31.65 17.824 31.65 14.871C31.65 10.5551 30.2523 7.04889 27.4501 4.36695C24.6534 1.69032 21.3342 0.35 17.5 0.35C13.6658 0.35 10.3466 1.69032 7.54993 4.36695C4.74767 7.04889 3.35 10.5551 3.35 14.871C3.35 17.824 4.53212 21.0513 6.87446 24.5494L6.9991 24.4659L6.87446 24.5494C9.21726 28.048 12.7281 31.8221 17.4018 35.872ZM17.5032 18.0207C18.4662 18.0207 19.2933 17.6761 19.9764 16.9908C20.6594 16.3056 21.0028 15.4776 21.0028 14.5147C21.0028 13.5517 20.6582 12.7245 19.9729 12.0414C19.2878 11.3585 18.4597 11.015 17.4968 11.015C16.5338 11.015 15.7067 11.3597 15.0236 12.0449C14.3406 12.7301 13.9972 13.5582 13.9972 14.521C13.9972 15.484 14.3418 16.3112 15.0271 16.9943C15.7122 17.6772 16.5403 18.0207 17.5032 18.0207ZM25.7044 22.6279C23.8066 25.5691 21.0731 28.6449 17.5 31.8548C13.9269 28.6449 11.1934 25.5691 9.29556 22.6279C7.37792 19.6561 6.43213 17.0722 6.43213 14.871C6.43213 11.5244 7.49387 8.78396 9.61161 6.63691C11.7306 4.48854 14.3567 3.41428 17.5 3.41428C20.6433 3.41428 23.2694 4.48854 25.3884 6.63691C27.5061 8.78396 28.5679 11.5244 28.5679 14.871C28.5679 17.0722 27.6221 19.6561 25.7044 22.6279Z" fill="white" stroke="white" stroke-width="0.3"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_177_400">
+                                    <rect width="35" height="35" fill="white" transform="translate(0.5 0.5)"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="card-info">
+                        <span>Location</span>
+                        <a class="text-decoration-none" href="https://maps.app.goo.gl/6Hp99887DYaHsjpm8" target="_blank"><span>231 rue Saint Honoré 75001 Paris</span></a>
+                    </div>
+                </div>
+            </div>
+            <form class="get-in-touch-contact-wrapper" onsubmit="getInTouchForm(event);">
+                {% csrf_token %}
+                <div class="contact-input-container">
+                    <div class="contact-input-row">
+                        <div>
+                            <label for="first-name" data-i18n="home-get-in-touch-first-name">First Name</label>
+                            <div>
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.5 6.9C14.5 8.19836 13.4082 9.3 12 9.3V11.3C14.4578 11.3 16.5 9.35718 16.5 6.9H14.5ZM12 9.3C10.5918 9.3 9.5 8.19836 9.5 6.9H7.5C7.5 9.35718 9.54224 11.3 12 11.3V9.3ZM9.5 6.9C9.5 5.60164 10.5918 4.5 12 4.5V2.5C9.54224 2.5 7.5 4.44282 7.5 6.9H9.5ZM12 4.5C13.4082 4.5 14.5 5.60164 14.5 6.9H16.5C16.5 4.44282 14.4578 2.5 12 2.5V4.5ZM8.5 14.7H15.5V12.7H8.5V14.7ZM15.5 19.5H8.5V21.5H15.5V19.5ZM8.5 19.5C7.09177 19.5 6 18.3984 6 17.1H4C4 19.5572 6.04224 21.5 8.5 21.5V19.5ZM18 17.1C18 18.3984 16.9082 19.5 15.5 19.5V21.5C17.9578 21.5 20 19.5572 20 17.1H18ZM15.5 14.7C16.9082 14.7 18 15.8016 18 17.1H20C20 14.6428 17.9578 12.7 15.5 12.7V14.7ZM8.5 12.7C6.04224 12.7 4 14.6428 4 17.1H6C6 15.8016 7.09177 14.7 8.5 14.7V12.7Z" fill="#5D5959"/>
+                                </svg>
+                                <input type="text" name="first_name" id="first-name" placeholder="Christian" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="last-name" data-i18n="home-get-in-touch-last-name">Last Name</label>
+                            <div>
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.5 6.9C14.5 8.19836 13.4082 9.3 12 9.3V11.3C14.4578 11.3 16.5 9.35718 16.5 6.9H14.5ZM12 9.3C10.5918 9.3 9.5 8.19836 9.5 6.9H7.5C7.5 9.35718 9.54224 11.3 12 11.3V9.3ZM9.5 6.9C9.5 5.60164 10.5918 4.5 12 4.5V2.5C9.54224 2.5 7.5 4.44282 7.5 6.9H9.5ZM12 4.5C13.4082 4.5 14.5 5.60164 14.5 6.9H16.5C16.5 4.44282 14.4578 2.5 12 2.5V4.5ZM8.5 14.7H15.5V12.7H8.5V14.7ZM15.5 19.5H8.5V21.5H15.5V19.5ZM8.5 19.5C7.09177 19.5 6 18.3984 6 17.1H4C4 19.5572 6.04224 21.5 8.5 21.5V19.5ZM18 17.1C18 18.3984 16.9082 19.5 15.5 19.5V21.5C17.9578 21.5 20 19.5572 20 17.1H18ZM15.5 14.7C16.9082 14.7 18 15.8016 18 17.1H20C20 14.6428 17.9578 12.7 15.5 12.7V14.7ZM8.5 12.7C6.04224 12.7 4 14.6428 4 17.1H6C6 15.8016 7.09177 14.7 8.5 14.7V12.7Z" fill="#5D5959"/>
+                                </svg>
+                                <input type="text" name="last_name" id="last-name" placeholder="Grey" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-input-row">
+                        <div>
+                            <label for="email">Email</label>
+                            <div>
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18.7143 7H4.88571C3.84606 7 3 7.79044 3 8.76176V16.9716C3 17.9429 3.84606 18.7333 4.88571 18.7333H18.7143C19.7539 18.7333 20.6 17.9429 20.6 16.9716V8.76176C20.6 7.79044 19.7539 7 18.7143 7ZM19.3429 16.9716C19.3429 17.2957 19.0613 17.5588 18.7143 17.5588H4.88571C4.53874 17.5588 4.25714 17.2957 4.25714 16.9716V10.9593L11.162 13.276C11.3675 13.3453 11.5838 13.3799 11.8 13.3799C12.0162 13.3799 12.2325 13.3453 12.4374 13.2766L19.3429 10.9593V16.9716ZM19.3429 9.71076L12.0118 12.1714C11.8754 12.2172 11.7252 12.2178 11.5875 12.1714L4.25714 9.71135V8.76176C4.25714 8.4376 4.53874 8.17451 4.88571 8.17451H18.7143C19.0613 8.17451 19.3429 8.4376 19.3429 8.76176V9.71076Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                </svg>
+                                <input type="email" name="email" id="email" placeholder="C.grey@work.com" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="topic" data-i18n="home-get-in-touch-topic">Topic</label>
+                            <div>
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_177_434)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2218 14.7462C15.1356 16.5815 14.4706 17.7045 14.4338 17.7678C14.4301 17.7739 14.3926 17.8366 14.346 17.8918C14.322 17.9194 14.2975 17.944 14.2747 17.9655L12.3473 19.0959L12.4093 16.8891C12.4161 16.8511 12.4278 16.8075 12.445 16.7608C12.4701 16.6926 12.499 16.6454 12.5107 16.6251C12.5463 16.5643 14.9876 12.4387 18.0301 7.2981C18.0504 7.28091 18.1529 7.26556 18.2677 7.33371L19.8108 8.24738C19.9256 8.31492 19.9612 8.41132 19.9581 8.43281L16.2218 14.7462ZM20.9289 8.03923C21.0443 8.35422 21.0185 8.69193 20.8564 8.96456L17.1201 15.2779C16.0351 17.1108 15.3714 18.2326 15.3339 18.2958C15.329 18.3044 15.2467 18.4444 15.1374 18.5715C15.0601 18.6618 14.9845 18.733 14.9176 18.7895L14.8458 18.8405L12.5475 20.1889C12.4376 20.2515 12.2872 20.2994 12.1226 20.2994C11.9875 20.2994 11.8426 20.2675 11.7032 20.1846C11.4011 20.0059 11.2931 19.694 11.2931 19.4619L11.3729 16.7565C11.3882 16.6552 11.4165 16.5324 11.4662 16.3973C11.5239 16.2438 11.5878 16.1351 11.6105 16.097C11.64 16.0467 14.0844 11.9155 17.1349 6.76206C17.2963 6.48943 17.5794 6.304 17.9122 6.25365C18.2088 6.20821 18.5244 6.2733 18.7995 6.4354L20.3425 7.34906C20.617 7.51117 20.8251 7.75616 20.9289 8.03923ZM10.5286 14.3328C10.8166 14.3328 11.0505 14.5661 11.0505 14.8547C11.0505 15.1427 10.8166 15.3766 10.5286 15.3766H5.62625C5.33766 15.3766 5.10433 15.1427 5.10433 14.8547C5.10433 14.5661 5.33766 14.3328 5.62625 14.3328H10.5286ZM5.62631 12.2259H11.7727C12.0606 12.2259 12.2946 12.4593 12.2946 12.7478C12.2946 13.0358 12.0606 13.2698 11.7727 13.2698H5.62631C5.33772 13.2698 5.10439 13.0358 5.10439 12.7478C5.10439 12.4593 5.33772 12.2259 5.62631 12.2259ZM9.73651 19.0926C10.0226 19.0926 10.2584 19.3284 10.2584 19.6145C10.2584 19.9007 10.0226 20.1364 9.73651 20.1364H4.15689C4.08259 20.1352 3.60243 20.1192 3.26902 19.7207C3.01665 19.4193 3.00069 19.0815 3.00007 18.9796V6.65743C2.99885 6.55612 3.0099 6.22086 3.25612 5.91938C3.59015 5.51044 4.08628 5.50061 4.15689 5.5H11.0628C11.0953 5.50123 11.1389 5.50553 11.1874 5.52088C11.2734 5.54851 11.3311 5.59702 11.3618 5.6271C12.3614 6.62796 13.3605 7.62881 14.3601 8.62905C14.3896 8.65914 14.497 8.77396 14.5111 8.95756C14.524 9.12518 14.4516 9.24615 14.427 9.2836C14.3177 9.46842 14.2084 9.65324 14.0991 9.83806C14.077 9.8792 14.0187 9.97438 13.9008 10.0419C13.7921 10.1045 13.6896 10.1107 13.6423 10.1107C12.2528 10.1107 10.8626 10.1101 9.47309 10.1095C9.44055 10.1095 9.2238 10.1045 9.07275 9.92587C8.95608 9.78771 8.95117 9.63175 8.95117 9.58754V8.11021C8.95117 7.82346 9.18634 7.58829 9.47309 7.58829C9.75923 7.58829 9.99501 7.82346 9.99501 8.11021V9.06562H13.3242L10.8024 6.54384H4.15689C4.14768 6.54384 4.11207 6.54384 4.08137 6.57085C4.04391 6.60401 4.04391 6.65006 4.04391 6.65743V18.9796C4.04391 18.987 4.04514 19.0312 4.08198 19.0637C4.11207 19.0914 4.14707 19.0926 4.15689 19.0926H9.73651Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.6"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_177_434">
+                                            <rect width="24" height="24" fill="white" transform="translate(0 0.5)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <input type="text" name="topic" id="topic" placeholder="Grey" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-input-row">
+                        <div class="w-100">
+                            <label for="description" data-i18n="home-get-in-touch-help-you-with">What can we help you with?</label>
+                            <textarea name="description" id="description" placeholder="Write your query here..." data-i18n="[placeholder]home-get-in-touch-help-you-with-placeholder" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <small class="email-error-msg input-error-msg"></small>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="get-in-touch-btn" type="submit">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text" data-i18n="home-get-in-touch-send">Send</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    {% include './includes/footer.html' %}
+
+    {% include './modals/contact-us-modal.html' %}
+
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+<script src="{% static 'translations/localization.js' %}"></script>
+<script src="{% static 'web/js/index.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{key}}&libraries=places&callback=initMap"></script>
+</html>

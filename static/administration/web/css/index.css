@@ -1,0 +1,1266 @@
+.homepage-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 75px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.homepage-header > div {
+    width: 49%;
+}
+
+.homepage-header .header-headline-section {
+    padding-left: 49px;
+    align-self: flex-start;
+    padding-top: 40px;
+    width: 40%;
+}
+
+.homepage-header .header-headline-section .main-line {
+    font-size: 2.813rem;
+    font-weight: 700;
+    line-height: 85.5px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+.homepage-header .header-headline-section .main-line .highlighted-text {
+    color: #FFFFFF;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 11px;
+}
+
+.homepage-header .header-headline-section .main-line .custom-underline {
+    /* background-repeat: no-repeat;
+    background-image: url("../images/arc1.svg");
+    background-position: 0 1.06em;
+    background-size: 10px 9px; */
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.homepage-header .header-headline-section .main-line .custom-underline > svg {
+    position: absolute;
+    bottom: -15px;
+    width: 100%;
+}
+
+.homepage-header .header-headline-section .helping-line {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    max-width: 654px;
+    display: inline-block;
+}
+
+.homepage-header .header-headline-section .quick-search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.homepage-header .header-headline-section .quick-search-container .quick-search-inputs {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.homepage-header .header-headline-section .quick-search-container .quick-search-inputs > div {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.homepage-header .header-headline-section .quick-search-container .quick-search-inputs > div > input {
+    box-shadow: 0px 0px 5px 2px #640EF11A;
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    width: 100%;
+    padding-left: 44px;
+    padding-right: 10px;
+}
+
+.homepage-header .header-headline-section .quick-search-container .quick-search-inputs > div > svg {
+    position: absolute;
+    left: 10px;
+}
+
+.homepage-header .header-headline-section .quick-search-container .quick-search-btn {
+    max-width: 300px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-color);
+    box-shadow: 0px 0px 10px 0px #0C47AF4D;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+}
+
+.homepage-header .header-image-section {
+    width: 58%;
+}
+
+.homepage-header .header-image-section img {
+    width: 100%;
+    max-height: 620px;
+}
+
+
+/* ----------------------------------------------------------- */
+
+
+.tools-section {
+    /* padding-top: 50px; */
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.tools-section .tools-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.tools-section .tools-section-header h2 {
+    font-size: 2.813rem;
+    font-weight: 700;
+    line-height: 76.95px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.tools-section .tools-section-header span {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    max-width: 867px;
+    display: inline-block;
+}
+
+.tools-section .tools-container {
+    padding: 0px 7.4%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.tools-section .tools-container .tool-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tools-section .tools-container .tool-card:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.tools-section .tools-container .tool-card > div {
+    width: 40%;
+}
+
+.tools-section .tools-container .tool-card .tool-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tools-section .tools-container .tool-card .tool-details .tool-heading {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 51.3px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.tools-section .tools-container .tool-card .tool-details span {
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+.tools-section .tools-container .tool-card .tool-image {
+    width: 45%;
+}
+
+.tools-section .tools-container .tool-card .tool-image img {
+    width: 100%;
+}
+
+
+/* --------------------------------------------------------- */
+
+
+.search-info-section {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-info-section .search-info-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-info-section .search-info-section-header h2 {
+    font-size: 2.813rem;
+    font-weight: 700;
+    line-height: 67.5px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    max-width: 1171px;
+}
+
+.search-info-section .search-info-section-header span {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    max-width: 867px;
+    display: inline-block;
+}
+
+.search-info-section .search-features-wrapper {
+    width: 100%;
+    margin: 50px 0px;
+    padding: 0px 11%;
+}
+
+.search-info-section .search-features-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1470px;
+}
+
+.search-info-section .search-features-container .search-features {
+    max-width: 261px;
+    height: 182px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-info-section .search-features-container .search-features > div {
+    /* display: flex;
+    flex-direction: column; */
+    position: relative;
+}
+
+.search-info-section .search-features-container .search-features > div > span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 68.4px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.search-info-section .search-features-container .search-features > div > svg {
+    position: absolute;
+    left: 0px;
+    bottom: -4px;
+}
+
+.search-info-section .search-features-container .search-features > span {
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 37.62px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.search-info-section .search-demo-btn {
+    width: 300px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-color);
+    box-shadow: 0px 0px 10px 0px #0C47AF4D;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+/* ---------------------------------------------------------------- */
+
+
+.subscription-info-section {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscription-info-section .subscription-info-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscription-info-section .subscription-info-section-header h2 {
+    font-size: 2.813rem;
+    font-weight: 700;
+    line-height: 67.5px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    max-width: 1032px;
+}
+
+.subscription-info-section .subscription-info-section-header span {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    max-width: 867px;
+    display: inline-block;
+}
+
+.subscription-info-section .subscription-filters {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown {
+    width: 106px;
+    height: 45px;
+    /* padding: 9px 10px 10px 10px; */
+    border-radius: 8px;
+    border: 2px solid #070C29;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown-btn {
+    width: 100%;
+    padding: 0px 7px;
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown .currency-details {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown .currency-details span:first-of-type {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+    position: relative;
+    /* top: -1px; */
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown .currency-details span:last-of-type {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 20.8px;
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown .subscription-currency-menu {
+    width: 100%;
+    padding: 0px;
+    border: none;
+    min-width: unset;
+    top: 10px!important;
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown .subscription-currency-menu .dropdown-item {
+    width: 103px;
+    height: 45px;
+    padding: 0px;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown .subscription-currency-menu .dropdown-item:first-of-type {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown .subscription-currency-menu .dropdown-item:last-of-type {
+    border-radius: 0px 0px 8px 8px;
+}
+
+.subscription-info-section .subscription-filters .subscription-currency-dropdown .subscription-currency-menu .dropdown-item span {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 20.8px;
+    text-align: center;
+}
+
+.subscription-info-section .subscription-filters .subscription-duration-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.subscription-info-section .subscription-filters .subscription-duration-group .duration-radio-btn {
+    position: relative;
+    width: 210px;
+    height: 45px;
+    border-radius: 8px;
+}
+
+input[name="subscription_duration_radio"] {
+    display: none;
+}
+
+.subscription-info-section .subscription-filters .subscription-duration-group .duration-radio-btn .duration-radio-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 20.8px;
+    text-align: center;
+    color: var(--text-field-heading);
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    border-radius: 0px 8px 8px 0px;
+    transition: all ease .1s;
+    cursor: pointer;
+}
+
+.subscription-info-section .subscription-filters .subscription-duration-group .duration-radio-btn:first-of-type .duration-radio-label {
+    border-radius: 8px 0px 0px 8px;
+}
+
+.subscription-info-section .subscription-filters .subscription-duration-group .duration-radio-btn .duration-radio-label .savings {
+    font-size: .75rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 15.6px;
+    text-align: right;
+    color: var(--primary-color)!important;
+}
+
+input[name="subscription_duration_radio"]:checked + .duration-radio-label {
+    color: #9A9A9A!important;
+    background: #7C00F41A!important;
+    border-radius: 8px!important;
+    border: 2px solid #7C00F4!important;
+    box-shadow: none!important;
+    color: #000000!important;
+}
+
+.subscription-info-section .subscription-card-container {
+    padding: 0px 3.6%;
+}
+
+.subscription-info-section .subscription-card {
+    border: none;
+    border-radius: 20px;
+    max-width: 422px;
+    transition: all ease .2s;
+}
+
+.subscription-info-section .subscription-card .card-body {
+    padding: 30px;
+    padding-bottom: 0px;
+}
+
+.subscription-info-section .subscription-card .card-body > div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.subscription-info-section .subscription-card .card-body .subscription-type {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 46.8px;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.subscription-info-section .subscription-card .card-body .subscription-fee {
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 39px;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.subscription-info-section .subscription-card .card-body .subscription-points {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.subscription-info-section .subscription-card .card-body .subscription-points > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subscription-info-section .subscription-card .subscription-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription-info-section .subscription-card .subscription-choose-btn {
+    width: 230px;
+    height:55px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #0C47AF4D;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 26px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.subscription-info-section .subscription-card:hover {
+    background-color: #070C29;
+}
+
+.subscription-info-section .subscription-card:hover h3,
+.subscription-info-section .subscription-card:hover h4,
+.subscription-info-section .subscription-card:hover span {
+    color: #FFFFFF;
+}
+
+
+/* ---------------------------------------------------------------- */
+
+
+.questions-section {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questions-section .questions-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.questions-section .questions-section-header h2 {
+    font-size: 2.813rem;
+    font-weight: 700;
+    line-height: 76.95px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    max-width: 1171px;
+    margin-bottom: 0px;
+}
+
+.questions-section .questions-section-header > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.questions-section .questions-section-header span {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    max-width: 867px;
+    display: inline-block;
+}
+
+.questions-section .common-questions-section {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.questions-section .common-questions-section > .accordion-item {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: none;
+}
+
+.questions-section .common-questions-section > .accordion-item .accordion-header button {
+    height: 100px;
+    padding: 33px 20px;
+    border-radius: 20px;
+
+    font-size: 1.625rem;
+    font-weight: 400;
+    line-height: 33.8px;
+    text-align: left;
+}
+
+.questions-section .common-questions-section > .accordion-item .accordion-header button::after {
+    background-image: url("data:image/svg+xml,<svg width='28' height='16' viewBox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M26.5002 0.925223C26.0318 0.459596 25.3982 0.198242 24.7377 0.198242C24.0773 0.198242 23.4436 0.459596 22.9752 0.925223L14.0002 9.77522L5.15024 0.925223C4.68183 0.459596 4.0482 0.198242 3.38774 0.198242C2.72727 0.198242 2.09364 0.459596 1.62524 0.925223C1.39092 1.15763 1.20493 1.43413 1.07801 1.73878C0.951087 2.04343 0.885742 2.37019 0.885742 2.70022C0.885742 3.03025 0.951087 3.35702 1.07801 3.66167C1.20493 3.96631 1.39092 4.24282 1.62524 4.47522L12.2252 15.0752C12.4576 15.3095 12.7341 15.4955 13.0388 15.6225C13.3434 15.7494 13.6702 15.8147 14.0002 15.8147C14.3303 15.8147 14.657 15.7494 14.9617 15.6225C15.2663 15.4955 15.5428 15.3095 15.7752 15.0752L26.5002 4.47522C26.7346 4.24282 26.9205 3.96631 27.0475 3.66167C27.1744 3.35702 27.2397 3.03025 27.2397 2.70022C27.2397 2.37019 27.1744 2.04343 27.0475 1.73878C26.9205 1.43413 26.7346 1.15763 26.5002 0.925223Z' fill='%230C0630'/></svg>")!important;
+    background-position: center;
+}
+
+.questions-section .common-questions-section > .accordion-item .accordion-header button:not(.collapsed) {
+    color: #FFFFFF;
+    font-weight: 700;
+    background-color: #070C29;
+    box-shadow: none;
+    border-radius: 20px 20px 0px 0px;
+    padding-bottom: 0px;
+    height: fit-content;
+}
+
+.questions-section .common-questions-section > .accordion-item .accordion-header button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,<svg width='28' height='16' viewBox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M26.5002 0.925223C26.0318 0.459596 25.3982 0.198242 24.7377 0.198242C24.0773 0.198242 23.4436 0.459596 22.9752 0.925223L14.0002 9.77522L5.15024 0.925223C4.68183 0.459596 4.0482 0.198242 3.38774 0.198242C2.72727 0.198242 2.09364 0.459596 1.62524 0.925223C1.39092 1.15763 1.20493 1.43413 1.07801 1.73878C0.951087 2.04343 0.885742 2.37019 0.885742 2.70022C0.885742 3.03025 0.951087 3.35702 1.07801 3.66167C1.20493 3.96631 1.39092 4.24282 1.62524 4.47522L12.2252 15.0752C12.4576 15.3095 12.7341 15.4955 13.0388 15.6225C13.3434 15.7494 13.6702 15.8147 14.0002 15.8147C14.3303 15.8147 14.657 15.7494 14.9617 15.6225C15.2663 15.4955 15.5428 15.3095 15.7752 15.0752L26.5002 4.47522C26.7346 4.24282 26.9205 3.96631 27.0475 3.66167C27.1744 3.35702 27.2397 3.03025 27.2397 2.70022C27.2397 2.37019 27.1744 2.04343 27.0475 1.73878C26.9205 1.43413 26.7346 1.15763 26.5002 0.925223Z' fill='%23FFFFFF'/></svg>")!important;
+    background-position: bottom;
+}
+
+.questions-section .common-questions-section > .accordion-item .accordion-body {
+    padding: 33px 20px;
+    background-color: #070C29;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.questions-section .common-questions-section > .accordion-item .accordion-body span {
+    font-size: 1.625rem;
+    font-weight: 400;
+    line-height: 33.8px;
+    text-align: left;
+    color: #ABAEC7;
+}
+
+.accordion-button:focus {
+    border-color: unset;
+    box-shadow: none;
+}
+
+
+/* ---------------------------------------------------------------------------- */
+
+
+.get-in-touch-section {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.get-in-touch-section .get-in-touch-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.get-in-touch-section .get-in-touch-section-header h2 {
+    font-size: 2.813rem;
+    font-weight: 700;
+    line-height: 67.5px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    max-width: 1171px;
+}
+
+.get-in-touch-section .get-in-touch-section-header span {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    max-width: 867px;
+    display: inline-block;
+}
+
+.get-in-touch-section .get-in-touch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    width: 75.41%;
+    justify-content: space-between;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    align-self: flex-start;
+    width: 41%;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-info-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-info-card .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    border-radius: 12px;
+    background: #070C29;
+    flex-shrink: 0;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-info-card .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-info-card .card-info span:last-of-type {
+    font-weight: 500;
+    color: var(--text-field-heading);
+    word-break: break-all;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper {
+    width: 53.3%;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row > div > div {
+    display: flex;
+    align-items: center;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row > div > div input {
+    width: 100%;
+    max-width: 367px;
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    padding-left: 44px;
+    padding-right: 10px;
+    line-height: 24px;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row > div > div svg {
+    position: absolute;
+    left: 10px;
+    bottom: 17px;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row textarea {
+    width: 100%;
+    height: 140px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    resize: none;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .get-in-touch-btn {
+    width: 315px;
+    height: 59px;
+    border: none;
+    border-radius: 15px;
+    background: var(--primary-color);
+
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+
+@media screen and (max-width: 1520px) {
+    .homepage-header .header-headline-section .main-line {
+        font-size: 2rem;
+        line-height: 56px;
+        margin-bottom: 35px;
+    }
+
+    .tools-section .tools-section-header h2,
+    .search-info-section .search-info-section-header h2,
+    .subscription-info-section .subscription-info-section-header h2,
+    .questions-section .questions-section-header h2,
+    .get-in-touch-section .get-in-touch-section-header h2 {
+        font-size: 2rem;
+        line-height: 48px;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    .homepage-header {
+        gap: 15px;
+    }
+    
+    .homepage-header .header-headline-section .quick-search-container {
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .homepage-header .header-image-section {
+        width: 65%;
+    }
+
+    .tools-section .tools-container .tool-card .tool-details span {
+        font-size: 1rem;
+        line-height: 28px;
+    }
+
+    .search-info-section .search-features-wrapper {
+        padding: 0px 3%;
+    }
+
+
+    .get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-info-card .card-info {
+        font-size: 1.25rem;
+        line-height: 24px;
+    }
+
+    .get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-info-card .card-icon {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .homepage-header {
+        flex-direction: column;   
+    }
+
+    .homepage-header .header-headline-section {
+        width: 100%;
+        padding-top: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .homepage-header .header-headline-section .main-line,
+    .homepage-header .header-headline-section .helping-line {
+        text-align: center;
+        max-width: unset;
+    }
+
+    .homepage-header .header-image-section {
+        width: 100%;
+        display: contents;
+    }
+
+    .homepage-header .header-image-section img {
+        max-width: 600px;
+        width: 100%;
+        order: -1;
+        padding: 0px 20px;
+    }
+
+    .homepage-header .header-headline-section .quick-search-container .quick-search-btn {
+        width: 100%;
+        align-self: center;
+    }
+
+
+    .tools-section {
+        padding: 0px 20px;
+    }
+
+    .tools-section .tools-section-header {
+        padding-top: 0px;
+    }
+
+    .tools-section .tools-container .tool-card {
+        flex-direction: column!important;
+        gap: 10px;
+    }
+
+    .tools-section .tools-container .tool-card .tool-details,
+    .tools-section .tools-container .tool-card .tool-image {
+        width: 100%;
+    }
+
+    .tools-section .tools-container .tool-card .tool-details .tool-heading,
+    .tools-section .tools-container .tool-card .tool-details span {
+        text-align: center;
+    }
+
+    .tools-section .tools-container .tool-card .tool-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tools-section .tools-container .tool-card .tool-image img {
+        max-width: 500px;
+    }
+
+    
+    .search-info-section {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 0px;
+    }
+
+    .search-info-section .search-features-wrapper {
+        margin: 20px 0px;
+        padding: 0px;
+    }
+
+    .search-info-section .search-features-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .search-info-section .search-features-container .search-features {
+        min-width: 200px;
+        height: 120px;
+        justify-content: space-between;
+    }
+
+    .search-info-section .search-features-container .search-features > div > span {
+        font-size: 2rem;
+        line-height: 50px;
+    }
+
+    .search-info-section .search-features-container .search-features > div > svg {
+        bottom: -8px;
+    }
+
+    .search-info-section .search-features-container .search-features > span {
+        font-size: 1.125rem;
+        line-height: 24px;
+    }
+
+    .subscription-info-section {
+        padding-bottom: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .subscription-info-section .subscription-filters {
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .subscription-info-section .subscription-filters .subscription-duration-group {
+        flex-wrap: wrap;
+        background: transparent;
+    }
+
+    .subscription-info-section .subscription-card {
+        margin: 0px auto;
+    }
+
+    .subscription-info-section .subscription-card .card-body .subscription-type {
+        font-size: 1.875rem;
+        line-height: 22px;
+    }
+
+    .subscription-info-section .subscription-card .card-body .subscription-fee {
+        font-size: 1.5rem;
+        line-height: 20px;
+    }
+
+    .subscription-info-section .subscription-card .card-body .subscription-points {
+        gap: 15px;
+    }
+
+
+    .questions-section {
+        padding-bottom: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .questions-section .common-questions-section {
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    .questions-section .common-questions-section > .accordion-item .accordion-header button {
+        font-size: 1.375rem;
+        line-height: 26px;
+        padding: 15px;
+        height: fit-content;
+    }
+
+    .questions-section .common-questions-section > .accordion-item .accordion-body span {
+        font-size: 1.375rem;
+        line-height: 26px;
+    }
+
+
+    .get-in-touch-section {
+        padding-bottom: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .get-in-touch-section .get-in-touch-wrapper {
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .get-in-touch-section .get-in-touch-wrapper {
+        flex-direction: column;
+    }
+
+    .get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .get-in-touch-section .get-in-touch-wrapper .get-in-touch-contact-wrapper {
+        width: 100%;
+    }
+
+    .get-in-touch-section .get-in-touch-wrapper .get-in-touch-contact-wrapper .contact-input-container {
+        gap: 15px;
+    }
+
+    .get-in-touch-section .get-in-touch-wrapper .get-in-touch-contact-wrapper .contact-input-container .contact-input-row {
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 570px) {
+    .search-info-section .search-features-container {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .homepage-header .header-headline-section .main-line {
+        font-size: 1.5rem;
+        line-height: 40px;
+        margin-bottom: 35px;
+    }
+
+    .homepage-header .header-headline-section .main-line .highlighted-text {
+        display: block;
+    }
+
+    .tools-section .tools-section-header h2,
+    .search-info-section .search-info-section-header h2,
+    .subscription-info-section .subscription-info-section-header h2,
+    .questions-section .questions-section-header h2,
+    .get-in-touch-section .get-in-touch-section-header h2 {
+        font-size: 1.5rem;
+        line-height: 40px;
+    }
+
+    .helping-line {
+        font-size: 1rem!important;
+    }
+
+    .homepage-header .header-headline-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }    
+
+    .homepage-header .header-headline-section .quick-search-container .quick-search-inputs {
+        flex-direction: column;
+    }
+
+    .tools-section {
+        padding: 0px 10px;
+    }
+
+    .tools-section .tools-section-header {
+        padding-bottom: 20px;
+    }
+
+    .tools-section .tools-container .tool-card .tool-details .tool-heading {
+        font-size: 1.375rem;
+        line-height: 40px;
+    }
+
+    .search-info-section .search-demo-btn {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .search-info-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .search-info-section .search-features-container .search-features > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-info-section .search-features-container .search-features > div > svg {
+        left: unset;
+    }
+
+    .search-info-section .search-features-container .search-features > span {
+        text-align: center;
+    }
+
+    .search-info-section .search-features-container .search-features > div > span {
+        font-size: 1.5rem;
+        line-height: 40px;
+    }
+
+    .search-info-section .search-features-container .search-features {
+        height: 100px;
+    }
+
+    .subscription-info-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .subscription-info-section .subscription-filters .subscription-duration-group .duration-radio-btn .duration-radio-label {
+        border-radius: 8px;
+    }
+
+    .subscription-info-section .subscription-filters .subscription-duration-group .duration-radio-btn:first-of-type .duration-radio-label {
+        border-radius: 8px;
+    }
+
+    .subscription-info-section .subscription-card .card-body > div {
+        gap: 20px;
+    }
+
+    .subscription-info-section .subscription-card .card-body .subscription-type {
+        font-size: 1.5rem;
+        line-height: 20px;
+    }
+
+    .subscription-info-section .subscription-card .card-body .subscription-fee {
+        font-size: 1.25rem;
+        line-height: 18px;
+    }
+
+    .questions-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .questions-section .common-questions-section > .accordion-item .accordion-header button,
+    .questions-section .common-questions-section > .accordion-item .accordion-body span {
+        font-size: 1.125rem;
+        line-height: 20px;
+    }
+
+    .get-in-touch-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .get-in-touch-section .get-in-touch-wrapper .get-in-touch-contact-wrapper .contact-input-container .contact-input-row {
+        flex-direction: column;
+    }
+
+    .get-in-touch-section .get-in-touch-wrapper .get-in-touch-contact-wrapper .contact-input-container .contact-input-row input {
+        max-width: unset;
+    }
+}

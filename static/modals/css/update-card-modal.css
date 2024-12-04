@@ -1,0 +1,327 @@
+#updatecard .modal-dialog {
+    max-width: unset;
+    width: 514px;
+}
+
+#updatecard .modal-header {
+    padding: 0!important;
+    border-radius: 15px!important;
+
+}
+
+#updatecard .modal-content {
+    padding: 30px;
+}
+
+#updatecard .modal-footer,
+#updatecard .modal-content {
+    border-radius: 15px!important;
+}
+
+#updatecard .modal-header {
+    margin-bottom: 20px;
+}
+
+#updatecard .modal-header > span {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 26.56px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+#updatecard .modal-body {
+    padding: 0px!important;
+}
+
+#updatecard .modal-body .input-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    width: 100%;
+}
+
+#updatecard .modal-body .input-wrapper label {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+#updatecard .modal-body .input-wrapper > div {
+    display: flex;
+    align-items: center;
+}
+
+#updatecard .modal-body .input-wrapper > div input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #E3E8F9;
+    border-radius: 8px;
+    /* box-shadow: 0px 0px 1px 0px #C5C5C5; */
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 24px;
+    font-size: .875rem;
+}
+
+.ElementsApp, .ElementsApp .InputElement { 
+    font-size: 14px !important;
+}
+
+#card-element { 
+    padding: 10px !important;
+}
+.input-wrapper .show-hide-icon {
+    right: 10px;
+    left: unset !important;
+    width: 20px;
+    height: 20px;
+}
+#updatecard .modal-body .input-wrapper > div svg {
+    position: absolute;
+    left: 10px;
+    /* bottom: 17px; */
+}
+
+#updatecard .modal-body .edit-btn {
+    width: 35px;
+    height: 35px;
+    pointer-events: all;
+    position: absolute;
+    /* bottom: -36px;
+    right: -50px; */
+    bottom: 5px;
+    right: -10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #7C00F41A;
+    border-radius: 6px;
+    box-shadow: 0px 13px 41px 0px #3B3B3D1B;
+}
+
+#updatecard .error-div {
+    text-align: left;
+    /* padding: 0px 30px; */
+    /* margin-top: 5px; */
+}
+
+
+#updatecard .modal-footer {
+    padding: 0px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 43px;
+}
+
+#updatecard .modal-footer > button {
+    width: 122px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 40px;
+    /* box-shadow: 0px 0px 10px 0px #0C47AF4D; */
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: center;
+}
+
+#updatecard .modal-footer > button:first-of-type {
+    background: transparent;
+}
+
+#updatecard .modal-footer > button:last-of-type {
+    background: var(--second-secondary-color);
+}
+
+#updatecard .modal-footer > button > span {
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+/* -------------------------------------------------------------------- */
+
+
+
+
+
+
+
+.stripe-div {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* height: 100vh; */
+    width: 100%;
+}
+
+#payment-form {
+    width: 100%;
+    min-width: 300px;
+    align-self: center;
+    /* box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
+        0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 7px; */
+    padding: 0px 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#payment-message {
+    color: #dc3545;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 12px;
+    text-align: center;
+}
+
+#payment-element {
+    margin-bottom: 24px;
+}
+
+#subscription-modal .back-link {
+    align-self: center;
+    text-decoration: none;
+    color: #475467;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    margin-top: 15px;
+}
+
+input[name="cardNumber"] {
+    position: absolute!important;
+    z-index: 3!important;
+    background: red!important;
+}
+
+#payment-form .__PrivateStripeElement-input {
+    position: static!important;
+}
+
+/* Buttons and links */
+#payment-form button {
+    background: #5469d4;
+    border-radius: 4px;
+    border: 0;
+    padding: 6px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    transition: all 0.2s ease;
+    box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+    width: 100%;
+}
+#payment-form button > span {
+    color: #ffffff;
+}
+#payment-form button:hover {
+    filter: contrast(115%);
+}
+#payment-form button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* spinner/processing state, errors */
+.spinner,
+.spinner:before,
+.spinner:after {
+    border-radius: 50%;
+}
+.spinner {
+    color: #ffffff;
+    font-size: 22px;
+    text-indent: -99999px;
+    margin: 0px auto;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    box-shadow: inset 0 0 0 2px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.spinner:before,
+.spinner:after {
+    position: absolute;
+    content: "";
+}
+.spinner:before {
+    width: 10.4px;
+    height: 20.4px;
+    background: #5469d4;
+    border-radius: 20.4px 0 0 20.4px;
+    top: -0.2px;
+    left: -0.2px;
+    -webkit-transform-origin: 10.4px 10.2px;
+    transform-origin: 10.4px 10.2px;
+    -webkit-animation: loading 2s infinite ease 1.5s;
+    animation: loading 2s infinite ease 1.5s;
+}
+.spinner:after {
+    width: 10.4px;
+    height: 10.2px;
+    background: #5469d4;
+    border-radius: 0 10.2px 10.2px 0;
+    top: -0.1px;
+    left: 10.2px;
+    -webkit-transform-origin: 0px 10.2px;
+    transform-origin: 0px 10.2px;
+    -webkit-animation: loading 2s infinite ease;
+    animation: loading 2s infinite ease;
+}
+
+@-webkit-keyframes loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #payment-form {
+        width: 80vw;
+        min-width: initial;
+    }
+}
+
+.show {
+    display: block;
+}
+.hide{
+    display: none;
+}
+

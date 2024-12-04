@@ -1,0 +1,107 @@
+.main-content {
+    padding: 30px;
+    position: absolute;
+    bottom: 0px;
+    top: 60px;
+    width: 100%;
+}
+
+.main-content > h1 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+}
+
+.common-questions-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.common-questions-section > .accordion-item {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: none;
+}
+
+.common-questions-section > .accordion-item .accordion-header {
+    /* border: 4px solid #E3E8F9; */
+    border-radius: 20px;
+}
+
+.common-questions-section > .accordion-item:has(button[aria-expanded="true"]) .accordion-header button {
+    border-color: transparent;
+}
+
+.common-questions-section > .accordion-item:has(button[aria-expanded="true"]) {
+    border: 3px solid #070C29;
+}
+
+.common-questions-section > .accordion-item .accordion-header button {
+    height: 60px;
+    border: 3px solid #E3E8F9;
+    padding: 20px 16px;
+    border-radius: 18px!important;
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    box-shadow: 0px 0px 5px 2px #C5C5C51A;
+
+    /* transition: none; */
+}
+
+.common-questions-section > .accordion-item .accordion-header button::after {
+    background-image: url("data:image/svg+xml,<svg width='24' height='14' viewBox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M26.5002 0.925223C26.0318 0.459596 25.3982 0.198242 24.7377 0.198242C24.0773 0.198242 23.4436 0.459596 22.9752 0.925223L14.0002 9.77522L5.15024 0.925223C4.68183 0.459596 4.0482 0.198242 3.38774 0.198242C2.72727 0.198242 2.09364 0.459596 1.62524 0.925223C1.39092 1.15763 1.20493 1.43413 1.07801 1.73878C0.951087 2.04343 0.885742 2.37019 0.885742 2.70022C0.885742 3.03025 0.951087 3.35702 1.07801 3.66167C1.20493 3.96631 1.39092 4.24282 1.62524 4.47522L12.2252 15.0752C12.4576 15.3095 12.7341 15.4955 13.0388 15.6225C13.3434 15.7494 13.6702 15.8147 14.0002 15.8147C14.3303 15.8147 14.657 15.7494 14.9617 15.6225C15.2663 15.4955 15.5428 15.3095 15.7752 15.0752L26.5002 4.47522C26.7346 4.24282 26.9205 3.96631 27.0475 3.66167C27.1744 3.35702 27.2397 3.03025 27.2397 2.70022C27.2397 2.37019 27.1744 2.04343 27.0475 1.73878C26.9205 1.43413 26.7346 1.15763 26.5002 0.925223Z' fill='%23070C29'/></svg>")!important;
+}
+
+.common-questions-section > .accordion-item .accordion-header button:not(.collapsed) {
+    color: #000000;
+    font-weight: 700;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 20px 20px 0px 0px!important;
+    padding-bottom: 0px;
+    height: fit-content;
+    border: none;
+}
+
+.common-questions-section > .accordion-item .accordion-header button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,<svg width='24' height='14' viewBox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M26.5002 0.925223C26.0318 0.459596 25.3982 0.198242 24.7377 0.198242C24.0773 0.198242 23.4436 0.459596 22.9752 0.925223L14.0002 9.77522L5.15024 0.925223C4.68183 0.459596 4.0482 0.198242 3.38774 0.198242C2.72727 0.198242 2.09364 0.459596 1.62524 0.925223C1.39092 1.15763 1.20493 1.43413 1.07801 1.73878C0.951087 2.04343 0.885742 2.37019 0.885742 2.70022C0.885742 3.03025 0.951087 3.35702 1.07801 3.66167C1.20493 3.96631 1.39092 4.24282 1.62524 4.47522L12.2252 15.0752C12.4576 15.3095 12.7341 15.4955 13.0388 15.6225C13.3434 15.7494 13.6702 15.8147 14.0002 15.8147C14.3303 15.8147 14.657 15.7494 14.9617 15.6225C15.2663 15.4955 15.5428 15.3095 15.7752 15.0752L26.5002 4.47522C26.7346 4.24282 26.9205 3.96631 27.0475 3.66167C27.1744 3.35702 27.2397 3.03025 27.2397 2.70022C27.2397 2.37019 27.1744 2.04343 27.0475 1.73878C26.9205 1.43413 26.7346 1.15763 26.5002 0.925223Z' fill='%23070C29'/></svg>")!important;
+}
+
+.common-questions-section > .accordion-item .accordion-body {
+    padding: 20px 16px;
+    /* background-color: var(--pagination-color); */
+    border-radius: 0px 0px 20px 20px;
+}
+
+.common-questions-section > .accordion-item .accordion-body span {
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    color: #070C29;
+}
+
+.accordion-button:focus {
+    border-color: unset;
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    width: 1rem;
+    height: .65rem;
+    background-size: 1rem;
+}
+
+@media (min-width: 1920px) {
+    .common-questions-section {
+        max-height: 86vh;
+    }
+}

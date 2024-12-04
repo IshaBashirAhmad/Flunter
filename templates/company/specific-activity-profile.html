@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% extends 'layouts/base.html' %}
+    {% load static %}
+    
+    {% block links %}
+    <link rel="stylesheet" href="{% static 'company/css/specific_shared_profile.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/profile_card.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'modals/css/save_on_list_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/report_candidate_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/add_actions_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/share_profile_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/delete_modal.css' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    {% endblock %}
+    
+    <title>Flunter Specific Profile</title>
+</head>
+<body>
+    {% block body %}        
+        <div class="main-content">
+            <div class="">
+                <svg onclick="history.back();" width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1.5" y="2" width="47" height="47" rx="2.5" stroke="#000000" stroke-width="3"/>
+                    <path d="M27.6263 32.8548L20.293 25.5007L27.6263 18.1465" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                    
+                <h1 class="list-name">Activity Profile</h1>
+            </div>
+            <div class="main-content-container">
+                <div class="w-100 h-100 d-flex justify-content-center align-items-center pt-2 pb-2" id="table-loader">
+                    <span class="spinner-border spinner-border-md" style="color: #7C00F4;" role="status" aria-hidden="true">
+                    </span>
+                </div>
+                <div class="result-list">
+
+                </div>
+            </div>
+        </div>
+
+
+    {% include "modals/save-list-modal.html" %}
+    {% include "modals/report-candidate-modal.html" %}
+    {% include "modals/add-action-modal.html" %}
+    {% include "modals/share-profile-modal.html" %}
+    {% include "modals/delete-modal.html" %}
+
+    {{list_id|json_script:"list_id"}}
+    {{request.user_data.data|json_script:"userData"}}
+
+    {% endblock %}
+</body>
+{% block scripts %}
+<script>
+    const userData = JSON.parse(document.getElementById('userData').textContent);
+    const list_id = JSON.parse(document.getElementById('list_id').textContent);
+</script>
+<script src="{% static 'company/js/specificSharedProfile.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="{% static 'modals/js/addActionModal.js' %}"></script>
+<script src="{% static 'modals/js/shareProfileModal.js' %}"></script>
+<script src="{% static 'modals/js/reportCandidateModal.js' %}"></script>
+<script src="{% static 'modals/js/saveOnListModal.js' %}"></script>
+<script src="{% static 'common/js/profileCard.js' %}"></script>
+{% endblock %}
+</html>

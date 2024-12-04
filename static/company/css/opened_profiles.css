@@ -1,0 +1,19 @@
+.main-content-container {
+    max-height: calc(100vh - 240px);
+    overflow-y: auto;
+}
+
+.pagination-div > .records {
+    font-size: .65rem;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: left;
+    color: #000000;
+}
+
+
+@media (min-width: 1920px) {
+    .main-content-container {
+        max-height: 75vh;
+    }
+}

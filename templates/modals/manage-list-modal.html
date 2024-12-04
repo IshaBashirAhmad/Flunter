@@ -1,0 +1,50 @@
+{% load static %}
+
+<div class="modal fade" id="manageListModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="manageListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form>
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span class="add-user-modal-header-text" id="manage-list-modal-header-text">Create List</span>
+                </div>
+                <div class="modal-body">
+                    <div class="select-list-type-container" id="select-list-type-container">
+                        <span>Type</span>
+                        <div class="list-type-group">
+                            <div class="duration-radio-btn">
+                                <input type="radio" onclick="changeManageListType('recruitment');" id="manage-list-recruitment" value="recruitment" name="list_type" checked />
+                                <label for="manage-list-recruitment" class="duration-radio-label">Recruitment</label>
+                            </div>
+                            <div class="duration-radio-btn">
+                                <input type="radio" onclick="changeManageListType('prospection');" id="manage-list-prospection" value="prospection" name="list_type" />
+                                <label for="manage-list-prospection" class="duration-radio-label">Prospection</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="manage-list-name">Name</label>
+                        <div>
+                            <!-- <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.5 6.9C14.5 8.19836 13.4082 9.3 12 9.3V11.3C14.4578 11.3 16.5 9.35718 16.5 6.9H14.5ZM12 9.3C10.5918 9.3 9.5 8.19836 9.5 6.9H7.5C7.5 9.35718 9.54224 11.3 12 11.3V9.3ZM9.5 6.9C9.5 5.60164 10.5918 4.5 12 4.5V2.5C9.54224 2.5 7.5 4.44282 7.5 6.9H9.5ZM12 4.5C13.4082 4.5 14.5 5.60164 14.5 6.9H16.5C16.5 4.44282 14.4578 2.5 12 2.5V4.5ZM8.5 14.7H15.5V12.7H8.5V14.7ZM15.5 19.5H8.5V21.5H15.5V19.5ZM8.5 19.5C7.09177 19.5 6 18.3984 6 17.1H4C4 19.5572 6.04224 21.5 8.5 21.5V19.5ZM18 17.1C18 18.3984 16.9082 19.5 15.5 19.5V21.5C17.9578 21.5 20 19.5572 20 17.1H18ZM15.5 14.7C16.9082 14.7 18 15.8016 18 17.1H20C20 14.6428 17.9578 12.7 15.5 12.7V14.7ZM8.5 12.7C6.04224 12.7 4 14.6428 4 17.1H6C6 15.8016 7.09177 14.7 8.5 14.7V12.7Z" fill="#5D5959"/>
+                            </svg> -->
+                            <input maxlength="50" type="text" name="name" id="manage-list-name" placeholder="Django" />
+                        </div>
+                    </div>
+                </div>
+                <div class="error-div">
+                    <small class="create-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" type="submit">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Create</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="manageListModal" data-bs-toggle="modal" data-bs-target="#manageListModal" />

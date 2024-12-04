@@ -1,0 +1,34 @@
+{% load static %}
+
+<div class="modal fade" id="saveNeedModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="saveNeedModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form>
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span class="add-user-modal-header-text" id="add-user-modal-header-text">Need Name</span>
+                </div>
+                <div class="modal-body">
+                    <div class="input-wrapper">
+                        <label for="need-name">Need Name</label>
+                        <div>
+                            <input maxlength="50" type="text" name="name" id="need-name" placeholder="Developer" />
+                        </div>
+                    </div>
+                </div>
+                <div class="error-div">
+                    <small class="create-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" type="submit">
+                        <span class="spinner-border spinner-border-sm hide text-dark" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="saveNeedModal" data-bs-toggle="modal" data-bs-target="#saveNeedModal" />

@@ -1,0 +1,199 @@
+{% load static %}
+
+<div class="modal fade" id="filterModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="filterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form id="filters-form">
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span class="add-user-modal-header-text" id="add-user-modal-header-text">Advanced Search</span>
+                    <span>See results in your view based on the filters you select here.</span>
+                </div>
+                <div class="modal-body">
+                    <div class="main-content-modal">
+                        <div class="skils-job-company">
+                            <div class="jobs">
+                                <div class="header">
+                                    <span>                                         
+                                        <label for="job">Job Title Keyword</label>
+                                    </span>
+                                    <svg id="clear-jobs-tags-button" class="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.83398 17.5C5.37565 17.5 4.98329 17.3368 4.6569 17.0104C4.33051 16.684 4.16732 16.2917 4.16732 15.8333V5H3.33398V3.33333H7.50065V2.5H12.5007V3.33333H16.6673V5H15.834V15.8333C15.834 16.2917 15.6708 16.684 15.3444 17.0104C15.018 17.3368 14.6257 17.5 14.1673 17.5H5.83398ZM14.1673 5H5.83398V15.8333H14.1673V5ZM7.50065 14.1667H9.16732V6.66667H7.50065V14.1667ZM10.834 14.1667H12.5007V6.66667H10.834V14.1667Z" fill="#68759A"/>
+                                    </svg>                                                                             
+                                </div>
+                                <div class="tag-container" id="job-tag-container">
+                                    <textarea name="" class="skills" id="job-tag-input" placeholder="Enter Job title keyword"></textarea>
+                                </div>
+                            </div>
+                            <div class="skills">
+                                <div class="header">
+                                    <span>
+                                        <label for="skills">Skills</label>
+                                    </span>
+                                    <svg id="clear-skills-tags-button" class="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.83398 17.5C5.37565 17.5 4.98329 17.3368 4.6569 17.0104C4.33051 16.684 4.16732 16.2917 4.16732 15.8333V5H3.33398V3.33333H7.50065V2.5H12.5007V3.33333H16.6673V5H15.834V15.8333C15.834 16.2917 15.6708 16.684 15.3444 17.0104C15.018 17.3368 14.6257 17.5 14.1673 17.5H5.83398ZM14.1673 5H5.83398V15.8333H14.1673V5ZM7.50065 14.1667H9.16732V6.66667H7.50065V14.1667ZM10.834 14.1667H12.5007V6.66667H10.834V14.1667Z" fill="#68759A"/>
+                                    </svg>                                                                               
+                                </div>
+                                <div class="tag-container" id="tag-container">
+                                    <textarea name="" class="skills" id="tag-input" placeholder="Enter Skills"></textarea>
+                                </div>
+                            </div>
+                            <div class="company">
+                                <div class="header">
+                                    <span>                                                                                       
+                                        <label for="job">Company Name</label>
+                                    </span> 
+                                    <svg id="clear-company-tags-button" class="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.83398 17.5C5.37565 17.5 4.98329 17.3368 4.6569 17.0104C4.33051 16.684 4.16732 16.2917 4.16732 15.8333V5H3.33398V3.33333H7.50065V2.5H12.5007V3.33333H16.6673V5H15.834V15.8333C15.834 16.2917 15.6708 16.684 15.3444 17.0104C15.018 17.3368 14.6257 17.5 14.1673 17.5H5.83398ZM14.1673 5H5.83398V15.8333H14.1673V5ZM7.50065 14.1667H9.16732V6.66667H7.50065V14.1667ZM10.834 14.1667H12.5007V6.66667H10.834V14.1667Z" fill="#68759A"/>
+                                    </svg>                                        
+                                </div>
+                                <div class="tag-container" id="company-tag-container">
+                                    <textarea name="" class="skills" id="company-tag-input" placeholder="Enter Company Name"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="employee-headcount">
+                            <div class="header">
+                                <div class="">
+                                    <span>Employee headcount</span>
+                                    <div> 
+                                        <svg id="clear-headcount-checkbox-button" class="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.83398 17.5C5.37565 17.5 4.98329 17.3368 4.6569 17.0104C4.33051 16.684 4.16732 16.2917 4.16732 15.8333V5H3.33398V3.33333H7.50065V2.5H12.5007V3.33333H16.6673V5H15.834V15.8333C15.834 16.2917 15.6708 16.684 15.3444 17.0104C15.018 17.3368 14.6257 17.5 14.1673 17.5H5.83398ZM14.1673 5H5.83398V15.8333H14.1673V5ZM7.50065 14.1667H9.16732V6.66667H7.50065V14.1667ZM10.834 14.1667H12.5007V6.66667H10.834V14.1667Z" fill="#68759A"/>
+                                        </svg>    
+                                    </div>
+                                </div>
+                                <span>Select number of employees</span>
+                            </div>
+                            <div class="body">
+                                <label for="0-10" class="cursor-pointer">
+                                    <input type="checkbox" name="company_size_filter" value="0-10" data-min="0" data-max="10" id="0-10" class="form-check-input cursor-pointer" />
+                                    <span class="terms-checkbox-label cursor-pointer">0 - 10</span>
+                                </label>
+                                <label for="11-50" class="cursor-pointer">
+                                    <input type="checkbox" name="company_size_filter" value="11-50" data-min="11" data-max="50" id="11-50" class="form-check-input cursor-pointer" />
+                                    <span class="terms-checkbox-label cursor-pointer">11 - 50</span>
+                                </label>
+                                <label for="51-200_" class="cursor-pointer">
+                                    <input type="checkbox" name="company_size_filter" value="51-200" data-min="51" data-max="200" id="51-200_" class="form-check-input cursor-pointer"/>
+                                    <span class="terms-checkbox-label cursor-pointer">51 - 200</span>
+                                </label>
+                                <label for="201_500" class="cursor-pointer">
+                                    <input type="checkbox" name="company_size_filter" value="201-500" data-min="201" data-max="500" id="201_500" class="form-check-input cursor-pointer" />
+                                    <span class="terms-checkbox-label cursor-pointer">201 - 500</span>
+                                </label>
+                                <label for="501-1000" class="cursor-pointer">
+                                    <input type="checkbox" name="company_size_filter" value="501-1000" data-min="501" data-max="1000" id="501-1000" class="form-check-input cursor-pointer" />
+                                    <span class="terms-checkbox-label cursor-pointer">501 - 1000</span>
+                                </label>
+                                <label for="1001_5000" class="cursor-pointer">
+                                    <input type="checkbox" name="company_size_filter" value="1001-5000" data-min="1001" data-max="5000" id="1001_5000" class="form-check-input cursor-pointer" />
+                                    <span class="terms-checkbox-label cursor-pointer">1001 - 5000</span>
+                                </label>
+                                <label for="5001-10000" class="cursor-pointer">
+                                    <input type="checkbox" name="company_size_filter" value="5001-10000" data-min="5001" data-max="10000" id="5001-10000" class="form-check-input cursor-pointer" />
+                                    <span class="terms-checkbox-label cursor-pointer">5001 - 10000</span>
+                                </label>
+                                <label for="greater-than-10000" class="cursor-pointer">
+                                    <input type="checkbox" name="company_size_filter" value="10000" data-min="10000" data-max="" id="greater-than-10000" class="form-check-input cursor-pointer" />
+                                    <span class="terms-checkbox-label cursor-pointer">10,000 +</span>
+                                </label>
+                            </div>
+                            <div class="contact-name">
+                                <div class="">                                       
+                                    <label for="contact-name">Contact Name</label>
+                                </div>
+                                <input type="text" name="contact_name" id="contact-name" placeholder="Enter contact name">
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <div class="contact-details">
+                                <div class="header">
+                                    <span>
+                                        <label for="contact-detials">Contact Details</label>
+                                    </span>
+                                    <svg id="clear-contact-details-button" class="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.83398 17.5C5.37565 17.5 4.98329 17.3368 4.6569 17.0104C4.33051 16.684 4.16732 16.2917 4.16732 15.8333V5H3.33398V3.33333H7.50065V2.5H12.5007V3.33333H16.6673V5H15.834V15.8333C15.834 16.2917 15.6708 16.684 15.3444 17.0104C15.018 17.3368 14.6257 17.5 14.1673 17.5H5.83398ZM14.1673 5H5.83398V15.8333H14.1673V5ZM7.50065 14.1667H9.16732V6.66667H7.50065V14.1667ZM10.834 14.1667H12.5007V6.66667H10.834V14.1667Z" fill="#68759A"/>
+                                    </svg>                                           
+                                </div>
+                                <div class="contact-details-radio-btn">
+                                    <label for="contact-details">
+                                        <span>Must Contain</span>
+                                        <div class="redios">
+                                            <div class="radio-btn-container">
+                                                <input type="radio" name="contact_details_radio" value="or" checked id="or">
+                                                <label for="or" >Or</label >
+                                            </div>
+                                            <div class="radio-btn-container">
+                                                <input type="radio" name="contact_details_radio" value="and" id="and">
+                                                <label for="and" >And</label >
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="body">
+                                    <label for="Mobile" class="cursor-pointer">
+                                        <input type="checkbox" name="contact_details" value="phone1" id="Mobile" class="form-check-input cursor-pointer" />
+                                        <span class="terms-checkbox-label cursor-pointer">Mobile</span>
+                                    </label>
+                                    <label for="Direct" class="cursor-pointer">
+                                        <input type="checkbox" name="contact_details" value="phone2" id="Direct" class="form-check-input cursor-pointer" />
+                                        <span class="terms-checkbox-label cursor-pointer">Direct</span>
+                                    </label>
+                                    <label for="Personal-Email" class="cursor-pointer">
+                                        <input type="checkbox" name="contact_details" value="email1" id="Personal-Email" class="form-check-input cursor-pointer" />
+                                        <span class="terms-checkbox-label cursor-pointer">Personal Email</span>
+                                    </label>
+                                    <label for="Work-Email" class="cursor-pointer">
+                                        <input type="checkbox" name="contact_details" value="email2" id="Work-Email" class="form-check-input cursor-pointer" />
+                                        <span class="terms-checkbox-label cursor-pointer">Work Email</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="contact-details">
+                                <div class="header">
+                                    <span>
+                                        <label>Seniority Level</label>
+                                    </span>
+                                    <svg id="clear-seniority-level-button" class="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.83398 17.5C5.37565 17.5 4.98329 17.3368 4.6569 17.0104C4.33051 16.684 4.16732 16.2917 4.16732 15.8333V5H3.33398V3.33333H7.50065V2.5H12.5007V3.33333H16.6673V5H15.834V15.8333C15.834 16.2917 15.6708 16.684 15.3444 17.0104C15.018 17.3368 14.6257 17.5 14.1673 17.5H5.83398ZM14.1673 5H5.83398V15.8333H14.1673V5ZM7.50065 14.1667H9.16732V6.66667H7.50065V14.1667ZM10.834 14.1667H12.5007V6.66667H10.834V14.1667Z" fill="#68759A"/>
+                                    </svg>                                                                              
+                                </div>
+                                <div class="body">
+                                    <label for="junior-level" class="cursor-pointer">
+                                        <input type="checkbox" name="seniority_level" value="junior" data-min="0" data-max="2" id="junior-level" class="form-check-input cursor-pointer" />
+                                        <span class="terms-checkbox-label cursor-pointer">Junior</span>
+                                    </label>
+                                    <label for="medior-level" class="cursor-pointer">
+                                        <input type="checkbox" name="seniority_level" value="medior" data-min="2.5" data-max="5" id="medior-level" class="form-check-input cursor-pointer" />
+                                        <span class="terms-checkbox-label cursor-pointer">Medior</span>
+                                    </label>
+                                    <label for="senior-level" class="cursor-pointer">
+                                        <input type="checkbox" name="seniority_level" value="senior" data-min="5.5" data-max="11.5" id="senior-level" class="form-check-input cursor-pointer" />
+                                        <span class="terms-checkbox-label cursor-pointer">Senior</span>
+                                    </label>
+                                    <label for="expert-level" class="cursor-pointer">
+                                        <input type="checkbox" name="seniority_level" value="expert" data-min="12" data-max="" id="expert-level" class="form-check-input cursor-pointer" />
+                                        <span class="terms-checkbox-label cursor-pointer">Expert</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="error-div">
+                    <small class="create-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" type="button" data-bs-dismiss="modal" onclick="applySearch();">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Apply filters</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="filterModal" data-bs-toggle="modal" data-bs-target="#filterModal" />

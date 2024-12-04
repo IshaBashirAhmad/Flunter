@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'administration/common/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/common/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/account/css/sidebar.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/account/css/recent_searches.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/company/css/companies-list.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/company/css/company-detail.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/individual/css/individual-detail.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/modals/css/delete_modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'modals/css/delete-search-modal.css' %}">
+    <link rel="stylesheet" href="{% static 'administration/modals/css/delete_modal.css' %}" />
+
+    {% comment %} <link rel="stylesheet" href="{% static 'common/css/bootstrap.min.css' %}">
+    <script src="{% static 'common/js/bootstrap.bundle.min.js' %}"></script> {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'common/images/favicon.svg' %}" />
+    
+    <title>Flunter | Individual Details</title>
+</head>
+<body>
+
+    {% include '../includes/company-sidebar.html' %}
+
+    <div class="main-page">
+        {% include '../includes/admin-navbar.html' %}
+        
+        <div class="main-content">
+            <div class="container d-flex justify-content-between p-0">
+                <h1>Individuals</h1>
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{message.tags}} alert-dismissible fade show d-flex index w-25 mt-4 w-100" role="alert">
+                        {% if message.tags == 'alert-danger' %}
+                        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#842029" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                        {% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 34 34" fill="none">
+                            <path d="M17 0.6875C13.7737 0.6875 10.6198 1.64421 7.93727 3.43665C5.25469 5.22909 3.16388 7.77676 1.92922 10.7575C0.694568 13.7382 0.371526 17.0181 1.00095 20.1824C1.63037 23.3467 3.18398 26.2533 5.46533 28.5347C7.74667 30.816 10.6533 32.3696 13.8176 32.9991C16.9819 33.6285 20.2618 33.3054 23.2425 32.0708C26.2232 30.8361 28.7709 28.7453 30.5634 26.0627C32.3558 23.3802 33.3125 20.2263 33.3125 17C33.3125 12.6737 31.5939 8.52451 28.5347 5.46532C25.4755 2.40613 21.3264 0.6875 17 0.6875ZM25.8594 10.745L15.7006 22.3606C15.6479 22.4206 15.583 22.4687 15.5103 22.5017C15.4376 22.5347 15.3586 22.5518 15.2788 22.5519C15.1551 22.5531 15.0345 22.5136 14.9356 22.4394L8.22501 17.2756C8.16628 17.2306 8.11701 17.1744 8.08 17.1103C8.04298 17.0462 8.01896 16.9754 8.0093 16.902C7.99963 16.8286 8.00452 16.7541 8.02368 16.6826C8.04283 16.6111 8.07589 16.544 8.12094 16.4853C8.16601 16.4266 8.22219 16.3773 8.28629 16.3403C8.3504 16.3033 8.42116 16.2793 8.49455 16.2696C8.56794 16.2599 8.64251 16.2648 8.71401 16.284C8.78551 16.3031 8.85253 16.3362 8.91126 16.3812L15.2 21.2244L25.01 9.97437C25.0588 9.9186 25.118 9.87298 25.1844 9.84011C25.2508 9.80725 25.323 9.78777 25.3969 9.78281C25.4708 9.77785 25.545 9.78749 25.6152 9.81119C25.6853 9.83489 25.7502 9.87218 25.8059 9.92094C25.8617 9.96969 25.9073 10.029 25.9402 10.0953C25.9731 10.1617 25.9925 10.2339 25.9975 10.3078C26.0025 10.3817 25.9928 10.4559 25.9691 10.5261C25.9454 10.5963 25.9081 10.6611 25.8594 10.7169V10.745Z" fill="#28A745"/>
+                          </svg>
+                        {% endif %}
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="main-content-container-companies-list">
+                <div class="company-intro">
+                    <div class="info">
+                        <div class="d-flex justify-content-between">
+                            <span class="info-heading">Individual Info</span>
+                            <span class="action-btns">
+                                <a href="{% url "individual_update" individual.id %}">
+                                    <svg  width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="4" stroke="#7C00F4" stroke-width="2"/>
+                                        <path opacity="0.4" d="M21.7944 28.3373H28.5257" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9026 12.5646C21.6805 11.5735 22.9377 11.6252 23.9299 12.4031L25.3971 13.5537C26.3894 14.3316 26.7409 15.5381 25.9629 16.5314L17.2134 27.6939C16.921 28.0676 16.4745 28.2882 15.9995 28.2935L12.6249 28.3367L11.8607 25.0487C11.753 24.5874 11.8607 24.1019 12.1531 23.7271L20.9026 12.5646Z" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path opacity="0.4" d="M19.2642 14.6553L24.3245 18.6221" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                                <svg class="" onclick="openDelModal('delUserModal', '{{individual.id}}', 'individual');" width="35" height="35" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="5" fill="#FF0000"/>
+                                    <path d="M27.8482 17.2876C27.8482 17.2876 27.2664 24.5037 26.9289 27.5433C26.7682 28.9951 25.8714 29.8458 24.4025 29.8726C21.6071 29.923 18.8086 29.9262 16.0143 29.8672C14.6011 29.8383 13.7193 28.9769 13.5618 27.5508C13.2221 24.4844 12.6436 17.2876 12.6436 17.2876" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M29.3304 13.8287H11.1611" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M25.8296 13.8285C24.9885 13.8285 24.2643 13.2339 24.0993 12.41L23.8389 11.1071C23.6782 10.506 23.1339 10.0903 22.5135 10.0903H17.9782C17.3578 10.0903 16.8135 10.506 16.6528 11.1071L16.3925 12.41C16.2275 13.2339 15.5032 13.8285 14.6621 13.8285" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="info-details">
+                            <div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.5 6.4C14.5 7.69836 13.4082 8.8 12 8.8V10.8C14.4578 10.8 16.5 8.85718 16.5 6.4H14.5ZM12 8.8C10.5918 8.8 9.5 7.69836 9.5 6.4H7.5C7.5 8.85718 9.54224 10.8 12 10.8V8.8ZM9.5 6.4C9.5 5.10164 10.5918 4 12 4V2C9.54224 2 7.5 3.94282 7.5 6.4H9.5ZM12 4C13.4082 4 14.5 5.10164 14.5 6.4H16.5C16.5 3.94282 14.4578 2 12 2V4ZM8.5 14.2H15.5V12.2H8.5V14.2ZM15.5 19H8.5V21H15.5V19ZM8.5 19C7.09177 19 6 17.8984 6 16.6H4C4 19.0572 6.04224 21 8.5 21V19ZM18 16.6C18 17.8984 16.9082 19 15.5 19V21C17.9578 21 20 19.0572 20 16.6H18ZM15.5 14.2C16.9082 14.2 18 15.3016 18 16.6H20C20 14.1428 17.9578 12.2 15.5 12.2V14.2ZM8.5 12.2C6.04224 12.2 4 14.1428 4 16.6H6C6 15.3016 7.09177 14.2 8.5 14.2V12.2Z" fill="#5D5959"/>
+                                </svg>
+                                <span>
+                                        {% if individual.first_name and individual.last_name %}{{individual.first_name |title}} {{individual.last_name |title}}{% else %}-----{% endif %}
+                                </span>
+                            </div>
+                            <div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.0504 12.9829L17.5438 12.6028C16.4107 12.317 15.2484 12.8228 14.6539 13.8612L14.5397 14.0604C14.3538 14.3838 14.052 14.6063 13.6884 14.688C13.3132 14.7738 12.9089 14.6913 12.5845 14.4655C11.3906 13.6329 10.3634 12.6062 9.53042 11.4128C9.30446 11.0886 9.22359 10.686 9.3078 10.3093C9.38951 9.94598 9.61213 9.6443 9.93563 9.45928L10.1749 9.32178C11.1729 8.75007 11.674 7.57166 11.3939 6.45658L11.0145 4.95065C10.8111 4.14309 10.2516 3.50138 9.47872 3.19053C8.70498 2.87801 7.8587 2.95301 7.15083 3.39304C5.55666 4.38561 4.44774 6.01488 4.10923 7.86418C3.76905 9.7218 4.23179 11.6503 5.38073 13.1545C6.95239 15.2122 8.78919 17.0506 10.8411 18.6191C12.0209 19.5208 13.4625 20 14.9266 20C15.326 20 15.7278 19.9642 16.1264 19.8917C17.9782 19.5541 19.6107 18.4449 20.6079 16.8448C21.0473 16.1381 21.1215 15.2905 20.8097 14.5188C20.4979 13.7462 19.8559 13.187 19.0488 12.9837L19.0504 12.9829ZM19.5457 16.1864C18.7369 17.484 17.4096 18.3857 15.9038 18.6607C14.3921 18.9374 12.8247 18.5582 11.6023 17.6257C9.63881 16.1247 7.88038 14.3646 6.37542 12.3962C5.44076 11.1719 5.0639 9.60179 5.34071 8.09003C5.62003 6.56492 6.49799 5.274 7.81368 4.45561C8.02963 4.32144 8.26975 4.2531 8.51322 4.2531C8.6808 4.2531 8.85006 4.2856 9.01264 4.35144C9.41119 4.51145 9.69884 4.84231 9.80306 5.25733L10.1824 6.76244C10.3275 7.33664 10.069 7.94418 9.5546 8.23837L9.3153 8.37588C8.68414 8.73757 8.24891 9.32761 8.08882 10.0368C7.92791 10.7552 8.07965 11.5178 8.50571 12.1295C9.42369 13.4446 10.556 14.5755 11.8708 15.4922C12.482 15.9189 13.2449 16.0697 13.9644 15.9089C14.6748 15.7497 15.2643 15.3138 15.6253 14.683L15.7395 14.4838C16.053 13.9379 16.6567 13.6737 17.2395 13.8162L18.7453 14.1954C19.1613 14.3004 19.4923 14.5888 19.6532 14.9863C19.8133 15.3839 19.775 15.8197 19.5465 16.1872L19.5457 16.1864Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                </svg>
+                                <span> {% if individual.phone_number %}{{individual.phone_number}}{% else %} -----{% endif %}</span>
+                            </div>
+                            <div>
+                                <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.58193 1.43908L9.80147 1.65861M8.70378 1.43908L8.62395 1.51891M8.62395 1.51891L1.29289 8.84996C1.10536 9.0375 1 9.29185 1 9.55707V19C1 19.5523 1.44772 20 2 20H16.2857C16.838 20 17.2857 19.5523 17.2857 19V9.55707C17.2857 9.29185 17.1804 9.0375 16.9928 8.84996L9.80147 1.65861M8.62395 1.51891V1.51891C8.91053 1.23232 9.37518 1.23232 9.66176 1.51891L9.80147 1.65861" stroke="#5D5959" stroke-width="1.6" stroke-linecap="round"/>
+                                    <path d="M3.46244 10.1723C3.75377 10.1477 4.05182 10.1286 4.35659 10.1152C4.6636 10.1018 4.9863 10.0951 5.32469 10.0951H6.80038C6.85864 10.0951 6.91467 10.0973 6.96845 10.1018C7.02223 10.1062 7.07041 10.1174 7.11299 10.1354C7.15557 10.1533 7.18919 10.179 7.21384 10.2126C7.23849 10.2462 7.25081 10.291 7.25081 10.347V10.6492L4.58853 14.3304H5.70118C5.78185 14.3304 5.86253 14.3293 5.9432 14.327C6.02612 14.3226 6.10791 14.3158 6.18859 14.3069C6.23789 14.2621 6.28383 14.2128 6.32641 14.1591C6.36899 14.1054 6.40596 14.0427 6.43734 13.971C6.46871 13.8971 6.49336 13.8109 6.51129 13.7124C6.53146 13.6139 6.54154 13.4952 6.54154 13.3564C6.59981 13.3564 6.6648 13.3586 6.73651 13.3631C6.80822 13.3653 6.87657 13.3687 6.94156 13.3732C7.00655 13.3754 7.06481 13.3776 7.11635 13.3799C7.17014 13.3821 7.20823 13.3832 7.23064 13.3832C7.23288 13.4213 7.23513 13.484 7.23737 13.5713C7.24185 13.6564 7.24521 13.7505 7.24745 13.8535C7.25193 13.9542 7.25529 14.055 7.25754 14.1557C7.26202 14.2565 7.26538 14.3405 7.26762 14.4076C7.26762 14.4412 7.26426 14.4905 7.25754 14.5554C7.25305 14.6204 7.24521 14.701 7.23401 14.7973C7.09506 14.8219 6.94716 14.8353 6.79029 14.8376C6.63566 14.8398 6.46759 14.8409 6.28607 14.8409H3.6137C3.57337 14.832 3.54087 14.8174 3.51622 14.7973C3.49381 14.7771 3.47588 14.7536 3.46244 14.7267C3.45123 14.6976 3.44339 14.6663 3.43891 14.6327C3.43667 14.5991 3.43555 14.5655 3.43555 14.5319V14.2565L6.03732 10.619H5.25074C5.18575 10.619 5.1062 10.6224 5.01208 10.6291C4.9202 10.6336 4.82607 10.6425 4.72971 10.656C4.63559 10.6694 4.54707 10.6873 4.46416 10.7097C4.38348 10.7321 4.32297 10.7601 4.28264 10.7937C4.27815 10.825 4.27479 10.8732 4.27255 10.9381C4.27255 11.003 4.27255 11.0724 4.27255 11.1463C4.27255 11.1732 4.27255 11.2012 4.27255 11.2303C4.27479 11.2572 4.27591 11.284 4.27591 11.3109C4.16386 11.3109 4.05182 11.312 3.93977 11.3143C3.82996 11.3143 3.71679 11.3143 3.60026 11.3143C3.59578 11.2538 3.58681 11.1754 3.57337 11.0792C3.56216 10.9829 3.54872 10.881 3.53303 10.7735C3.51958 10.666 3.50614 10.5597 3.49269 10.4544C3.47925 10.347 3.46916 10.2529 3.46244 10.1723Z" fill="#5D5959"/>
+                                    <path d="M7.79201 14.8846V14.3505H8.14832C8.19987 14.3505 8.24805 14.3505 8.29287 14.3505C8.33993 14.3483 8.38587 14.3438 8.43069 14.3371C8.45534 14.2498 8.46766 14.13 8.46766 13.9777V11.0724C8.46766 10.9605 8.46542 10.8687 8.46094 10.797C8.45646 10.7254 8.44637 10.6627 8.43069 10.6089C8.38811 10.6 8.34329 10.5955 8.29623 10.5955C8.25141 10.5933 8.20323 10.5921 8.15169 10.5921H7.79201V10.1387C7.98921 10.1163 8.18306 10.1006 8.37354 10.0917C8.56627 10.0805 8.76459 10.0749 8.96852 10.0749C9.22399 10.0749 9.45481 10.0783 9.66098 10.085C9.8694 10.0917 10.0543 10.1062 10.2156 10.1286V10.5921H9.85595C9.80441 10.5921 9.75511 10.5933 9.70805 10.5955C9.66323 10.5955 9.61841 10.6 9.57359 10.6089C9.56238 10.6537 9.55342 10.7041 9.54669 10.7601C9.54221 10.8138 9.53997 10.8799 9.53997 10.9582V13.971C9.53997 14.0494 9.54221 14.1188 9.54669 14.1792C9.55342 14.2375 9.56238 14.2901 9.57359 14.3371C9.61841 14.3438 9.66323 14.3483 9.70805 14.3505C9.75511 14.3505 9.80441 14.3505 9.85595 14.3505H10.2123V14.8846C10.0016 14.8667 9.80329 14.8543 9.61729 14.8476C9.43128 14.8432 9.25425 14.8409 9.08617 14.8409C8.88224 14.8409 8.67495 14.8432 8.4643 14.8476C8.25365 14.8543 8.02955 14.8667 7.79201 14.8846Z" fill="#5D5959"/>
+                                    <path d="M11.419 13.9777V10.9515C11.419 10.7993 11.4067 10.6828 11.3821 10.6022C11.344 10.5977 11.2991 10.5955 11.2476 10.5955C11.1983 10.5933 11.1468 10.5921 11.093 10.5921H10.6795V10.1354C10.9731 10.1062 11.2947 10.0861 11.6443 10.0749C11.9938 10.0637 12.3771 10.0581 12.7939 10.0581C13.1166 10.0581 13.4057 10.0794 13.6611 10.1219C13.9188 10.1645 14.1385 10.2406 14.32 10.3503C14.5015 10.4578 14.6404 10.6045 14.7368 10.7903C14.8354 10.9762 14.8869 11.2135 14.8914 11.5024C14.8914 11.7285 14.8522 11.93 14.7738 12.1069C14.6953 12.2838 14.5743 12.4338 14.4107 12.557C14.2494 12.6801 14.0432 12.7742 13.7922 12.8391C13.5435 12.9041 13.2488 12.9365 12.9082 12.9365C12.8454 12.9365 12.7804 12.9365 12.7132 12.9365C12.646 12.9365 12.5731 12.9343 12.4947 12.9298C12.4947 13.1336 12.4936 13.3049 12.4913 13.4437C12.4913 13.5803 12.4913 13.6945 12.4913 13.7863C12.4913 13.8758 12.4913 13.9475 12.4913 14.0012C12.4913 14.0527 12.4925 14.0975 12.4947 14.1356C12.4969 14.1714 12.5003 14.2039 12.5048 14.233C12.5115 14.2621 12.5205 14.2968 12.5317 14.3371C12.5743 14.3438 12.6191 14.3483 12.6661 14.3505C12.7154 14.3505 12.7659 14.3505 12.8174 14.3505H13.1872V14.8879C12.9541 14.8678 12.7412 14.8543 12.5485 14.8476C12.358 14.8432 12.1787 14.8409 12.0107 14.8409C11.8134 14.8409 11.6084 14.8432 11.3955 14.8476C11.1848 14.8543 10.9574 14.8678 10.7131 14.8879V14.3505H11.0896C11.1412 14.3505 11.1916 14.3505 11.2409 14.3505C11.2902 14.3483 11.3372 14.3438 11.3821 14.3371C11.3933 14.299 11.4022 14.2509 11.4089 14.1927C11.4157 14.1345 11.419 14.0628 11.419 13.9777ZM12.814 10.5921H12.4913V12.4428C12.5115 12.4428 12.5317 12.4439 12.5518 12.4462C12.5743 12.4462 12.5978 12.4462 12.6224 12.4462C12.8443 12.4462 13.0303 12.4282 13.1804 12.3924C13.3306 12.3543 13.4505 12.2972 13.5401 12.2211C13.632 12.145 13.697 12.0487 13.7351 11.9323C13.7754 11.8158 13.7956 11.677 13.7956 11.5158C13.7956 11.3479 13.7765 11.2057 13.7384 11.0892C13.7003 10.9706 13.641 10.8754 13.5603 10.8037C13.4819 10.7298 13.3799 10.6761 13.2544 10.6425C13.1311 10.6089 12.9844 10.5921 12.814 10.5921Z" fill="#5D5959"/>
+                                </svg>
+                                <span>{% if individual.user_profile.country %}{{individual.user_profile.country}}{% else %} ----- {% endif %}</span>    
+                            </div>
+                            {% if individual.company_profile.company_name %}
+                            <div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.3253 9.33333C12.773 9.33333 12.3253 9.78105 12.3253 10.3333V11.1833C12.3253 11.7356 11.8776 12.1833 11.3253 12.1833H7.77108C7.74137 12.1833 7.716 12.1721 7.69475 12.1521C7.67414 12.1314 7.66265 12.1065 7.66265 12.0778V10.1222C7.66265 9.56994 8.11037 9.12222 8.66265 9.12222H10.6747C11.227 9.12222 11.6747 8.67451 11.6747 8.12222V4C11.6747 3.44772 11.227 3 10.6747 3H4C3.44771 3 3 3.44772 3 4V8.12222C3 8.67451 3.44772 9.12222 4 9.12222H6.01205C6.56433 9.12222 7.01205 9.56994 7.01205 10.1222V12.0778C7.01335 12.4865 7.35123 12.8154 7.77108 12.8167H11.3253C11.8776 12.8167 12.3253 13.2644 12.3253 13.8167V14.4556C12.3253 15.0078 12.773 15.4556 13.3253 15.4556H15.3373C15.8896 15.4556 16.3373 15.9033 16.3373 16.4556V18.6222C16.3373 18.6509 16.3259 18.6758 16.3053 18.6965C16.284 18.7166 16.2584 18.7278 16.2289 18.7278H12.6747C12.1224 18.7278 11.6747 18.2801 11.6747 17.7278V16.8778C11.6747 16.3255 11.227 15.8778 10.6747 15.8778H4C3.44771 15.8778 3 16.3255 3 16.8778V21C3 21.5523 3.44772 22 4 22H10.6747C11.227 22 11.6747 21.5523 11.6747 21V20.3611C11.6747 19.8088 12.1224 19.3611 12.6747 19.3611H16.2289C16.6486 19.3598 16.9867 19.0309 16.988 18.6222V16.4556C16.988 15.9033 17.4357 15.4556 17.988 15.4556H20C20.5523 15.4556 21 15.0078 21 14.4556V10.3333C21 9.78105 20.5523 9.33333 20 9.33333H13.3253ZM4.08434 5.9C4.08434 5.34772 4.53205 4.9 5.08434 4.9H9.59036C10.1426 4.9 10.5904 5.34772 10.5904 5.9V7.06667C10.5904 7.61895 10.1426 8.06667 9.59036 8.06667H5.08434C4.53205 8.06667 4.08434 7.61895 4.08434 7.06667V5.9ZM5.08434 20.9444C4.53205 20.9444 4.08434 20.4967 4.08434 19.9444V18.7778C4.08434 18.2255 4.53205 17.7778 5.08434 17.7778H9.59036C10.1426 17.7778 10.5904 18.2255 10.5904 18.7778V19.9444C10.5904 20.4967 10.1426 20.9444 9.59036 20.9444H5.08434ZM19.9157 13.4C19.9157 13.9523 19.4679 14.4 18.9157 14.4H14.4096C13.8574 14.4 13.4096 13.9523 13.4096 13.4V12.2333C13.4096 11.681 13.8574 11.2333 14.4096 11.2333H18.9157C19.4679 11.2333 19.9157 11.681 19.9157 12.2333V13.4Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                </svg>                                
+                                <span> {% if individual.company_profile.company_name %}{{individual.company_profile.company_name}}{% else %} ----- {% endif %}</span>    
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="info-details">
+                            <div>
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.75 1.00977H3.25C2.0095 1.00977 1 1.95291 1 3.11187V12.9077C1 14.0666 2.0095 15.0098 3.25 15.0098H19.75C20.9905 15.0098 22 14.0666 22 12.9077V3.11187C22 1.95291 20.9905 1.00977 19.75 1.00977ZM20.5 12.9077C20.5 13.2944 20.164 13.6084 19.75 13.6084H3.25C2.836 13.6084 2.5 13.2944 2.5 12.9077V5.73389L10.7387 8.49815C10.984 8.58084 11.242 8.62218 11.5 8.62218C11.758 8.62218 12.016 8.58084 12.2605 8.49885L20.5 5.73389V12.9077ZM20.5 4.2442L11.7527 7.18014C11.59 7.23479 11.4107 7.23549 11.2465 7.18014L2.5 4.2449V3.11187C2.5 2.72508 2.836 2.41117 3.25 2.41117H19.75C20.164 2.41117 20.5 2.72508 20.5 3.11187V4.2442Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                </svg> 
+                                <span> {% if individual.email %}{{individual.email}}{% else %} ----- {% endif %}</span>
+                            </div>
+                            <div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.5 6.4C14.5 7.69836 13.4082 8.8 12 8.8V10.8C14.4578 10.8 16.5 8.85718 16.5 6.4H14.5ZM12 8.8C10.5918 8.8 9.5 7.69836 9.5 6.4H7.5C7.5 8.85718 9.54224 10.8 12 10.8V8.8ZM9.5 6.4C9.5 5.10164 10.5918 4 12 4V2C9.54224 2 7.5 3.94282 7.5 6.4H9.5ZM12 4C13.4082 4 14.5 5.10164 14.5 6.4H16.5C16.5 3.94282 14.4578 2 12 2V4ZM8.5 14.2H15.5V12.2H8.5V14.2ZM15.5 19H8.5V21H15.5V19ZM8.5 19C7.09177 19 6 17.8984 6 16.6H4C4 19.0572 6.04224 21 8.5 21V19ZM18 16.6C18 17.8984 16.9082 19 15.5 19V21C17.9578 21 20 19.0572 20 16.6H18ZM15.5 14.2C16.9082 14.2 18 15.3016 18 16.6H20C20 14.1428 17.9578 12.2 15.5 12.2V14.2ZM8.5 12.2C6.04224 12.2 4 14.1428 4 16.6H6C6 15.3016 7.09177 14.2 8.5 14.2V12.2Z" fill="#5D5959"/>
+                                </svg>
+                                <span>
+                                        {% if individual.user_profile.gender %}{{individual.user_profile.gender |title}} {% else %}-----{% endif %}
+                                </span>
+                            </div>
+                            <div></div>
+                            
+                        </div>
+                    </div>
+    
+                    <div class="subscription">
+                        <div class="d-flex justify-content-between align-items-center gap-1">
+                            <div class='d-flex gap-1 justify-content-center align-items-center'>
+                                <span class="info-heading">Active Subscription</span>
+                                {% if individual_subs_plan != None %}{% if individual_subs_plan.plan.name != 'Free'%}<span class="time-stamp">{{remaining_days}} Days Remaining</span> {% endif %}{% endif %}
+                            </div>
+                            <span class="action-btns">
+                                <svg class="d-none" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1" width="38" height="38" rx="4" stroke="#7C00F4" stroke-width="2"/>
+                                    <path opacity="0.4" d="M21.7944 28.3373H28.5257" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9026 12.5646C21.6805 11.5735 22.9377 11.6252 23.9299 12.4031L25.3971 13.5537C26.3894 14.3316 26.7409 15.5381 25.9629 16.5314L17.2134 27.6939C16.921 28.0676 16.4745 28.2882 15.9995 28.2935L12.6249 28.3367L11.8607 25.0487C11.753 24.5874 11.8607 24.1019 12.1531 23.7271L20.9026 12.5646Z" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path opacity="0.4" d="M19.2642 14.6553L24.3245 18.6221" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                {% if individual_subs_plan != None %}
+                                {% if individual_subs_plan.plan.name != 'Free' %}
+                                <svg onclick='deleteSubscription("{{individual_subs_plan.id}}")'  data-bs-toggle="modal" data-bs-target="#delModal"  width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="5" fill="#FF0000"/>
+                                    <path d="M27.8482 17.2876C27.8482 17.2876 27.2664 24.5037 26.9289 27.5433C26.7682 28.9951 25.8714 29.8458 24.4025 29.8726C21.6071 29.923 18.8086 29.9262 16.0143 29.8672C14.6011 29.8383 13.7193 28.9769 13.5618 27.5508C13.2221 24.4844 12.6436 17.2876 12.6436 17.2876" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M29.3304 13.8287H11.1611" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M25.8296 13.8285C24.9885 13.8285 24.2643 13.2339 24.0993 12.41L23.8389 11.1071C23.6782 10.506 23.1339 10.0903 22.5135 10.0903H17.9782C17.3578 10.0903 16.8135 10.506 16.6528 11.1071L16.3925 12.41C16.2275 13.2339 15.5032 13.8285 14.6621 13.8285" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                {% endif %}
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="sub-details">
+                            {% if individual_subs_plan %}
+                            <span class="category">{{individual_subs_plan.plan.name}}</span>
+                            {% if individual_subs_plan.is_trial %}(Trial){% endif %}
+                            <div class="" style='margin:10px 0px;'></div>
+                            <span class="price"> {% if individual_subs_plan.subscription_interval == 'monthly' %}
+                                €{{individual_subs_plan.plan.monthly_price}}/user/month
+                                {% elif individual_subs_plan.subscription_interval == 'yearly' %}
+                                €{{individual_subs_plan.plan.yearly_price}}/user/year
+                                {% endif %}
+                            </span>
+                            {% else %}
+                            <span>No Subscription Plan</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="invoices-list">
+                    <div><span>Invoice</span></div>
+                    <div class="container table-responsive p-0"> 
+                        <table class="table border " id='invoice_table'>
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Invoice ID</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Billing Email</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Amount</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Date</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Download</span>
+                                    </th>
+                                    {% comment %} <th scope="col" class="hide">
+                                        <span class='text-light me-3'>Actions</span>
+                                    </th> {% endcomment %}
+                                </tr>
+                            </thead>
+                            <tbody>  
+                                {% for invoice in invoices %}    
+                                <tr>
+                                    <td>{{invoice.number}}</td>
+                                    <td>{{invoice.customer_email}}</td>
+                                    <td>€{{ invoice.amount_paid|stringformat:"s" |slice:":-2" }}</td>
+                                    <td>{{invoice.lines.data.0.period.start}}</td>
+                                    <td>
+                                        <div class="container">
+                                            <a class="btn btn-primary" href="{{invoice.invoice_pdf}}" target='_blank' download  style = 'background-color: rgba(124, 0, 244, 1) !important;'>
+                                            Download PDF
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12.25 14L11.5429 14.7071C11.9334 15.0976 12.5666 15.0976 12.9571 14.7071L12.25 14ZM13.25 5C13.25 4.44772 12.8023 4 12.25 4C11.6977 4 11.25 4.44772 11.25 5L13.25 5ZM6.54289 9.70711L11.5429 14.7071L12.9571 13.2929L7.95711 8.29289L6.54289 9.70711ZM12.9571 14.7071L17.9571 9.70711L16.5429 8.29289L11.5429 13.2929L12.9571 14.7071ZM13.25 14L13.25 5L11.25 5L11.25 14L13.25 14Z" fill="white"/>
+                                                    <path d="M5.25 16L5.25 17C5.25 18.1046 6.14543 19 7.25 19L17.25 19C18.3546 19 19.25 18.1046 19.25 17V16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>                                                
+                                          </a>
+                                          </div>
+                                    </td>
+                                    {% comment %} <td class="hide">
+                                        <span class="action-btns">
+                                            <svg class="hide" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="1" width="38" height="38" rx="4" stroke="#7C00F4" stroke-width="2"/>
+                                                <path opacity="0.4" d="M21.7944 28.3373H28.5257" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9026 12.5646C21.6805 11.5735 22.9377 11.6252 23.9299 12.4031L25.3971 13.5537C26.3894 14.3316 26.7409 15.5381 25.9629 16.5314L17.2134 27.6939C16.921 28.0676 16.4745 28.2882 15.9995 28.2935L12.6249 28.3367L11.8607 25.0487C11.753 24.5874 11.8607 24.1019 12.1531 23.7271L20.9026 12.5646Z" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path opacity="0.4" d="M19.2642 14.6553L24.3245 18.6221" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <svg class="opacity-point-2" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="40" height="40" rx="5" fill="#FF0000"/>
+                                                <path d="M27.8482 17.2876C27.8482 17.2876 27.2664 24.5037 26.9289 27.5433C26.7682 28.9951 25.8714 29.8458 24.4025 29.8726C21.6071 29.923 18.8086 29.9262 16.0143 29.8672C14.6011 29.8383 13.7193 28.9769 13.5618 27.5508C13.2221 24.4844 12.6436 17.2876 12.6436 17.2876" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M29.3304 13.8287H11.1611" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M25.8296 13.8285C24.9885 13.8285 24.2643 13.2339 24.0993 12.41L23.8389 11.1071C23.6782 10.506 23.1339 10.0903 22.5135 10.0903H17.9782C17.3578 10.0903 16.8135 10.506 16.6528 11.1071L16.3925 12.41C16.2275 13.2339 15.5032 13.8285 14.6621 13.8285" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                    </td> {% endcomment %}
+                                </tr>  
+                                {%empty%}
+                                <tr>
+                                    <td colspan="5">No Record Available.</td>
+                                </tr>
+                                {% endfor %}            
+                            </tbody> 
+                        </table>
+                    </div>
+                </div>
+    
+                <div class="invoices-list">
+                    <div class="d-flex justify-content-between">
+                        <span>Saved Searches</span>
+                        <a href="{% url 'individual_search_list' pk=user_id type='Saved' %}">See List</a>
+                    </div>
+                    <div class="container table-responsive p-0"> 
+                        <table class="table border " id='company_table'>
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Current Possition</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Location</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Search Via</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Actions</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for search in saved_searches %}                      
+                                <tr>
+                                    <td>{{search.keywords |title}}</td>
+                                    <td>{{search.location |title}}</td>
+                                    <td>{{search.search_via}}</td>
+                                    <td>
+                                        <span class="action-btns">
+                                            <svg class="hide" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="1" width="38" height="38" rx="4" stroke="#7C00F4" stroke-width="2"/>
+                                                <path opacity="0.4" d="M21.7944 28.3373H28.5257" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9026 12.5646C21.6805 11.5735 22.9377 11.6252 23.9299 12.4031L25.3971 13.5537C26.3894 14.3316 26.7409 15.5381 25.9629 16.5314L17.2134 27.6939C16.921 28.0676 16.4745 28.2882 15.9995 28.2935L12.6249 28.3367L11.8607 25.0487C11.753 24.5874 11.8607 24.1019 12.1531 23.7271L20.9026 12.5646Z" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path opacity="0.4" d="M19.2642 14.6553L24.3245 18.6221" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <svg onclick="deleteSearch({{search.id}})" data-bs-toggle="modal" data-bs-target="#delsearchModal" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="40" height="40" rx="5" fill="#FF0000"/>
+                                                <path d="M27.8482 17.2876C27.8482 17.2876 27.2664 24.5037 26.9289 27.5433C26.7682 28.9951 25.8714 29.8458 24.4025 29.8726C21.6071 29.923 18.8086 29.9262 16.0143 29.8672C14.6011 29.8383 13.7193 28.9769 13.5618 27.5508C13.2221 24.4844 12.6436 17.2876 12.6436 17.2876" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M29.3304 13.8287H11.1611" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M25.8296 13.8285C24.9885 13.8285 24.2643 13.2339 24.0993 12.41L23.8389 11.1071C23.6782 10.506 23.1339 10.0903 22.5135 10.0903H17.9782C17.3578 10.0903 16.8135 10.506 16.6528 11.1071L16.3925 12.41C16.2275 13.2339 15.5032 13.8285 14.6621 13.8285" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+                                {% empty%}
+                                <tr>
+                                    <td colspan="4">No Record Available.</td>
+                                </tr>
+                                {% endfor %}                                        
+                            </tbody> 
+                        </table>
+                    </div>
+                </div>
+    
+                <div class="invoices-list">
+                    <div class="d-flex justify-content-between">
+                        <span>Recent Searches</span>
+                        <a href="{% url 'individual_search_list' pk=user_id type='Recent' %}">See List</a>
+                    </div>
+                    <div class="container table-responsive p-0"> 
+                        <table class="table border " id='company_table'>
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Search By Keyword</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Search By Location</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Estimated Results</span>
+                                    </th>
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Date & Time</span>
+                                    </th>
+                                    
+                                    <th scope="col">
+                                        <span class='text-light me-3'>Actions</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for search in recent_searches %}                       
+                                    <tr>
+                                        <td>{{search.keywords |title}}</td>
+                                        <td>{{search.location |title}}</td>
+                                        <td>{{search.number_of_results}}</td>
+                                        <td class='date-time'>{{ search.created_at|date:"c" }}</td>
+                                        <td>
+                                            <span class="action-btns">
+                                                <svg class="hide" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect x="1" y="1" width="38" height="38" rx="4" stroke="#7C00F4" stroke-width="2"/>
+                                                    <path opacity="0.4" d="M21.7944 28.3373H28.5257" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9026 12.5646C21.6805 11.5735 22.9377 11.6252 23.9299 12.4031L25.3971 13.5537C26.3894 14.3316 26.7409 15.5381 25.9629 16.5314L17.2134 27.6939C16.921 28.0676 16.4745 28.2882 15.9995 28.2935L12.6249 28.3367L11.8607 25.0487C11.753 24.5874 11.8607 24.1019 12.1531 23.7271L20.9026 12.5646Z" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path opacity="0.4" d="M19.2642 14.6553L24.3245 18.6221" stroke="#7C00F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <svg onclick="deleteSearch({{search.id}})"  data-bs-toggle="modal" data-bs-target="#delsearchModal" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="40" height="40" rx="5" fill="#FF0000"/>
+                                                    <path d="M27.8482 17.2876C27.8482 17.2876 27.2664 24.5037 26.9289 27.5433C26.7682 28.9951 25.8714 29.8458 24.4025 29.8726C21.6071 29.923 18.8086 29.9262 16.0143 29.8672C14.6011 29.8383 13.7193 28.9769 13.5618 27.5508C13.2221 24.4844 12.6436 17.2876 12.6436 17.2876" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M29.3304 13.8287H11.1611" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M25.8296 13.8285C24.9885 13.8285 24.2643 13.2339 24.0993 12.41L23.8389 11.1071C23.6782 10.506 23.1339 10.0903 22.5135 10.0903H17.9782C17.3578 10.0903 16.8135 10.506 16.6528 11.1071L16.3925 12.41C16.2275 13.2339 15.5032 13.8285 14.6621 13.8285" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                        </td>
+                                    </tr> 
+                                    {% empty%}
+                                <tr>
+                                    <td colspan="5">No Record Available.</td>
+                                </tr>
+                                {% endfor %}                               
+                            </tbody> 
+                        </table>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+    {% include '../modals/delete-subscription.html' %}
+    {% include '../../modals/delete-search-modal.html' %}
+    {% include '../modals/delete-modal.html' %}
+
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="{% static '/common/js/common.js' %}"></script>
+    <script src="{% static 'administration/individual/js/individual-search-List.js' %}"></script>
+    <script src="{% static 'administration/individual/js/individual-detail.js' %}"></script>
+    <script src="{% static 'administration/common/js/common.js'%}"></script>
+</body>
+</html>

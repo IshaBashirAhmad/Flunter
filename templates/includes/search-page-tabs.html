@@ -1,0 +1,21 @@
+{% load static %}
+<div class="page-tabs-container">
+    <a href="{% if active_sidebar == 'search' %}javascript:void(0);{% else %}{% url 'search_profile' %}{% endif %}" class="page-tab {% if active_sidebar == 'search' %}active{% endif %}">
+        <div><span>Searches</span></div>
+    </a>
+    <a href="{% if active_sidebar == 'saved_search' %}javascript:void(0);{% else %}{% url 'saved_searches' %}{% endif %}" class="page-tab {% if active_sidebar == 'saved_search' %}active{% endif %}">
+        <div><span>Saved Searches</span></div>
+    </a>
+    <a href="{% if active_sidebar == 'saved_profiles' %}javascript:void(0);{% else %}{% url 'saved_profiles' %}{% endif %}" class="page-tab {% if active_sidebar == 'saved_profiles' %}active{% endif %}">
+        <div><span>Favourite Profiles</span></div>
+    </a>
+    <a href="{% if active_sidebar == 'my_list' %}javascript:void(0);{% else %}{% url 'my_list' %}{% endif %}" class="page-tab {% if active_sidebar == 'my_list' %}active{% endif %}">
+        <div><span>My Lists</span></div>
+    </a>
+    <a href="{% if active_sidebar == 'shared_profiles' %}javascript:void(0);{% else %}{% url 'shared_profile' %}{% endif %}" class="page-tab {% if active_sidebar == 'shared_profiles' %}active{% endif %}">
+        <div><span>Shared Profiles</span></div>
+    </a>
+    <a href="{% if active_sidebar == 'opened_profiles' %}javascript:void(0);{% else %}{% url 'opened_profiles' %}{% endif %}" class="page-tab {% if active_sidebar == 'opened_profiles' %}active{% endif %}">
+        <div><span>Opened Profiles</span></div>
+    </a>
+</div>

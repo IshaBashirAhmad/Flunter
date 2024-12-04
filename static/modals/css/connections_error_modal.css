@@ -1,0 +1,100 @@
+#connectionsErrorModal .modal-dialog {
+    max-width: unset;
+    width: 390px;
+}
+
+#connectionsErrorModal .modal-header {
+    padding: 0!important;
+    border-radius: 15px!important;
+
+}
+
+#connectionsErrorModal .modal-content {
+    padding: 30px;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    border: none;
+}
+
+#connectionsErrorModal .modal-footer,
+#connectionsErrorModal .modal-content {
+    border-radius: 15px!important;
+}
+
+#connectionsErrorModal .modal-header > span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+#connectionsErrorModal .modal-body {
+    padding: 0px!important;
+}
+
+#connectionsErrorModal .modal-body > p {
+    font-size: .875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 0px;
+    color: #5D5D5D;
+}
+
+#connectionsErrorModal .error-div {
+    text-align: left;
+    /* padding: 0px 30px; */
+    /* margin-top: 5px; */
+}
+
+
+#connectionsErrorModal .modal-footer {
+    padding: 0px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#connectionsErrorModal .modal-footer > button {
+    width: 75%;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    /* box-shadow: 0px 0px 10px 0px #0C47AF4D; */
+    color: #FFFFFF;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+    background: var(--primary-color);
+    margin: 0px;
+}
+
+#connectionsErrorModal .modal-footer > button > span {
+    color: #FFFFFF;
+}
+
+
+@media (max-width:992px) {
+    .img-fluid {
+        display: none;
+    }
+}
+
+
+@media (max-width: 576px) {
+    #connectionsErrorModal .modal-dialog {
+        width: 100%;
+        background: transparent;
+        justify-content: center;
+        box-shadow: none;
+        margin: 0px;
+    }
+
+    #connectionsErrorModal .modal-content {
+        max-width: 80%;
+        box-shadow: 0px 0px 5px 2px #7C00F41A;
+    }
+}

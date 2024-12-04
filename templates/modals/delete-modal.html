@@ -1,0 +1,31 @@
+<div class="modal fade" id="delModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="delModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form>
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span id="del-modal-header">Delete User</span>
+                </div>
+                <div class="modal-body">
+                    <p id="warning-statement">Are you sure you want to delete this user?</p>
+                    <svg width="87" height="86" viewBox="0 0 87 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.1" d="M43.0395 74.3138C62.2371 74.3138 77.7998 72.3116 77.7998 69.8418C77.7998 67.372 62.2371 65.3699 43.0395 65.3699C23.842 65.3699 8.2793 67.372 8.2793 69.8418C8.2793 72.3116 23.842 74.3138 43.0395 74.3138Z" fill="#1E274A"/>
+                        <path d="M31.4937 60.4599C30.2144 60.4599 29.1192 60.0043 28.2082 59.0933C27.2972 58.1823 26.8416 57.0871 26.8416 55.8078V25.5695H24.5156V20.9175H36.1457V18.5914H50.1019V20.9175H61.732V25.5695H59.406V55.8078C59.406 57.0871 58.9505 58.1823 58.0394 59.0933C57.1284 60.0043 56.0332 60.4599 54.7539 60.4599H31.4937ZM54.7539 25.5695H31.4937V55.8078H54.7539V25.5695ZM36.1457 51.1558H40.7978V30.2215H36.1457V51.1558ZM45.4498 51.1558H50.1019V30.2215H45.4498V51.1558Z" fill="#FF4D4D"/>
+                    </svg> 
+                </div>
+                <div class="error-div">
+                    <small class="delete-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" type="submit">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Delete</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="delModal" data-bs-toggle="modal" data-bs-target="#delModal" />

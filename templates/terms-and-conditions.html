@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'common/css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/terms_policy.css' %}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'common/images/favicon.svg' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+    
+    <title>Flunter | Terms And Conditions</title>
+</head>
+<body>
+    {% include './includes/navbar.html' %}
+
+    <section class="terms-policy-section">
+        <div class="terms-policy">
+            <h1>Terms and Conditions for Flunter</h1>
+            <ol>
+                <li>
+                    <h2>Introduction</h2>
+                    <p>Welcome to Flunter. By accessing and using our services, you agree to comply with these Terms and Conditions ("Terms"). Please read them carefully. These Terms govern your use of our web application, which allows you to search for candidates and prospects.</p>
+                </li>
+                <li>
+                    <h2>Services Provided</h2>
+                    <p>Flunter provides a platform to search for and view profiles of candidates and prospects based on filters such as keywords and location. Users can access names, current positions, and skills for free. Additional details like phone numbers and email addresses require the use of credits.</p>
+                </li>
+                <li>
+                    <h2>Account and Registration</h2>
+                    <ul>
+                        <li><b>Eligibility</b>: Users must be at least 18 years old and have the legal capacity to enter into these Terms.</li>
+                        <li><b>Registration</b>: Users must provide accurate and complete information during registration and keep this information updated.</li>
+                        <li><b>Account Security</b>: Users are responsible for maintaining the confidentiality of their account credentials and are liable for any activity conducted under their account.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Credits and Subscription Plans</h2>
+                    <ul>
+                        <li><b>Credits</b>: Credits are required to unlock phone numbers and email addresses. Credits are allocated based on the chosen subscription plan.</li>
+                        <li><b>Rollover</b>: Unused credits from a month are rolled over to the next month.</li>
+                        <li><b>Subscription Plans</b>: Users can select from different subscription plans, each offering a specific number of credits.</li>
+                        <li><b>Refunds and Cancellations</b>: Users can cancel their subscription and request a refund within the first 14 days. After this period, the subscription can only be canceled at the end of the term, with a notice period of three months for annual plans and two weeks for monthly plans.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Data Usage and Restrictions</h2>
+                    <ul>
+                        <li><b>Data Sources</b>: All data provided by Flunter is sourced from publicly accessible web pages.</li>
+                        <li><b>Permitted Use</b>: Users may use the data for lawful purposes and in compliance with applicable laws.</li>
+                        <li><b>Prohibited Activities</b>: Users must not scrape, steal, or use automated means (robots) to access or collect data from Flunter. Unauthorized access, misuse, or redistribution of our data is strictly prohibited.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>User Responsibilities</h2>
+                    <ul>
+                        <li><b>Compliance</b>: Users must comply with all applicable laws and these Terms.</li>
+                        <li><b>Accuracy</b>: Users must ensure the accuracy and legality of the information they provide and the manner in which they use our services.</li>
+                        <li><b>Indemnity</b>: Users agree to indemnify and hold Flunter harmless from any claims, damages, or liabilities arising from their use of the service.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Intellectual Property</h2>
+                    <p>All intellectual property rights in the Flunter service and content are owned by Flunter or its licensors. Users are granted a limited, non-exclusive, non-transferable license to use the service for its intended purpose.</p>
+                </li>
+                <li>
+                    <h2>Limitation of Liability</h2>
+                    <p>Flunter is not liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to the use of our services. Our total liability to any user is limited to the amount paid by the user to Flunter in the twelve months preceding the claim.</p>
+                </li>
+                <li>
+                    <h2>Termination</h2>
+                    <p>Flunter reserves the right to suspend or terminate user accounts for violations of these Terms or other conduct deemed harmful to the service or its users.</p>
+                </li>
+                <li>
+                    <h2>Changes to Terms</h2>
+                    <p>Flunter reserves the right to modify these Terms at any time. Users will be notified of significant changes, and continued use of the services constitutes acceptance of the updated Terms.</p>
+                </li>
+                <li>
+                    <h2>Governing Law</h2>
+                    <p>These Terms are governed by and construed in accordance with the laws of France. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts located in France.</p>
+                </li>
+                <li>
+                    <h2>Contact Information</h2>
+                    <p>For questions or more information on how to use our services, please visit the resources page on our website or contact us at [Your Contact Information].</p>
+                </li>
+            </ol>
+            <p>By using Flunter, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
+        </div>
+    </section>
+
+    {% include './includes/footer.html' %}
+
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

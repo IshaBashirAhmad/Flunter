@@ -1,0 +1,312 @@
+#addCustomPlan .modal-dialog {
+    max-width: unset;
+    width: 514px;
+}
+
+#addCustomPlan .modal-header {
+    padding: 0!important;
+    border-radius: 15px!important;
+
+}
+
+#addCustomPlan .modal-content {
+    padding: 30px;
+}
+
+#addCustomPlan .modal-footer,
+#addCustomPlan .modal-content {
+    border-radius: 15px!important;
+}
+
+#addCustomPlan .modal-header {
+    margin-bottom: 20px;
+}
+
+#addCustomPlan .modal-header > span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+#addCustomPlan .modal-body {
+    padding: 0px!important;
+}
+
+#addCustomPlan .modal-body .input-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    width: 100%;
+}
+
+#addCustomPlan .modal-body .input-wrapper label {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+#addCustomPlan .modal-body .input-wrapper > div {
+    display: flex;
+    align-items: center;
+}
+
+#addCustomPlan .modal-body .input-wrapper > div input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px #7C00F41A;
+    padding-left: 44px;
+    padding-right: 10px;
+    line-height: 24px;
+}
+.input-wrapper .show-hide-icon {
+    right: 10px;
+    left: unset !important;
+}
+#addCustomPlan .modal-body .input-wrapper > div svg {
+    position: absolute;
+    left: 10px;
+    /* bottom: 17px; */
+}
+
+#addCustomPlan .modal-body .input-wrapper .added-user-role {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 130px;
+    height: 50px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+#addCustomPlan .modal-body .input-wrapper .added-user-role.show {
+    display: flex!important;
+}
+
+#addCustomPlan .modal-body .input-wrapper .added-user-role > span {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 20.8px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+#addCustomPlan .modal-body .input-wrapper .added-user-role > svg {
+    position: static;
+}
+
+#addCustomPlan .modal-body .edit-btn {
+    width: 35px;
+    height: 35px;
+    pointer-events: all;
+    position: absolute;
+    /* bottom: -36px;
+    right: -50px; */
+    bottom: 5px;
+    right: -10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #7C00F41A;
+    border-radius: 6px;
+    box-shadow: 0px 13px 41px 0px #3B3B3D1B;
+}
+
+#addCustomPlan .modal-body .edit-btn > svg {
+    position: relative;
+    top: -1px;
+}
+
+#addCustomPlan .modal-body .added-user-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#addCustomPlan .modal-body .added-user-wrapper .added-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#addCustomPlan .modal-body .added-user-wrapper .added-user .added-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#addCustomPlan .modal-body .added-user-wrapper .added-user .added-user-info > img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+
+#addCustomPlan .modal-body .added-user-wrapper .added-user .added-user-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#addCustomPlan .modal-body .added-user-wrapper .added-user .added-user-info > div > span:first-of-type {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+}
+
+#addCustomPlan .modal-body .added-user-wrapper .added-user .added-user-info > div > span:last-of-type {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+#addCustomPlan .modal-body .added-user-wrapper .added-user .added-user-role {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 130px;
+    height: 45px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+#addCustomPlan .modal-body .added-user-wrapper .added-user .added-user-role > span {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 20.8px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+#addCustomPlan .error-div {
+    text-align: left;
+    /* padding: 0px 30px; */
+    /* margin-top: 5px; */
+}
+
+
+#addCustomPlan .modal-footer {
+    padding: 0px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 43px;
+}
+
+#addCustomPlan .modal-footer > button {
+    width: 172px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #0C47AF4D;
+    color: #FFFFFF;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: center;
+}
+
+#addCustomPlan .modal-footer > button:first-of-type {
+    background: #FF0000;
+}
+
+#addCustomPlan .modal-footer > button:last-of-type {
+    background: var(--primary-color);
+}
+
+#addCustomPlan .modal-footer > button > span {
+    color: #FFFFFF;
+}
+
+
+/* ------------------------------------------------------- */
+
+.selection-div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.selection-div > input {
+    padding-right: 30px;
+}
+
+.selection-div + svg {
+    left: unset!important;
+    right: 15px;
+}
+
+.filter-dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute!important;
+    z-index: 1;
+    top: 84px;
+    background-color: #FFFFFF;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #E0E0DD;
+}
+
+#company-dropdown {
+    max-height: 216px;
+    overflow-y: auto;
+}
+
+.radio-btn > label {
+    width: 100%;
+    padding: 0px 15px;
+    min-height: 40px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 16px;
+    word-wrap: break-word;
+}
+/* 
+.radio-btn > label:first-of-type {
+    border-radius: 8px 0px 8px 0px;
+}
+
+.radio-btn > label:last-of-type {
+    border-radius: 0px 8px 8px 0px;
+} */
+
+.radio-btn:not(:first-child) {
+    border-top: 1px solid #E0E0DD;
+}
+
+.radio-btn > label:hover {
+    background-color: #DDDDDD;
+}
+
+.filter-dropdown input {
+    display: none;
+}
+
+
+#no-company-text {
+    font-weight: 500;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

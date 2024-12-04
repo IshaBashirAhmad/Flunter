@@ -1,0 +1,33 @@
+<div class="modal fade" id="connectionsErrorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="connectionsErrorLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div>
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span id="del-modal-header">Limit Exceeds!</span>
+                </div>
+                <div class="modal-body">
+                    <svg width="115" height="114" viewBox="0 0 115 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_2972_279)">
+                            <path d="M114.121 25.3493C105.253 82.6258 77.8886 107.726 58.2712 113.771C57.7626 113.928 57.2372 113.928 56.7286 113.771C37.1112 107.726 9.74724 82.6258 0.879321 25.3493C0.656878 23.9125 1.55933 22.5273 2.96452 22.1538C8.23275 20.7539 20.7783 17.3196 29 14.2502C38.9813 10.5238 51.779 3.31357 56.0445 0.849598C56.9484 0.327478 58.0515 0.327478 58.9555 0.849598C63.2208 3.31357 76.0187 10.5238 86 14.2502C94.2215 17.3196 106.768 20.7539 112.035 22.1538C113.441 22.5273 114.343 23.9125 114.121 25.3493Z" fill="#FF0000" fill-opacity="0.1"/>
+                            <path d="M47.6963 40.3359C46.604 34.5102 51.0732 29.125 57.0005 29.125C62.9277 29.125 67.397 34.5102 66.3048 40.3359L62.4038 61.1407C61.9163 63.7408 59.646 65.625 57.0005 65.625C54.355 65.625 52.0847 63.7408 51.5972 61.1407L47.6963 40.3359ZM63.8442 77.0312C63.8442 80.8108 60.7802 83.875 57.0005 83.875C53.2208 83.875 50.1567 80.8108 50.1567 77.0312C50.1567 73.2517 53.2208 70.1875 57.0005 70.1875C60.7802 70.1875 63.8442 73.2517 63.8442 77.0312Z" fill="#FF0000"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_2972_279">
+                                <rect width="114" height="114" fill="white" transform="translate(0.5)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <p id="warning-statement">The number of simultaneous connections is already reached. Please log out from there and then try to log in here.</p>
+                </div>
+                <div class="error-div">
+                    <small class="delete-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="connectionsErrorModal" data-bs-toggle="modal" data-bs-target="#connectionsErrorModal" />

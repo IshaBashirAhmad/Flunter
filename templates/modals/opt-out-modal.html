@@ -1,0 +1,73 @@
+{% load static %}
+
+<div class="modal fade" id="openOptOutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="contactUsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form>
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span class="add-user-modal-header-text" id="add-user-modal-header-text">Opt-Out Request</span>
+                </div>
+                <div class="modal-body">
+                    <div class="individual-input-container input-container">
+                        <div>
+                            <label for="contact-name">Full Name</label>
+                            <div>
+                                <input type="text" maxlength="50" name="full_name" id="contact-name" placeholder="Alex" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="contact-email">Email</label>
+                            <div>                            
+                                <input type="email" maxlength="50" name="email" id="contact-email" placeholder="alex.123@work.com" />
+                            </div>
+                        </div>
+                        <div>
+                            <label>Country</label>
+                            <div>
+                                <div class="dropdown input-container-dropdown w-100">
+                                    <div class="input-container-dropdown-btn" id="country-menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div class="d-flex align-items-center justify-content-between w-100 h-100">
+                                            <div class="input-selected-option-container">
+                                               
+                                                <span id="selected-country" style="color:#A9A9A9;">Select a Country</span>
+                                            </div>
+                                            <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.853552 0.853552C0.53857 0.53857 0.761654 0 1.20711 0H12.7929C13.2383 0 13.4614 0.538571 13.1464 0.853553L7.35355 6.64645C7.15829 6.84171 6.84171 6.84171 6.64645 6.64645L0.853552 0.853552Z" fill="#070C29"/>
+                                            </svg>                                                
+                                        </div>
+                                    </div>
+                                    <ul id="country-menu" class="dropdown-menu input-container-menu country-menu">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="contact-phone">Contact Phone <span class='optional'>(Optional)</span> </label>
+                            <div>
+                                
+                                <input type="tel" maxlength="15" name="contact_phone" id="contact-phone" placeholder="0215488784" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-area">
+                        <label for="comment">Additional Information</label>
+                        <textarea name="additional_information" id="comment" placeholder="Write your business requirements here..."></textarea>
+                    </div>
+                </div>
+                <div class="error-div">
+                    <small class="contact-us-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" type="submit">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Send</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="openOptOutModal" data-bs-toggle="modal" data-bs-target="#openOptOutModal" />

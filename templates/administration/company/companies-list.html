@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'administration/common/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/common/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/account/css/sidebar.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/account/css/recent_searches.css' %}" />
+    <link rel="stylesheet" href="{% static 'administration/company/css/companies-list.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'common/css/bootstrap.min.css' %}">
+    <script src="{% static 'common/js/bootstrap.bundle.min.js' %}"></script> {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'common/images/favicon.svg' %}" />
+    
+    <title>Flunter | Companies </title>
+</head>
+<body>
+    {% include '../includes/company-sidebar.html' %}
+    {% include '../includes/admin-navbar.html' %}
+
+    <div class="main-page">
+        <div class="main-content">
+            <div class="container d-flex justify-content-between p-0">
+                <h1>Companies</h1>
+                <button class="add-company-btn" onclick="location.pathname = '/administration/add-company/'" >Add Company</button>
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{message.tags}} alert-dismissible fade show d-flex index w-25 mt-4 w-100" role="alert">
+                        {% if message.tags == 'alert-danger' %}
+                        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#842029" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                        {% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 34 34" fill="none">
+                            <path d="M17 0.6875C13.7737 0.6875 10.6198 1.64421 7.93727 3.43665C5.25469 5.22909 3.16388 7.77676 1.92922 10.7575C0.694568 13.7382 0.371526 17.0181 1.00095 20.1824C1.63037 23.3467 3.18398 26.2533 5.46533 28.5347C7.74667 30.816 10.6533 32.3696 13.8176 32.9991C16.9819 33.6285 20.2618 33.3054 23.2425 32.0708C26.2232 30.8361 28.7709 28.7453 30.5634 26.0627C32.3558 23.3802 33.3125 20.2263 33.3125 17C33.3125 12.6737 31.5939 8.52451 28.5347 5.46532C25.4755 2.40613 21.3264 0.6875 17 0.6875ZM25.8594 10.745L15.7006 22.3606C15.6479 22.4206 15.583 22.4687 15.5103 22.5017C15.4376 22.5347 15.3586 22.5518 15.2788 22.5519C15.1551 22.5531 15.0345 22.5136 14.9356 22.4394L8.22501 17.2756C8.16628 17.2306 8.11701 17.1744 8.08 17.1103C8.04298 17.0462 8.01896 16.9754 8.0093 16.902C7.99963 16.8286 8.00452 16.7541 8.02368 16.6826C8.04283 16.6111 8.07589 16.544 8.12094 16.4853C8.16601 16.4266 8.22219 16.3773 8.28629 16.3403C8.3504 16.3033 8.42116 16.2793 8.49455 16.2696C8.56794 16.2599 8.64251 16.2648 8.71401 16.284C8.78551 16.3031 8.85253 16.3362 8.91126 16.3812L15.2 21.2244L25.01 9.97437C25.0588 9.9186 25.118 9.87298 25.1844 9.84011C25.2508 9.80725 25.323 9.78777 25.3969 9.78281C25.4708 9.77785 25.545 9.78749 25.6152 9.81119C25.6853 9.83489 25.7502 9.87218 25.8059 9.92094C25.8617 9.96969 25.9073 10.029 25.9402 10.0953C25.9731 10.1617 25.9925 10.2339 25.9975 10.3078C26.0025 10.3817 25.9928 10.4559 25.9691 10.5261C25.9454 10.5963 25.9081 10.6611 25.8594 10.7169V10.745Z" fill="#28A745"/>
+                          </svg>
+                        {% endif %}
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="main-content-container-companies-list">
+                <div class="container table-responsive p-0 m-0"> 
+                    <table class="table border " id='company_table'>
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col" id='state' onclick="table_sort_by_state(event, 0)" data-col='user__is_active' >
+                                <span class='text-light me-1'>State</span>
+                                <span>
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                                        </svg>
+                                </span>
+                            </th>
+                            <th scope="col" class="order" onclick="table_sort(event, 1)" data-col='company_name' >
+                                <span class='text-light me-1'>Company Name</span>
+                                <span>
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                                        </svg>
+                                </span>
+                            </th>
+                            <th scope="col" class="order" onclick="table_sort(event, 2)" data-col='' >
+                                <span class='text-light me-1'>Client Type</span>
+                                <span>
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                                        </svg>
+                                </span>
+                            </th>
+                            <th scope="col" class="order" onclick="table_sort(event, 3)" data-col='company_address' >
+                                <span class='text-light me-1'>Location</span>
+                                <span>
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                                        </svg>
+                                </span>
+                            </th>
+                            <th scope="col" class="order" onclick="table_sort(event, 4)" data-col='user__phone_number' >
+                                <span class='text-light me-1'>Phone</span>
+                                <span>
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                                        </svg>
+                                </span>
+                            </th>
+                            <th scope="col" class="order" onclick="table_sort(event, 5)" data-col='user__email' >
+                                <span class='text-light me-1'>Email</span>
+                                <span>
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1L5.29289 0.292893C5.68342 -0.0976313 6.31658 -0.0976313 6.70711 0.292893L6 1ZM7 16C7 16.5523 6.55229 17 6 17C5.44772 17 5 16.5523 5 16L7 16ZM0.292893 5.29289L5.29289 0.292893L6.70711 1.70711L1.70711 6.70711L0.292893 5.29289ZM6.70711 0.292893L11.7071 5.29289L10.2929 6.70711L5.29289 1.70711L6.70711 0.292893ZM7 1L7 16L5 16L5 1L7 1Z" fill="white"/>
+                                        <path d="M14 21L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071L14 21ZM15 6C15 5.44772 14.5523 5 14 5C13.4477 5 13 5.44772 13 6L15 6ZM8.29289 16.7071L13.2929 21.7071L14.7071 20.2929L9.70711 15.2929L8.29289 16.7071ZM14.7071 21.7071L19.7071 16.7071L18.2929 15.2929L13.2929 20.2929L14.7071 21.7071ZM15 21L15 6L13 6L13 21L15 21Z" fill="white"/>
+                                        </svg>
+                                </span>
+                            </th>
+                            
+                            
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            {% for company in companies %}      
+                            <tr data-pk="{{ company.id }}" data-state="{{company.is_active}}">
+                                <td>
+                                    {% if company.is_active %}
+                                    <svg width="17" height="16" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="7.5" cy="7.5" r="7.5" fill="#55C543"/>
+                                    </svg>
+                                    {% else %}
+                                    <svg width="17" height="16" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="7.5" cy="7.5" r="7.5" fill="#FF0000"/>
+                                    </svg>
+                                    {% endif %}
+                                </td>
+                                <td>{{company.company_profile.company_name |title}}</td>
+                                <td>{{company.company_profile.client_type | default:"---" | title}}</td>
+                                <td>{{company.company_profile.company_address}}</td>
+                                <td>{{company.phone_number}}</td>
+                                <td>{{company.email}}</td>
+                                
+                            </tr>  
+                            {% endfor %}                     
+                              
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div class="pagination-container">
+                    {% if companies.has_previous %}
+                        <a class="text-decoration-none" href="?page=1">
+                            <div>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.727 12L12.667 11.06L9.61366 8L12.667 4.94L11.727 4L7.72699 8L11.727 12Z" fill="#CCCCCC"/>
+                                    <path d="M7.33344 12L8.27344 11.06L5.2201 8L8.27344 4.94L7.33344 4L3.33344 8L7.33344 12Z" fill="#CCCCCC"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a class="text-decoration-none " href="?page={{ companies.previous_page_number }}">
+                            <div>
+                                <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.06 8L5 7.06L1.94667 4L5 0.94L4.06 8.21774e-08L0.0599996 4L4.06 8Z" fill="#CCCCCC"/>
+                                </svg>
+                            </div>
+                        </a>
+                    {% endif %}
+                    
+                    {% if companies.paginator.num_pages > 1 %}
+                        
+                        {% for num in companies.paginator.page_range %}
+                            {% if num == companies.number %}
+                                <div class="active">
+                                    <span style="color:inherit; font-size: .875rem; font-weight:400;">{{ num }}</span>
+                                </div>
+                            {% elif num > companies.number|add:'-3' and num < companies.number|add:'3' %}
+                                <div>
+                                    <a class="text-decoration-none w-100 h-100 d-flex justify-content-center align-items-center" href="?page={{ num }}">{{ num }}</a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+    
+                        {% if companies.paginator.num_pages > companies.number|add:'3' %}
+                            <div>
+                                <span>...</span>
+                            </div>
+                        {% endif %}
+    
+                    {% endif %}
+                    
+                    {% if companies.has_next %}
+                        <a class="text-decoration-none" href="?page={{ companies.next_page_number }}">
+                            <div>
+                                <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.94 0L0 0.94L3.05333 4L0 7.06L0.94 8L4.94 4L0.94 0Z" fill="black"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a class="text-decoration-none" href="?page={{ companies.paginator.num_pages }}">
+                            <div>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.27301 4L3.33301 4.94L6.38634 8L3.33301 11.06L4.27301 12L8.27301 8L4.27301 4Z" fill="black"/>
+                                    <path d="M8.66656 4L7.72656 4.94L10.7799 8L7.72656 11.06L8.66656 12L12.6666 8L8.66656 4Z" fill="black"/>
+                                </svg>
+                            </div>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'administration/company/js/companyList.js' %}"></script>
+    <script src="{% static 'administration/common/js/common.js'%}"></script>
+
+</body>
+</html>

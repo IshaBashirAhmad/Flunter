@@ -1,0 +1,94 @@
+{% load static %}
+
+<div class="modal fade" id="contactUsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="contactUsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <form>
+                {% csrf_token %}
+                <div class="modal-header border-bottom-0 w-100 justify-content-center">
+                    <span class="add-user-modal-header-text" id="add-user-modal-header-text">Contact Us</span>
+                </div>
+                <div class="modal-body">
+                    <div class="individual-input-container input-container">
+                        <div>
+                            <label for="contact-name">Contact Name</label>
+                            <div>
+                                <input type="text" maxlength="50" name="contact_name" id="contact-name" placeholder="Alex" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="contact-email">Contact Email</label>
+                            <div>
+                                <input type="email" maxlength="50" name="contact_email" id="contact-email" placeholder="alex.123@work.com" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="contact-phone">Contact Phone</label>
+                            {% comment %} <div>
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.0504 13.4829L17.5438 13.1028C16.4107 12.817 15.2484 13.3228 14.6539 14.3612L14.5397 14.5604C14.3538 14.8838 14.052 15.1063 13.6884 15.188C13.3132 15.2738 12.9089 15.1913 12.5845 14.9655C11.3906 14.1329 10.3634 13.1062 9.53042 11.9128C9.30446 11.5886 9.22359 11.186 9.3078 10.8093C9.38951 10.446 9.61213 10.1443 9.93563 9.95928L10.1749 9.82178C11.1729 9.25007 11.674 8.07166 11.3939 6.95658L11.0145 5.45065C10.8111 4.64309 10.2516 4.00138 9.47872 3.69053C8.70498 3.37801 7.8587 3.45301 7.15083 3.89304C5.55666 4.88561 4.44774 6.51488 4.10923 8.36418C3.76905 10.2218 4.23179 12.1503 5.38073 13.6545C6.95239 15.7122 8.78919 17.5506 10.8411 19.1191C12.0209 20.0208 13.4625 20.5 14.9266 20.5C15.326 20.5 15.7278 20.4642 16.1264 20.3917C17.9782 20.0541 19.6107 18.9449 20.6079 17.3448C21.0473 16.6381 21.1215 15.7905 20.8097 15.0188C20.4979 14.2462 19.8559 13.687 19.0488 13.4837L19.0504 13.4829ZM19.5457 16.6864C18.7369 17.984 17.4096 18.8857 15.9038 19.1607C14.3921 19.4374 12.8247 19.0582 11.6023 18.1257C9.63881 16.6247 7.88038 14.8646 6.37542 12.8962C5.44076 11.6719 5.0639 10.1018 5.34071 8.59003C5.62003 7.06492 6.49799 5.774 7.81368 4.95561C8.02963 4.82144 8.26975 4.7531 8.51322 4.7531C8.6808 4.7531 8.85006 4.7856 9.01264 4.85144C9.41119 5.01145 9.69884 5.34231 9.80306 5.75733L10.1824 7.26244C10.3275 7.83664 10.069 8.44418 9.5546 8.73837L9.3153 8.87588C8.68414 9.23757 8.24891 9.82761 8.08882 10.5368C7.92791 11.2552 8.07965 12.0178 8.50571 12.6295C9.42369 13.9446 10.556 15.0755 11.8708 15.9922C12.482 16.4189 13.2449 16.5697 13.9644 16.4089C14.6748 16.2497 15.2643 15.8138 15.6253 15.183L15.7395 14.9838C16.053 14.4379 16.6567 14.1737 17.2395 14.3162L18.7453 14.6954C19.1613 14.8004 19.4923 15.0888 19.6532 15.4863C19.8133 15.8839 19.775 16.3197 19.5465 16.6872L19.5457 16.6864Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                </svg>
+                                <input type="tel" maxlength="15" name="contact_phone" id="contact-phone" placeholder="0215488784" />
+                            </div> {% endcomment %}
+                            <div>
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.0504 13.4829L17.5438 13.1028C16.4107 12.817 15.2484 13.3228 14.6539 14.3612L14.5397 14.5604C14.3538 14.8838 14.052 15.1063 13.6884 15.188C13.3132 15.2738 12.9089 15.1913 12.5845 14.9655C11.3906 14.1329 10.3634 13.1062 9.53042 11.9128C9.30446 11.5886 9.22359 11.186 9.3078 10.8093C9.38951 10.446 9.61213 10.1443 9.93563 9.95928L10.1749 9.82178C11.1729 9.25007 11.674 8.07166 11.3939 6.95658L11.0145 5.45065C10.8111 4.64309 10.2516 4.00138 9.47872 3.69053C8.70498 3.37801 7.8587 3.45301 7.15083 3.89304C5.55666 4.88561 4.44774 6.51488 4.10923 8.36418C3.76905 10.2218 4.23179 12.1503 5.38073 13.6545C6.95239 15.7122 8.78919 17.5506 10.8411 19.1191C12.0209 20.0208 13.4625 20.5 14.9266 20.5C15.326 20.5 15.7278 20.4642 16.1264 20.3917C17.9782 20.0541 19.6107 18.9449 20.6079 17.3448C21.0473 16.6381 21.1215 15.7905 20.8097 15.0188C20.4979 14.2462 19.8559 13.687 19.0488 13.4837L19.0504 13.4829ZM19.5457 16.6864C18.7369 17.984 17.4096 18.8857 15.9038 19.1607C14.3921 19.4374 12.8247 19.0582 11.6023 18.1257C9.63881 16.6247 7.88038 14.8646 6.37542 12.8962C5.44076 11.6719 5.0639 10.1018 5.34071 8.59003C5.62003 7.06492 6.49799 5.774 7.81368 4.95561C8.02963 4.82144 8.26975 4.7531 8.51322 4.7531C8.6808 4.7531 8.85006 4.7856 9.01264 4.85144C9.41119 5.01145 9.69884 5.34231 9.80306 5.75733L10.1824 7.26244C10.3275 7.83664 10.069 8.44418 9.5546 8.73837L9.3153 8.87588C8.68414 9.23757 8.24891 9.82761 8.08882 10.5368C7.92791 11.2552 8.07965 12.0178 8.50571 12.6295C9.42369 13.9446 10.556 15.0755 11.8708 15.9922C12.482 16.4189 13.2449 16.5697 13.9644 16.4089C14.6748 16.2497 15.2643 15.8138 15.6253 15.183L15.7395 14.9838C16.053 14.4379 16.6567 14.1737 17.2395 14.3162L18.7453 14.6954C19.1613 14.8004 19.4923 15.0888 19.6532 15.4863C19.8133 15.8839 19.775 16.3197 19.5465 16.6872L19.5457 16.6864Z" fill="#5D5959" stroke="#5D5959" stroke-width="0.5"/>
+                                </svg>
+                                <input type="tel" name="contact_phone" id="phone"  />
+                            </div>
+                            <small id="valid-msg" class="hide text-success text-start">✓ Valid</small>
+                            <small id="error-msg" class="hide text-danger  text-start"></small>
+                            <small id='phone_number_errors' class='text-danger  text-start'></small>
+                        </div>
+                        <div>
+                            <label for="business-name">Business Name</label>
+                            <div>
+                                <input type="text" maxlength="50" name="business_name" id="business-name" placeholder="Alex" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="business-email">Business Email</label>
+                            <div>
+                                <input type="text" maxlength="50" name="business_email" id="business-email" placeholder="alex.123@work.com" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="number-of-employees">Number of Employees</label>
+                            <div>
+                                <input type="number" min="1" maxlength="50" name="number_of_employees" id="number-of-employees" placeholder="10" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="desired-credits">Desired number of credits</label>
+                            <div>
+                                <input type="number" maxlength="50" min="1" name="desired_credits" id="desired-credits" placeholder="100" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="desired-connections">Desired number of simultaneous connections</label>
+                            <div>
+                                <input type="number" maxlength="50" min="1" name="desired_connections" id="desired-connections" placeholder="100" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-area">
+                        <label for="comment">Comment</label>
+                        <textarea name="comment" id="comment" placeholder="Write your business requirements here..."></textarea>
+                    </div>
+                </div>
+                <div class="error-div">
+                    <small class="contact-us-error-msg input-error-msg"></small>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="submit-btn" type="submit">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text">Send</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="contactUsModal" data-bs-toggle="modal" data-bs-target="#contactUsModal" />
