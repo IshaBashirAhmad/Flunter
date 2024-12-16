@@ -497,3 +497,13 @@ nav .logo-container {
         max-width: 100%;
     }
 }
+
+
+
+
+[lang="ar"] {
+    .navbar-nav {
+        margin-left: unset!important;
+        margin-right: auto!important;
+    }
+}

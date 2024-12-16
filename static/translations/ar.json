@@ -1,10 +1,10 @@
 {
-    "navbar-home": "Accueil",
-    "navbar-pricing": "Tarifs",
-    "navbar-about-us": "À propos de nous",
-    "navbar-faq": "FAQ's",
-    "navbar-14-day-trial": "Essai gratuit 14 jours",
-    "navbar-login": "Connexion",
+    "navbar-home": "الرئيسية",
+    "navbar-pricing": "التعريفات",
+    "navbar-about-us": "من نحن",
+    "navbar-faq": "الأسئلة الشائعة",
+    "navbar-14-day-trial": "تجربة مجانية لمدة 14 يومًا",
+    "navbar-login": "تسجيل الدخول",
 
 
     "footer-home": "Accueil",
